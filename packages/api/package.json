@@ -25,7 +25,7 @@
     "typeorm": "ts-node $(yarn bin typeorm)",
     "migration:generate": "yarn typeorm migration:generate",
     "migration:run": "yarn typeorm migration:run",
-    "migration:revert": "yarn typeorm migration:revert"
+    "migration:revert": "yarn typeorm migration:revert",
     "db:import": "babel-node -r dotenv/config -- scripts/applications.js",
   },
   "dependencies": {
