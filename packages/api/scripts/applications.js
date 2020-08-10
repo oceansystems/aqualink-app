@@ -115,7 +115,7 @@ async function runDataImport() {
     const depth = getDepth(depthRange);
 
     // Convert lat, lon to POINT geometry, avoiding under/overfloats
-    const polygon = `SRID=4326;POINT(${(parseFloat(lng) + 360) % 360} ${lat})`;
+    const polygon = `SRID=4326;POINT(${parseFloat(lng)} ${lat})`;
 
     const { text: reefText, values: reefValues } = saveReefQuery({
       polygon,
@@ -146,7 +146,7 @@ async function runDataImport() {
   });
 
   // Export links to CSV when done.
-  await getLinks(FINAL_URL, '2020-06-28');
+  await getLinks(FINAL_URL, '2020-08-10');
 }
 
 runDataImport();
