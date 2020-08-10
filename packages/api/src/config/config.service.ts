@@ -45,7 +45,6 @@ class ConfigService {
   public getTypeOrmConfig(): TypeOrmModuleOptions {
     return {
       ...dbConfig,
-      ssl: this.isProduction(),
     };
   }
 }

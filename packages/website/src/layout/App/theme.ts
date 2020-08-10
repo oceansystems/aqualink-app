@@ -1,22 +1,28 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-const skyBlue: string = "#009EE0";
-const lightBlue: string = "#168DBD";
-const darkGreyBlue: string = "#2D3436";
-const white: string = "#FFFFFF";
-const lightGray = "#CCCCCC";
+const skyBlue = "#009ee0";
+const lightBlue = "#168dbd";
+const lighterBlue = "#c0e1f0";
+const darkGreyBlue = "#2d3436";
+const black = "#2f2f2f";
+const white = "#ffffff";
+const lightGray = "#939393";
 
-export const colors = { skyBlue, lightBlue, darkGreyBlue };
+const fontFamily =
+  "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif";
+
+export const colors = { skyBlue, lightBlue, lighterBlue, darkGreyBlue };
 
 const theme: any = createMuiTheme({
   palette: {
     primary: {
       main: lightBlue,
       dark: darkGreyBlue,
+      light: white,
     },
     text: {
       primary: white,
-      secondary: darkGreyBlue,
+      secondary: black,
     },
     grey: {
       500: lightGray,
@@ -39,20 +45,44 @@ const theme: any = createMuiTheme({
       },
     },
     MuiTypography: {
-      h5: {
+      h2: {
+        fontSize: 52,
+        fontFamily,
+      },
+      h3: {
+        fontSize: 32,
+        fontFamily,
+      },
+      h4: {
         fontSize: 26,
+        fontFamily,
+      },
+      h5: {
+        fontSize: 20,
+        fontFamily,
+      },
+      h6: {
+        fontSize: 16,
+        fontFamily,
       },
       subtitle1: {
         fontSize: 14,
+        fontFamily,
       },
       subtitle2: {
         fontSize: 12,
+        fontFamily,
       },
       caption: {
         fontSize: 10,
+        fontFamily,
+      },
+      overline: {
+        fontSize: 8.5,
+        fontFamily,
       },
       gutterBottom: {
-        marginBottom: "3rem",
+        marginBottom: "1rem",
       },
     },
     MuiGrid: {
@@ -70,6 +100,18 @@ const theme: any = createMuiTheme({
       },
       containedSecondary: {
         backgroundColor: darkGreyBlue,
+      },
+    },
+    MuiCardContent: {
+      root: {
+        "&:last-child": {
+          paddingBottom: 0,
+        },
+      },
+    },
+    MuiInputLabel: {
+      root: {
+        color: lightGray,
       },
     },
   },

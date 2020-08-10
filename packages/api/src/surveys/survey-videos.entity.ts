@@ -8,6 +8,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { GeoJSON } from 'geojson';
 import { ReefPointOfInterest } from '../reef-pois/reef-pois.entity';
 import { Survey } from './surveys.entity';
 import { User } from '../users/users.entity';
@@ -19,7 +20,7 @@ export class SurveyVideo {
 
   @Column('point')
   @Index({ spatial: true })
-  location: string;
+  location: GeoJSON;
 
   @Column()
   url: string;

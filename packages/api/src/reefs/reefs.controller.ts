@@ -1,50 +1,47 @@
-import { merge } from 'lodash';
 import {
-  Body,
   Controller,
-  Delete,
-  Get,
+  Body,
   Param,
+  Get,
   Post,
   Put,
+  Delete,
+  Query,
+  ParseIntPipe,
 } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { ReefsService } from './reefs.service';
 import { Reef } from './reefs.entity';
-import reefs from '../../mock_response/reefs.json';
-import reefDetails from '../../mock_response/reefs_id.json';
-import dailyData from '../../mock_response/daily_data.json';
+import { CreateReefDto } from './dto/create-reef.dto';
+import { FilterReefDto } from './dto/filter-reef.dto';
+import { UpdateReefDto } from './dto/update-reef.dto';
 import surveys from '../../mock_response/survey_data.json';
+import { AdminLevel } from '../users/users.entity';
+import { Auth } from '../auth/auth.decorator';
 
 @Controller('reefs')
 export class ReefsController {
-  constructor(
-    @InjectRepository(Reef)
-    private readonly reefRepository: Repository<Reef>,
-  ) {}
+  constructor(private reefsService: ReefsService) {}
 
+  @Auth(AdminLevel.ReefManager, AdminLevel.SuperAdmin)
   @Post()
-  create(@Body() reefData: Reef) {
-    return this.reefRepository.insert(reefData);
+  create(@Body() createReefDto: CreateReefDto): Promise<Reef> {
+    return this.reefsService.create(createReefDto);
   }
 
   @Get()
-  findAll() {
-    // return this.reefRepository.find();
-    return reefs;
+  find(@Query() filterReefDto: FilterReefDto): Promise<Reef[]> {
+    return this.reefsService.find(filterReefDto);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return merge(reefDetails, { id });
-    // return this.reefRepository.findOneReef(id);
+  findOne(@Param('id', ParseIntPipe) id: number): Promise<Reef> {
+    return this.reefsService.findOne(id);
   }
 
   @Get(':id/daily_data')
   // eslint-disable-next-line no-unused-vars
-  findDailyData(@Param('id') id: string) {
-    return dailyData;
-    // return this.reefRepository.findOneReef(id);
+  findDailyData(@Param('id') id: number) {
+    return this.reefsService.findDailyData(id);
   }
 
   @Get(':id/surveys/:poi')
@@ -58,13 +55,18 @@ export class ReefsController {
     // return this.reefRepository.findOneReef(id);
   }
 
+  @Auth(AdminLevel.ReefManager, AdminLevel.SuperAdmin)
   @Put(':id')
-  update(@Param('id') id: string, @Body() reef: Reef) {
-    return this.reefRepository.save({ ...reef, id: parseInt(id, 10) });
+  update(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() updateReefDto: UpdateReefDto,
+  ): Promise<Reef> {
+    return this.reefsService.update(id, updateReefDto);
   }
 
+  @Auth(AdminLevel.ReefManager, AdminLevel.SuperAdmin)
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.reefRepository.delete(id);
+  delete(@Param('id', ParseIntPipe) id: number): Promise<void> {
+    return this.reefsService.delete(id);
   }
 }

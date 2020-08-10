@@ -1,6 +1,22 @@
+# config files
+*firebase.json
+!example.firebase.json
+
 # compiled output
 /dist
 
 # Tests
 /coverage
 /.nyc_output
+
+# Import data
+/scripts/application_data/*
+
+# Database
+/db_data/
+
+# Firebase Local Config
+.runtimeconfig.json
+
+# Firebase Cloud Functions Generated files
+cloud-functions/dist/*.js

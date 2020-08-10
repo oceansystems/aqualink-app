@@ -1,0 +1,296 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReefTable should render with given state from Redux store 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    style="margin-top: 2rem;"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation0 MuiPaper-rounded"
+      style="position: relative;"
+    >
+      <div
+        class="Component-horizontalScrollContainer-5"
+        style="overflow-x: auto; position: relative;"
+      >
+        <div>
+          <div
+            style="overflow-y: auto;"
+          >
+            <div>
+              <table
+                class="MuiTable-root"
+                style="table-layout: auto;"
+              >
+                <thead
+                  class="MuiTableHead-root"
+                >
+                  <tr
+                    class="MuiTableRow-root MuiTableRow-head"
+                  >
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-6 MuiTableCell-alignLeft"
+                      scope="col"
+                      style="background-color: rgb(202, 203, 209); color: black; text-align: center; box-sizing: border-box;"
+                    >
+                      <span
+                        aria-disabled="false"
+                        class="MuiButtonBase-root MuiTableSortLabel-root"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          aria-describedby="rbd-hidden-text-0-hidden-text-0"
+                          data-rbd-drag-handle-context-id="0"
+                          data-rbd-drag-handle-draggable-id="0"
+                          data-rbd-draggable-context-id="0"
+                          data-rbd-draggable-id="0"
+                          draggable="false"
+                          role="button"
+                          tabindex="0"
+                        >
+                          LOCATION NAME
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                          />
+                        </svg>
+                      </span>
+                    </th>
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-6 MuiTableCell-alignRight"
+                      scope="col"
+                      style="background-color: rgb(202, 203, 209); color: black; text-align: center; box-sizing: border-box;"
+                    >
+                      <span
+                        aria-disabled="false"
+                        class="MuiButtonBase-root MuiTableSortLabel-root"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          aria-describedby="rbd-hidden-text-0-hidden-text-0"
+                          data-rbd-drag-handle-context-id="0"
+                          data-rbd-drag-handle-draggable-id="1"
+                          data-rbd-draggable-context-id="0"
+                          data-rbd-draggable-id="1"
+                          draggable="false"
+                          role="button"
+                          tabindex="0"
+                        >
+                          TEMP
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                          />
+                        </svg>
+                      </span>
+                    </th>
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-6 MuiTableCell-alignRight"
+                      scope="col"
+                      style="background-color: rgb(202, 203, 209); color: black; text-align: center; box-sizing: border-box;"
+                    >
+                      <span
+                        aria-disabled="false"
+                        class="MuiButtonBase-root MuiTableSortLabel-root"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          aria-describedby="rbd-hidden-text-0-hidden-text-0"
+                          data-rbd-drag-handle-context-id="0"
+                          data-rbd-drag-handle-draggable-id="2"
+                          data-rbd-draggable-context-id="0"
+                          data-rbd-draggable-id="2"
+                          draggable="false"
+                          role="button"
+                          tabindex="0"
+                        >
+                          DEPTH
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                          />
+                        </svg>
+                      </span>
+                    </th>
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-6 MuiTableCell-alignRight"
+                      scope="col"
+                      style="background-color: rgb(202, 203, 209); color: black; text-align: center; box-sizing: border-box;"
+                    >
+                      <span
+                        aria-disabled="false"
+                        class="MuiButtonBase-root MuiTableSortLabel-root"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          aria-describedby="rbd-hidden-text-0-hidden-text-0"
+                          data-rbd-drag-handle-context-id="0"
+                          data-rbd-drag-handle-draggable-id="3"
+                          data-rbd-draggable-context-id="0"
+                          data-rbd-draggable-id="3"
+                          draggable="false"
+                          role="button"
+                          tabindex="0"
+                        >
+                          DHD
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                          />
+                        </svg>
+                      </span>
+                    </th>
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-6 MuiTableCell-alignLeft"
+                      scope="col"
+                      style="background-color: rgb(202, 203, 209); color: black; text-align: center; box-sizing: border-box;"
+                    >
+                      <span
+                        aria-disabled="false"
+                        class="MuiButtonBase-root MuiTableSortLabel-root"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          aria-describedby="rbd-hidden-text-0-hidden-text-0"
+                          data-rbd-drag-handle-context-id="0"
+                          data-rbd-drag-handle-draggable-id="4"
+                          data-rbd-draggable-context-id="0"
+                          data-rbd-draggable-id="4"
+                          draggable="false"
+                          role="button"
+                          tabindex="0"
+                        >
+                          ALERT
+                        </div>
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                          />
+                        </svg>
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="MuiTableBody-root"
+                >
+                  <tr
+                    class="MuiTableRow-root MuiTableRow-hover"
+                    index="0"
+                    level="0"
+                    path="0"
+                    style="transition: all ease 300ms; cursor: pointer;"
+                  >
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="color: black; box-sizing: border-box; font-size: inherit; font-family: inherit; font-weight: inherit; align-items: center; text-align: center;"
+                      value="Mock Reef Hartmann"
+                    >
+                      <h6
+                        class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary"
+                        style="padding-right: 1.5rem;"
+                      >
+                        Mock Reef Hartmann
+                      </h6>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+                      style="color: black; box-sizing: border-box; font-size: inherit; font-family: inherit; font-weight: inherit; align-items: center; text-align: center;"
+                      value="28.6"
+                    >
+                      <h6
+                        class="MuiTypography-root MuiTypography-h6"
+                        style="color: rgb(22, 141, 189); padding-left: 2rem;"
+                      >
+                        28.6
+                         ℃
+                      </h6>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+                      style="color: black; box-sizing: border-box; font-size: inherit; font-family: inherit; font-weight: inherit; align-items: center; text-align: center;"
+                      value="19"
+                    >
+                      <h6
+                        class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary"
+                        style="padding-left: 2rem;"
+                      >
+                        19
+                         m
+                      </h6>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
+                      style="color: black; box-sizing: border-box; font-size: inherit; font-family: inherit; font-weight: inherit; align-items: center; text-align: center;"
+                      value="14"
+                    >
+                      <h6
+                        class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary"
+                        style="padding-left: 2rem;"
+                      >
+                        14
+                      </h6>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="color: black; box-sizing: border-box; font-size: inherit; font-family: inherit; font-weight: inherit; align-items: center; text-align: center;"
+                      value="warning"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root"
+                        focusable="false"
+                        style="color: rgb(22, 141, 189); padding-right: 2rem;"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+                        />
+                      </svg>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

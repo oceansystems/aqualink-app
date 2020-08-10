@@ -6,18 +6,19 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { GeoJSON } from 'geojson';
 
 @Entity()
 export class VideoStream {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 254 })
+  @Column()
   ownerEmail: string;
 
   @Column('point')
   @Index({ spatial: true })
-  location: string;
+  location: GeoJSON;
 
   @Column()
   url: string;

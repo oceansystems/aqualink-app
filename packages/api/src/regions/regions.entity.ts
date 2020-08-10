@@ -4,30 +4,29 @@ import {
   Column,
   Index,
   ManyToOne,
-  JoinColumn,
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { GeoJSON } from 'geojson';
 
 @Entity()
 export class Region {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 50 })
+  @Column()
   name: string;
 
-  @Column('polygon')
+  @Column('geometry', { spatialFeatureType: 'Polygon' })
   @Index({ spatial: true })
-  polygon: string;
-
-  @ManyToOne(() => Region, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'parent_id' })
-  parentId: Region;
+  polygon: GeoJSON;
 
   @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @ManyToOne(() => Region, { onDelete: 'CASCADE', nullable: true })
+  parent?: Region;
 }

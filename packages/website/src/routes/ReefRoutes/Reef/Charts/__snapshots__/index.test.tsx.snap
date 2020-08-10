@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-item"
+    id="threshold-text-container"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+      style="position: relative; top: 0px;"
+    >
+      <span
+        class="MuiTypography-root MuiTypography-caption"
+      >
+        Bleaching
+      </span>
+      <span
+        class="MuiTypography-root MuiTypography-caption"
+      >
+        Threshold
+      </span>
+      <span
+        class="MuiTypography-root MuiTypography-caption"
+      >
+        (Mean)
+      </span>
+    </div>
+  </div>
+  <div
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-9"
+  >
+    <div
+      class="Charts-root-1"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-h6"
+        style="margin-left: 4rem; font-weight: normal;"
+      >
+        MEAN DAILY WATER TEMPERATURE AT 25M (C°)
+      </h6>
+      Mock-Line
+      <h6
+        class="MuiTypography-root MuiTypography-h6"
+        style="margin: 2rem 0px 0px 4rem; font-weight: normal;"
+      >
+        MEAN DAILY WIND SPEED (KPH)
+      </h6>
+      Mock-Line
+      <h6
+        class="MuiTypography-root MuiTypography-h6"
+        style="margin: 2rem 0px 0px 4rem; font-weight: normal;"
+      >
+        MEAN DAILY WAVE HEIGHT (M)
+      </h6>
+      Mock-Line
+    </div>
+  </div>
+</div>
+`;

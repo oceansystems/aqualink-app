@@ -1,31 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders as expected 1`] = `
+exports[`Homepage should render with given state from Redux store 1`] = `
 <div>
   <header
-    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary HomepageNavBar-appBar-4 MuiPaper-elevation4"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-grid-xs-12"
       >
         <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-flex-end"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+        >
+          <button
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-5"
+        >
+          <h4
+            class="MuiTypography-root MuiTypography-h4"
+          >
+            Aqua
+          </h4>
+          <h4
+            class="MuiTypography-root MuiTypography-h4"
+            style="color: rgb(138, 198, 222);"
+          >
+            link
+          </h4>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-6"
         >
           <div
             class="MuiGrid-root MuiGrid-item"
           >
             <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+              class="MuiButtonBase-root MuiButton-root MuiButton-text"
               tabindex="0"
               type="button"
             >
               <span
                 class="MuiButton-label"
               >
-                Log In
+                SIGN IN
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-text"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                REGISTER
               </span>
               <span
                 class="MuiTouchRipple-root"
@@ -40,39 +100,135 @@ exports[`renders as expected 1`] = `
     class="Homepage-root-1"
   >
     <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center"
+      class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center"
+      style="height: 100%;"
     >
       <div
-        class="MuiGrid-root MuiGrid-item"
+        class="MuiGrid-root Homepage-map-2 MuiGrid-item MuiGrid-grid-xs-6"
       >
-        <h1
-          class="MuiTypography-root MuiTypography-h1 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+        <div
+          class="HomepageMap-map-27 leaflet-container leaflet-grab leaflet-touch-drag"
+          style="position: relative;"
+          tabindex="0"
         >
-          Welcome to Aqualink App
-        </h1>
+          <div
+            class="leaflet-pane leaflet-map-pane"
+            style="left: 0px; top: 0px;"
+          >
+            <div
+              class="leaflet-pane leaflet-tile-pane"
+            >
+              <div
+                class="leaflet-layer "
+                style="z-index: 1;"
+              >
+                <div
+                  class="leaflet-tile-container leaflet-zoom-animated"
+                  style="z-index: 18; left: 0px; top: 0px;"
+                >
+                  <img
+                    alt=""
+                    class="leaflet-tile"
+                    role="presentation"
+                    src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/2/1/1"
+                    style="width: 256px; height: 256px; left: -256px; top: -256px;"
+                  />
+                  <img
+                    alt=""
+                    class="leaflet-tile"
+                    role="presentation"
+                    src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/2/1/2"
+                    style="width: 256px; height: 256px; left: 0px; top: -256px;"
+                  />
+                  <img
+                    alt=""
+                    class="leaflet-tile"
+                    role="presentation"
+                    src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/2/2/1"
+                    style="width: 256px; height: 256px; left: -256px; top: 0px;"
+                  />
+                  <img
+                    alt=""
+                    class="leaflet-tile"
+                    role="presentation"
+                    src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/2/2/2"
+                    style="width: 256px; height: 256px; left: 0px; top: 0px;"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="leaflet-pane leaflet-shadow-pane"
+            />
+            <div
+              class="leaflet-pane leaflet-overlay-pane"
+            />
+            <div
+              class="leaflet-pane leaflet-marker-pane"
+            />
+            <div
+              class="leaflet-pane leaflet-tooltip-pane"
+            />
+            <div
+              class="leaflet-pane leaflet-popup-pane"
+            />
+          </div>
+          <div
+            class="leaflet-control-container"
+          >
+            <div
+              class="leaflet-top leaflet-left"
+            >
+              <div
+                class="leaflet-control-zoom leaflet-bar leaflet-control"
+              >
+                <a
+                  aria-label="Zoom in"
+                  class="leaflet-control-zoom-in"
+                  href="#"
+                  role="button"
+                  title="Zoom in"
+                >
+                  +
+                </a>
+                <a
+                  aria-label="Zoom out"
+                  class="leaflet-control-zoom-out leaflet-disabled"
+                  href="#"
+                  role="button"
+                  title="Zoom out"
+                >
+                  −
+                </a>
+              </div>
+            </div>
+            <div
+              class="leaflet-top leaflet-right"
+            />
+            <div
+              class="leaflet-bottom leaflet-left"
+            />
+            <div
+              class="leaflet-bottom leaflet-right"
+            >
+              <div
+                class="leaflet-control-attribution leaflet-control"
+              >
+                <a
+                  href="https://leafletjs.com"
+                  title="A JS library for interactive maps"
+                >
+                  Leaflet
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div
-        class="MuiGrid-root MuiGrid-item"
+        class="MuiGrid-root Homepage-reefTable-3 MuiGrid-item MuiGrid-grid-xs-6"
       >
-        <a
-          href="/reefs"
-          style="text-decoration: none;"
-        >
-          <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
-            tabindex="0"
-            type="button"
-          >
-            <span
-              class="MuiButton-label"
-            >
-              See Reefs List
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-        </a>
+        <mock-reeftable />
       </div>
     </div>
   </div>

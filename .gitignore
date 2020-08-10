@@ -2,6 +2,9 @@
 .env*
 !.env.example
 
+# Virtual env
+env/
+
 node_modules
 
 # OS

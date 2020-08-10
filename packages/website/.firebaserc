@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "ocean-systems"
+  },
+  "targets": {
+    "ocean-systems": {
+      "hosting": {
+        "staging-target": [
+          "aqualink-app-staging"
+        ],
+        "prod-target": [
+          "os-aqualink"
+        ]
+      }
+    }
+  }
+}

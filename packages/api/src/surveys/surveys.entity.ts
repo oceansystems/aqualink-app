@@ -32,8 +32,7 @@ export class Survey {
   userId: User;
 
   @ManyToOne(() => Reef, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'reef_id' })
-  reefId: Reef;
+  reef: Reef;
 
   @CreateDateColumn()
   createdAt: Date;

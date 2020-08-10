@@ -1,3 +1,4 @@
+import { GeoJSON } from 'geojson';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -6,6 +7,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Exclude } from 'class-transformer';
 
 export enum AdminLevel {
   Default = 'default',
@@ -13,25 +15,35 @@ export enum AdminLevel {
   SuperAdmin = 'super_admin',
 }
 
-@Entity()
+@Entity({ name: 'users' })
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 128 })
-  firebaseUid: string;
+  @Exclude()
+  @Column({ nullable: true })
+  firebaseUid?: string;
 
-  @Column({ length: 50 })
-  fullName: string;
+  @Column({ nullable: true })
+  fullName?: string;
 
-  @Column({ length: 254 })
+  @Column()
+  @Index({ unique: true })
   email: string;
 
-  @Column({ type: 'point', nullable: true })
-  @Index({ spatial: true })
-  location?: string;
+  @Column({ nullable: true })
+  organization?: string;
 
-  @Column({ length: 50, nullable: true })
+  @Column({
+    type: 'geometry',
+    spatialFeatureType: 'Point',
+    nullable: true,
+    srid: 4326,
+  })
+  @Index({ spatial: true })
+  location?: GeoJSON;
+
+  @Column({ nullable: true })
   country?: string;
 
   @Column({

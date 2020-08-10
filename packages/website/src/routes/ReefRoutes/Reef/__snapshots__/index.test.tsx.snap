@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Reef Detail Page should render with given state from Redux store 1`] = `
+exports[`Reef Detail Page should render with given state from Redux store: snapshot-with-data 1`] = `
 <div>
   <header
-    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary ReefNavBar-appBar-27 MuiPaper-elevation4"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -12,10 +12,10 @@ exports[`Reef Detail Page should render with given state from Redux store 1`] = 
         class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between MuiGrid-grid-xs-12"
       >
         <div
-          class="MuiGrid-root MuiGrid-item"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5"
         >
           <div
-            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-align-items-xs-center"
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center"
           >
             <div
               class="MuiGrid-root MuiGrid-item"
@@ -49,69 +49,746 @@ exports[`Reef Detail Page should render with given state from Redux store 1`] = 
                 </button>
               </a>
             </div>
-            <div
-              class="MuiGrid-root MuiGrid-item"
-            >
-              <h5
-                class="MuiTypography-root MuiTypography-h5"
-              >
-                Hawai
-              </h5>
-            </div>
-            <div
-              class="MuiGrid-root MuiGrid-item"
-            >
-              <h6
-                class="MuiTypography-root MuiTypography-subtitle1"
-              >
-                Last surveyed: May 10, 2020
-              </h6>
-            </div>
+            
           </div>
         </div>
         <div
-          class="MuiGrid-root MuiGrid-item"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5"
+        />
+      </div>
+    </div>
+  </header>
+  <div
+    class="MuiGrid-root ReefDetails-root-28 MuiGrid-container MuiGrid-justify-xs-center"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-space-evenly MuiGrid-grid-xs-10"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-md-5"
+      >
+        <div
+          class="ReefDetails-container-29"
+        >
+          <mock-map
+            polygon="[object Object]"
+          />
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-md-5"
+      >
+        <div
+          class="ReefDetails-container-29"
+        >
+          <mock-featurevideo
+            url=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-space-evenly MuiGrid-grid-xs-10"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-md-5"
+      >
+        <div
+          class="ReefDetails-smallContainer-30"
         >
           <div
-            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-align-items-xs-center"
+            class="MuiPaper-root MuiCard-root Temperature-card-32 MuiPaper-elevation1 MuiPaper-rounded"
           >
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiCardHeader-root Temperature-header-33"
             >
               <div
-                class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-end"
+                class="MuiCardHeader-content"
               >
-                <h6
-                  class="MuiTypography-root MuiTypography-subtitle2"
-                >
-                  Managed by: Manager
-                </h6>
                 <span
-                  class="MuiTypography-root MuiTypography-caption"
+                  class="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
                 >
-                  Contact Manager
+                  <div
+                    class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-baseline"
+                  >
+                    <div
+                      class="MuiGrid-root MuiGrid-item"
+                      style="margin-right: 0.5rem;"
+                    >
+                      <h6
+                        class="MuiTypography-root MuiTypography-h6"
+                      >
+                        CURRENT CONDITIONS
+                      </h6>
+                    </div>
+                    <div
+                      class="MuiGrid-root MuiGrid-item"
+                    >
+                      <h6
+                        class="MuiTypography-root MuiTypography-subtitle2"
+                      >
+                        5/20/2020 12:00 AM
+                      </h6>
+                    </div>
+                  </div>
                 </span>
               </div>
             </div>
             <div
-              class="MuiGrid-root MuiGrid-item"
+              class="MuiCardContent-root Temperature-content-34"
             >
               <div
-                class="MuiGrid-root MuiGrid-container"
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-flex-start MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-12"
+                style="height: 100%; padding: 0px 32px 0px 32px;"
               >
                 <div
-                  class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiAvatar-fallback"
-                    focusable="false"
-                    viewBox="0 0 24 24"
+                  <div
+                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start MuiGrid-grid-xs-7"
                   >
-                    <path
-                      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-                    />
-                  </svg>
+                    <span
+                      class="MuiTypography-root MuiTypography-caption"
+                    >
+                      TEMP AT 25M
+                    </span>
+                    <h2
+                      class="MuiTypography-root MuiTypography-h2"
+                    >
+                      30
+                       ℃
+                    </h2>
+                  </div>
+                  <div
+                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start MuiGrid-justify-xs-space-between MuiGrid-grid-xs-5"
+                  >
+                    <span
+                      class="MuiTypography-root MuiTypography-caption"
+                    >
+                      SURFACE TEMP
+                    </span>
+                    <h4
+                      class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom"
+                    >
+                      25
+                       ℃
+                    </h4>
+                    <span
+                      class="MuiTypography-root MuiTypography-caption"
+                    >
+                      WIND
+                    </span>
+                    <div
+                      class="MuiTypography-root MuiTypography-body1"
+                      style="display: flex; align-items: baseline;"
+                    >
+                      <div
+                        class="MuiBox-root MuiBox-root-36"
+                      >
+                        <h4
+                          class="MuiTypography-root MuiTypography-h4"
+                        >
+                          9
+                        </h4>
+                      </div>
+                      <div
+                        class="MuiBox-root MuiBox-root-37"
+                      >
+                        <h6
+                          class="MuiTypography-root MuiTypography-subtitle2"
+                        >
+                          kph
+                        </h6>
+                      </div>
+                      <div
+                        class="MuiBox-root MuiBox-root-38"
+                      >
+                        <span
+                          class="MuiTypography-root MuiTypography-caption"
+                        >
+                          FROM
+                        </span>
+                      </div>
+                      <div
+                        class="MuiBox-root MuiBox-root-39"
+                      >
+                        <h4
+                          class="MuiTypography-root MuiTypography-h4"
+                        >
+                          180
+                          °
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                >
+                  <div
+                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start MuiGrid-grid-xs-7"
+                  >
+                    <div
+                      class="MuiPaper-root MuiAlert-root MuiAlert-filledWarning Temperature-alert-35 MuiPaper-elevation0"
+                      role="alert"
+                    >
+                      <div
+                        class="MuiAlert-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="MuiAlert-message"
+                      >
+                        <span
+                          class="MuiTypography-root MuiTypography-caption"
+                        >
+                          ALERT LEVEL: HIGH
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start MuiGrid-grid-xs-5"
+                  >
+                    <span
+                      class="MuiTypography-root MuiTypography-caption"
+                    >
+                      WAVES
+                    </span>
+                    <div
+                      class="MuiTypography-root MuiTypography-body1"
+                      style="display: flex; align-items: baseline;"
+                    >
+                      <div
+                        class="MuiBox-root MuiBox-root-40"
+                      >
+                        <h4
+                          class="MuiTypography-root MuiTypography-h4"
+                        >
+                          5
+                        </h4>
+                      </div>
+                      <div
+                        class="MuiBox-root MuiBox-root-41"
+                      >
+                        <h6
+                          class="MuiTypography-root MuiTypography-subtitle2"
+                        >
+                          m
+                        </h6>
+                      </div>
+                      <div
+                        class="MuiBox-root MuiBox-root-42"
+                      >
+                        <span
+                          class="MuiTypography-root MuiTypography-caption"
+                        >
+                          AT
+                        </span>
+                      </div>
+                      <div
+                        class="MuiBox-root MuiBox-root-43"
+                      >
+                        <h4
+                          class="MuiTypography-root MuiTypography-h4"
+                        >
+                          2
+                        </h4>
+                      </div>
+                      <div
+                        class="MuiBox-root MuiBox-root-44"
+                      >
+                        <h6
+                          class="MuiTypography-root MuiTypography-subtitle2"
+                        >
+                          s
+                        </h6>
+                      </div>
+                      <div
+                        class="MuiBox-root MuiBox-root-45"
+                      >
+                        <span
+                          class="MuiTypography-root MuiTypography-caption"
+                        >
+                          FROM
+                        </span>
+                      </div>
+                      <div
+                        class="MuiBox-root MuiBox-root-46"
+                      >
+                        <h4
+                          class="MuiTypography-root MuiTypography-h4"
+                        >
+                          180
+                          °
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-md-5"
+      >
+        <div
+          class="ReefDetails-smallContainer-30 ReefDetails-statsContainer-31"
+        >
+          <div
+            class="MuiGrid-root Stats-root-47 MuiGrid-container MuiGrid-justify-xs-space-between"
+          >
+            <div
+              class="MuiGrid-root Stats-item-48 MuiGrid-item MuiGrid-grid-xs-5"
+            >
+              <div
+                class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+                style="height: inherit;"
+              >
+                <div
+                  class="MuiCardMedia-root Stats-card-49"
+                  style="background-image: url(bottom.svg);"
+                >
+                  <div
+                    class="MuiCardHeader-root"
+                    style="flex: 0 1 auto;"
+                  >
+                    <div
+                      class="MuiCardHeader-content"
+                    >
+                      <h6
+                        class="MuiTypography-root MuiTypography-subtitle2 MuiTypography-colorTextSecondary"
+                      >
+                        MAX PAST 7 DAYS
+                      </h6>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiCardContent-root"
+                    style="flex: 1 1 auto; padding: 0rem 1rem 2rem 1rem;"
+                  >
+                    <div
+                      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start MuiGrid-justify-xs-space-between"
+                      style="height: 100%;"
+                    >
+                      <div
+                        class="MuiGrid-root MuiGrid-item"
+                      >
+                        <span
+                          class="MuiTypography-root MuiTypography-caption"
+                          style="color: rgb(104, 104, 104);"
+                        >
+                          SURFACE TEMP
+                        </span>
+                        <h3
+                          class="MuiTypography-root MuiTypography-h3 MuiTypography-colorTextSecondary"
+                          style="font-weight: 300;"
+                        >
+                          25
+                           ℃
+                        </h3>
+                      </div>
+                      <div
+                        class="MuiGrid-root MuiGrid-item"
+                      >
+                        <span
+                          class="MuiTypography-root MuiTypography-caption"
+                          style="color: rgb(18, 140, 192);"
+                        >
+                          TEMP AT 25M
+                        </span>
+                        <h3
+                          class="MuiTypography-root MuiTypography-h3"
+                          style="color: rgb(18, 140, 192); font-weight: 300;"
+                        >
+                          30
+                           ℃
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root Stats-item-48 MuiGrid-item MuiGrid-grid-xs-5"
+            >
+              <div
+                class="MuiPaper-root MuiCard-root Stats-card-49 MuiPaper-elevation1 MuiPaper-rounded"
+              >
+                <div
+                  class="MuiCardHeader-root"
+                  style="flex: 0 1 auto;"
+                >
+                  <div
+                    class="MuiCardHeader-content"
+                  >
+                    <h6
+                      class="MuiTypography-root MuiTypography-subtitle2 MuiTypography-colorTextSecondary"
+                    >
+                      DEGREE HEATING WEEKS
+                    </h6>
+                  </div>
+                </div>
+                <div
+                  class="MuiCardContent-root"
+                  style="flex: 1 1 auto; padding: 0px;"
+                >
+                  <div
+                    class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between"
+                    style="height: 100%;"
+                  >
+                    <div
+                      class="MuiGrid-root MuiGrid-item"
+                    >
+                      <h1
+                        class="MuiTypography-root MuiTypography-h1"
+                        style="color: rgb(8, 91, 163); font-weight: 300; padding-left: 1rem;"
+                      >
+                        0.1
+                      </h1>
+                    </div>
+                    <div
+                      class="MuiGrid-root MuiGrid-container MuiGrid-item"
+                    >
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          style="width: 1rem; height: 1rem; color: rgb(8, 91, 163);"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                          />
+                        </svg>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                          style="background-color: rgb(8, 91, 163);"
+                        >
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            0
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          style="width: 1rem; height: 1rem; color: transparent;"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                          />
+                        </svg>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                          style="background-color: rgb(12, 157, 165);"
+                        >
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            2
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          style="width: 1rem; height: 1rem; color: transparent;"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                          />
+                        </svg>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                          style="background-color: rgb(117, 180, 114);"
+                        >
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            4
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          style="width: 1rem; height: 1rem; color: transparent;"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                          />
+                        </svg>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                          style="background-color: rgb(123, 217, 37);"
+                        >
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            6
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          style="width: 1rem; height: 1rem; color: transparent;"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                          />
+                        </svg>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                          style="background-color: rgb(193, 229, 34);"
+                        >
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            8
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          style="width: 1rem; height: 1rem; color: transparent;"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                          />
+                        </svg>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                          style="background-color: rgb(229, 187, 43);"
+                        >
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            10
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          style="width: 1rem; height: 1rem; color: transparent;"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                          />
+                        </svg>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                          style="background-color: rgb(230, 121, 40);"
+                        >
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            12
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          style="width: 1rem; height: 1rem; color: transparent;"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                          />
+                        </svg>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                          style="background-color: rgb(232, 79, 46);"
+                        >
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            14
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          style="width: 1rem; height: 1rem; color: transparent;"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                          />
+                        </svg>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                          style="background-color: rgb(216, 69, 36);"
+                        >
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            16
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          style="width: 1rem; height: 1rem; color: transparent;"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                          />
+                        </svg>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                          style="background-color: rgb(128, 58, 32);"
+                        >
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            18
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          style="width: 1rem; height: 1rem; color: transparent;"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                          />
+                        </svg>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                          style="background-color: rgb(185, 41, 68);"
+                        >
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            20
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          style="width: 1rem; height: 1rem; color: transparent;"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="8"
+                          />
+                        </svg>
+                        <div
+                          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+                          style="background-color: rgb(128, 48, 126);"
+                        >
+                          <span
+                            class="MuiTypography-root MuiTypography-caption"
+                          >
+                            25
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -119,48 +796,117 @@ exports[`Reef Detail Page should render with given state from Redux store 1`] = 
         </div>
       </div>
     </div>
-  </header>
-  <div
-    class="MuiGrid-root Reef-root-1 MuiGrid-container"
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+    >
+      <mock-charts
+        dailydata="[object Object]"
+        temperaturethreshold="22"
+      />
+    </div>
+  </div>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary Footer-appBar-50 MuiPaper-elevation4"
   >
     <div
-      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <div
-        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-10 MuiGrid-justify-xs-center"
+        class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
       >
         <div
-          class="MuiGrid-root MuiGrid-item"
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
         >
-          <h5
-            class="MuiTypography-root MuiTypography-h5"
+          <h4
+            class="MuiTypography-root MuiTypography-h4"
           >
-            LOCATION:
-          </h5>
+            Aqua
+          </h4>
+          <h4
+            class="MuiTypography-root MuiTypography-h4"
+            style="color: rgb(138, 198, 222);"
+          >
+            link
+          </h4>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`Reef Detail Page should render with given state from Redux store: snapshot-with-no-data 1`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary ReefNavBar-appBar-2 MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between MuiGrid-grid-xs-12"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5"
+        >
           <div
-            class="Reef-container-2"
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center"
           >
-            <mock-map
-              polygon="[object Object]"
-            />
+            <div
+              class="MuiGrid-root MuiGrid-item"
+            >
+              <a
+                href="/reefs"
+              >
+                <button
+                  aria-label="menu"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </a>
+            </div>
+            
           </div>
         </div>
         <div
-          class="MuiGrid-root MuiGrid-item"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5"
+        />
+      </div>
+    </div>
+  </header>
+  <div
+    class="Reef-noData-1"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h2 MuiTypography-colorPrimary MuiTypography-gutterBottom"
         >
-          <h5
-            class="MuiTypography-root MuiTypography-h5"
-          >
-            FEATURE VIDEO
-          </h5>
-          <div
-            class="Reef-container-2"
-          >
-            <mock-featurevideo
-              url=""
-            />
-          </div>
-        </div>
+          No Data Found
+        </h2>
       </div>
     </div>
   </div>

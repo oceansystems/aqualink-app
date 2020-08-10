@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<div>
+  <div
+    class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <div
+      class="MuiCardHeader-root Popup-popupHeader-1"
+    >
+      <div
+        class="MuiCardHeader-content"
+      >
+        <span
+          class="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+        />
+        <span
+          class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+        />
+      </div>
+    </div>
+    <div
+      class="MuiCardContent-root"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-6"
+        >
+          <span
+            class="MuiTypography-root MuiTypography-caption MuiTypography-colorTextSecondary"
+          >
+            TEMP AT 25M
+          </span>
+          <h5
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
+            style="color: rgb(22, 141, 189);"
+          >
+            31.8 ℃
+          </h5>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-6"
+        >
+          <span
+            class="MuiTypography-root MuiTypography-caption MuiTypography-colorTextSecondary"
+          >
+            DEG. HEAT. DAYS
+          </span>
+          <h5
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
+            style="color: purple;"
+          >
+            58
+          </h5>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+        style="margin: 1rem 0px 1rem 0px;"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item"
+        >
+          <a
+            href="/reefs/0"
+            style="text-decoration: none;"
+          >
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                EXPLORE
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

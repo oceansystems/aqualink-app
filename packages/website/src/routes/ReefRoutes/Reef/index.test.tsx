@@ -4,35 +4,77 @@ import { Provider } from "react-redux";
 import { render } from "@testing-library/react";
 import configureStore from "redux-mock-store";
 import { BrowserRouter as Router } from "react-router-dom";
-
+import type { Reef as ReefType, Data } from "../../../store/Reefs/types";
 import Reef from ".";
 
 const mockStore = configureStore([]);
 
 jest.mock("./Map", () => "Mock-Map");
 jest.mock("./FeatureVideo", () => "Mock-FeatureVideo");
+jest.mock("./Charts", () => "Mock-Charts");
 
 describe("Reef Detail Page", () => {
-  let element: HTMLElement;
+  let elementEmpty: HTMLElement;
+  let elementFull: HTMLElement;
   beforeEach(() => {
-    const store = mockStore({
+    const reef: ReefType = {
+      id: 1,
+      name: null,
+      polygon: {
+        type: "Polygon",
+        coordinates: [[[0, 0]]],
+      },
+      temperatureThreshold: 22,
+      depth: 4,
+      status: 1,
+      region: "Hawaii",
+      videoStream: null,
+      stream: null,
+      admin: null,
+      dailyData: [],
+    };
+
+    const emptyStore = mockStore({
+      selectedReef: {
+        details: reef,
+        loading: false,
+        error: null,
+      },
+    });
+
+    const dailyData: Data = {
+      id: 1,
+      date: "20 May 2020",
+      minBottomTemperature: 20,
+      maxBottomTemperature: 30,
+      avgBottomTemperature: 25,
+      degreeHeatingDays: 1,
+      surfaceTemperature: 25,
+      satelliteTemperature: 26,
+      minWindSpeed: 10,
+      maxWindSpeed: 9,
+      avgWindSpeed: 11,
+      windDirection: 180,
+      minWaveHeight: 3,
+      maxWaveHeight: 5,
+      avgWaveHeight: 4,
+      waveDirection: 180,
+      wavePeriod: 2,
+    };
+
+    const fullStore = mockStore({
       selectedReef: {
         details: {
-          id: "1",
-          regionName: "Hawai",
-          managerName: "Manager",
-          videoStream: "",
-          polygon: {
-            type: "",
-            coordinates: [[[0, 0]]],
-          },
+          ...reef,
+          dailyData: [dailyData],
         },
         loading: false,
         error: null,
       },
     });
 
-    store.dispatch = jest.fn();
+    emptyStore.dispatch = jest.fn();
+    fullStore.dispatch = jest.fn();
 
     const mockMatch = {
       isExact: true,
@@ -43,8 +85,16 @@ describe("Reef Detail Page", () => {
       url: "/reefs/1",
     };
 
-    element = render(
-      <Provider store={store}>
+    elementEmpty = render(
+      <Provider store={emptyStore}>
+        <Router>
+          <Reef match={mockMatch} location={{} as any} history={{} as any} />
+        </Router>
+      </Provider>
+    ).container;
+
+    elementFull = render(
+      <Provider store={fullStore}>
         <Router>
           <Reef match={mockMatch} location={{} as any} history={{} as any} />
         </Router>
@@ -53,6 +103,10 @@ describe("Reef Detail Page", () => {
   });
 
   it("should render with given state from Redux store", () => {
-    expect(element).toMatchSnapshot();
+    expect(elementEmpty).toMatchSnapshot("snapshot-with-no-data");
+  });
+
+  it("should render with given state from Redux store", () => {
+    expect(elementFull).toMatchSnapshot("snapshot-with-data");
   });
 });

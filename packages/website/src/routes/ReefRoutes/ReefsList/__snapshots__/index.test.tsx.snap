@@ -1,38 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders as expected 1`] = `
+exports[`Reefs List should render with given state from Redux store 1`] = `
 <div>
   <div
     class="ReefsList-root-1"
   >
     <nav
       class="MuiList-root MuiList-padding"
-    >
-      <a
-        href="/reefs/1"
-        style="text-decoration: none;"
-      >
-        <div
-          aria-disabled="false"
-          class="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
-          role="button"
-          tabindex="0"
-        >
-          <div
-            class="MuiListItemText-root"
-          >
-            <span
-              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
-            >
-              Reef 1
-            </span>
-          </div>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </div>
-      </a>
-    </nav>
+    />
   </div>
 </div>
 `;

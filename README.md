@@ -42,6 +42,24 @@ yarn lint ./packages/api/src/path/to/file.ts
 yarn lint:all
 ```
 
+### Deploying
+We are using Google App Engine to deploy applications. The default project we are using is `ocean-systems`.
+
+- Install the Gloud CLI using the instructions available [here](https://cloud.google.com/sdk/docs/quickstart-macos)
+- Make sure you are logged in by running `gcloud auth login`
+- The run the following commands:
+
+```bash
+# Set the project to ocean-systems
+gcloud config set project ocean-systems
+
+# Deploy to Google Cloud
+yarn deploy
+
+# Wait and verify that the app is running
+gcloud app browse
+```
+
 ## Contributing
 
 Aqualink is an MIT-licensed open source project. Contributions from developers and scientists are welcome!

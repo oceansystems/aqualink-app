@@ -1,0 +1,17 @@
+html, body { height: 100vh }
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.MuiButtonBase-root.MuiIconButton-root.MuiPickersDay-day,
+.MuiPickersCalendarHeader-switchHeader {
+  color: black;
+}

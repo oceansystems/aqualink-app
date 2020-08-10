@@ -1,14 +1,20 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
-import { ReefsModule } from './reefs/reefs.module';
 import { configService } from './config/config.service';
+import { ReefApplicationsModule } from './reef-applications/reef-applications.module';
+import { ReefsModule } from './reefs/reefs.module';
+import { RegionsModule } from './regions/regions.module';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
+    ReefApplicationsModule,
     ReefsModule,
+    RegionsModule,
+    TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
+    UsersModule,
+    AuthModule,
   ],
-  controllers: [AppController],
 })
 export class AppModule {}

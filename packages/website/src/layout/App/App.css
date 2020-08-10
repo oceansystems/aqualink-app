@@ -10,3 +10,29 @@ html, body { height: 100vh }
     flex-direction: column;
     flex-grow: 1;
 }
+
+.tooltip-arrow {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  margin: auto;
+  border-width: 10px 10px 0 10px;
+  border-color: #404b6b transparent transparent transparent;
+  opacity: 0.9;
+  line-height: 0px;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 4px;
+  padding: 0px;
+}
+
+.leaflet-popup-content {
+  border-radius: 4px;
+  margin: 0px;
+}
+
+.leaflet-popup-tip {
+  height: 12px;
+  width: 12px;
+}

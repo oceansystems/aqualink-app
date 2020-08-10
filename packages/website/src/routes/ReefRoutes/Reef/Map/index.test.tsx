@@ -10,7 +10,7 @@ test("renders as expected", () => {
   const { container } = render(
     <Map
       polygon={{
-        type: "",
+        type: "Polygon",
         coordinates: [[[0, 0]]],
       }}
     />

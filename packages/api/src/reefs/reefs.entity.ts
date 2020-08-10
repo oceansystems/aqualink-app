@@ -1,15 +1,18 @@
+import { GeoJSON } from 'geojson';
 import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
   Index,
   ManyToOne,
-  JoinColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToOne,
 } from 'typeorm';
 import { Region } from '../regions/regions.entity';
 import { User } from '../users/users.entity';
+// eslint-disable-next-line import/no-cycle
+import { DailyData } from './daily-data.entity';
 import { VideoStream } from './video-streams.entity';
 
 @Entity()
@@ -17,24 +20,37 @@ export class Reef {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 50 })
+  @Column({ nullable: true })
   name: string;
 
-  @Column('polygon')
-  @Index({ spatial: true })
-  polygon: string;
+  @Column({ nullable: true })
+  spotterId: string;
 
-  @Column('float')
+  @Column({
+    type: 'geometry',
+    unique: true,
+    srid: 4326,
+  })
+  @Index({ spatial: true })
+  polygon: GeoJSON;
+
+  @Column('float', { nullable: true })
   temperatureThreshold: number;
 
-  @Column()
+  @Column({ nullable: true })
   depth: number;
 
-  @Column()
-  status: string;
+  @Column({ default: 0 })
+  status: number;
 
   @Column({ nullable: true })
   videoStream: string;
+
+  @Column('float', { nullable: true })
+  maxMonthlyMean: number;
+
+  @Column({ nullable: true })
+  timezone: string;
 
   @CreateDateColumn()
   createdAt: Date;
@@ -42,15 +58,15 @@ export class Reef {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @ManyToOne(() => Region, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'region_id' })
-  regionId: Region;
+  @ManyToOne(() => Region, { onDelete: 'CASCADE', nullable: true })
+  region?: Region;
 
-  @ManyToOne(() => User, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'admin_id' })
-  adminId: User;
+  @ManyToOne(() => User, { onDelete: 'CASCADE', nullable: true })
+  admin?: User;
 
-  @ManyToOne(() => VideoStream, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'stream_id' })
-  streamId: VideoStream;
+  @ManyToOne(() => VideoStream, { onDelete: 'CASCADE', nullable: true })
+  stream?: VideoStream;
+
+  @OneToOne(() => DailyData, (latestDailyData) => latestDailyData.reef)
+  latestDailyData?: DailyData;
 }

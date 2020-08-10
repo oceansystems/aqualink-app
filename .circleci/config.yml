@@ -37,6 +37,7 @@ jobs:
             - node_modules
             - packages/website/node_modules
             - packages/api/node_modules
+            - packages/application/node_modules
             - /usr/local/share/.cache/yarn/v4/
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 

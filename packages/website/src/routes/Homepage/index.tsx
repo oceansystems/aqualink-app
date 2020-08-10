@@ -1,54 +1,58 @@
-import React from "react";
-import {
-  Button,
-  Typography,
-  Grid,
-  Theme,
-  withStyles,
-  WithStyles,
-  createStyles,
-} from "@material-ui/core";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Grid, withStyles, WithStyles, createStyles } from "@material-ui/core";
 
-import HomepageNavBar from "./HomepageNavBar";
+import HomepageNavBar from "./NavBar";
+import HomepageMap from "./Map";
+import ReefTable from "./ReefTable";
+import { reefsRequest } from "../../store/Reefs/reefsListSlice";
+import { reefRequest } from "../../store/Reefs/selectedReefSlice";
 
-const Homepage = ({ classes }: HomepageProps) => (
-  <>
-    <HomepageNavBar />
-    <div className={classes.root}>
-      <Grid
-        container
-        direction="column"
-        justify="flex-start"
-        alignItems="center"
-      >
-        <Grid item>
-          <Typography gutterBottom color="primary" variant="h1">
-            Welcome to Aqualink App
-          </Typography>
+const Homepage = ({ classes }: HomepageProps) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(reefsRequest());
+    dispatch(reefRequest("18"));
+  }, [dispatch]);
+
+  return (
+    <>
+      <HomepageNavBar />
+      <div className={classes.root}>
+        <Grid
+          style={{ height: "100%" }}
+          container
+          direction="row"
+          justify="flex-start"
+          alignItems="center"
+        >
+          <Grid className={classes.map} item xs={6}>
+            <HomepageMap />
+          </Grid>
+          <Grid className={classes.reefTable} item xs={6}>
+            <ReefTable />
+          </Grid>
         </Grid>
-        <Grid item>
-          <Link style={{ textDecoration: "none" }} to="/reefs">
-            <Button color="primary" variant="contained">
-              See Reefs List
-            </Button>
-          </Link>
-        </Grid>
-      </Grid>
-    </div>
-  </>
-);
+      </div>
+    </>
+  );
+};
 
-const styles = (theme: Theme) =>
+const styles = () =>
   createStyles({
     root: {
-      display: "flex",
-      alignItems: "center",
       height: "100%",
-      backgroundColor: theme.palette.text.secondary,
+    },
+    map: {
+      height: "100%",
+    },
+    reefTable: {
+      height: "calc(100vh - 64px)",
+      overflowY: "auto",
     },
   });
 
-interface HomepageProps extends WithStyles<typeof styles> {}
+type HomepageProps = WithStyles<typeof styles>;
 
 export default withStyles(styles)(Homepage);

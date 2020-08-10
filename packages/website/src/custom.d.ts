@@ -5,6 +5,9 @@ declare module "*.svg" {
   export default content;
 }
 
+declare module "*.png";
+declare module "*.jpg";
+
 // Generic CSS import definition
 declare module "*.css" {
   interface IClassNames {

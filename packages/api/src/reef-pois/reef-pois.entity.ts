@@ -20,7 +20,7 @@ export class ReefPointOfInterest {
   @Column()
   imageUrl: string;
 
-  @Column({ length: 50 })
+  @Column()
   name: string;
 
   @ManyToOne(() => Reef, { onDelete: 'CASCADE' })
