@@ -7,28 +7,30 @@ import { getMMM } from '../src/utils/temperature';
 
 const dbConfig = require('../ormconfig');
 
+async function getAugmentedData(reef: Reef) {
+  const [longitude, latitude] = (reef.polygon as Point).coordinates;
+  const MMM = await getMMM(longitude, latitude);
+  if (MMM === null) {
+    console.warn(
+      `Max Monthly Mean appears to be null for Reef ${reef.name} at (lat, lon): (${latitude}, ${longitude}) `,
+    );
+  }
+  return omitBy(
+    {
+      timezone: geoTz(latitude, longitude)[0],
+      maxMonthlyMean: MMM,
+    },
+    isNil,
+  );
+}
+
 async function augmentReefs(connection: Connection) {
   const reefRepository = connection.getRepository(Reef);
   const allReefs = await reefRepository.find();
   return Promise.all(
     allReefs.map(async (reef) => {
-      const [longitude, latitude] = (reef.polygon as Point).coordinates;
-      const MMM = await getMMM(longitude, latitude);
-      if (MMM === null) {
-        console.warn(
-          `Max Monthly Mean appears to be null for Reef ${reef.name} at (lat, lon): (${latitude}, ${longitude}) `,
-        );
-      }
-      const res = await reefRepository.update(
-        reef.id,
-        omitBy(
-          {
-            timezone: geoTz(latitude, longitude)[0],
-            maxMonthlyMean: MMM,
-          },
-          isNil,
-        ),
-      );
+      const augmentedData = await getAugmentedData(reef);
+      const res = await reefRepository.update(reef.id, augmentedData);
       return res;
     }),
   );
