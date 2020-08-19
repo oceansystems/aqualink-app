@@ -10,10 +10,15 @@ import { reefsListSelector } from "../../../store/Reefs/reefsListSlice";
 import { reefDetailsSelector } from "../../../store/Reefs/selectedReefSlice";
 import { setReefOnMap } from "../../../store/Homepage/homepageSlice";
 import { colors } from "../../../layout/App/theme";
+import { formatNumber } from "../../../helpers/numberUtils";
+import {
+  colorFinder,
+  degreeHeatingWeeksCalculator,
+} from "../../../helpers/degreeHeatingWeeks";
 
 interface Row {
   locationName: string | null;
-  temp: number | null;
+  temp?: string | 0;
   depth: number | null;
   dhd: number | null;
   alert: string | null;
@@ -91,11 +96,15 @@ const ReefTable = () => {
       cellStyle,
       render: (rowData) => (
         <Typography
-          style={{ paddingLeft: "2rem" }}
+          style={{
+            paddingLeft: "2rem",
+            color: rowData.dhd
+              ? `${colorFinder(degreeHeatingWeeksCalculator(rowData.dhd))}`
+              : "black",
+          }}
           variant="subtitle1"
-          color="textSecondary"
         >
-          {rowData.dhd}
+          {formatNumber(rowData.dhd, 1)}
         </Typography>
       ),
     },
@@ -117,11 +126,13 @@ const ReefTable = () => {
   ];
 
   const tableData: Row[] = Object.entries(reefsList).map(([key, value]) => {
+    const { degreeHeatingDays, satelliteTemperature } =
+      value.latestDailyData || {};
     return {
       locationName: value.name,
-      temp: 28.6,
+      temp: formatNumber(satelliteTemperature, 1) || undefined,
       depth: value.depth,
-      dhd: 14,
+      dhd: degreeHeatingDays,
       alert: "warning",
       tableData: {
         id: parseFloat(key),
@@ -133,8 +144,7 @@ const ReefTable = () => {
     <>
       {selectedReef &&
         selectedReef.dailyData &&
-        selectedReef.dailyData.length > 0 &&
-        selectedReef.temperatureThreshold && (
+        selectedReef.dailyData.length > 0 && (
           <SelectedReefCard reef={selectedReef} />
         )}
       {reefsList && reefsList.length > 0 && (

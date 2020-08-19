@@ -9,13 +9,13 @@ export const thresholdPlugin = {
     const { left, right } = xScale;
     const { ctx } = chart;
     const yCoord = yScale.getPixelForValue(options.threshold);
-    let xCoord = left - 40;
+    let xCoord = left;
 
     ctx.beginPath();
     while (xCoord < right - 5) {
       ctx.moveTo(xCoord, yCoord);
       ctx.lineTo(xCoord + 5, yCoord);
-      ctx.strokeStyle = "#212121";
+      ctx.strokeStyle = "#ff8d00";
       ctx.fill();
       xCoord += 10;
     }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -8,23 +8,24 @@ import HomePage from "../../routes/Homepage";
 import ReefRoutes from "../../routes/ReefRoutes";
 import theme from "./theme";
 import "./App.css";
-import { initializeUser } from "../../store/User/userSlice";
+import { getSelf } from "../../store/User/userSlice";
 import app from "../../firebase";
 
 function App() {
   const [render, setRender] = useState<boolean>(false);
   const dispatch = useDispatch();
-  app.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // User is signed in
-      user.getIdToken().then((token) => {
-        dispatch(
-          initializeUser({ email: user.email, firebaseUid: user.uid, token })
-        );
-      });
-    }
-    setRender(true);
-  });
+
+  useEffect(() => {
+    app.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in
+        user.getIdToken().then((token) => {
+          dispatch(getSelf(token));
+        });
+      }
+      setRender(true);
+    });
+  }, [dispatch]);
 
   return (
     <ThemeProvider theme={theme}>

@@ -7,19 +7,15 @@ import {
   CardHeader,
   CardContent,
   Grid,
-  Box,
   Typography,
 } from "@material-ui/core";
+import { formatNumber } from "../../../../../helpers/numberUtils";
 
 const Tooltip = ({
   date,
+  depth,
   bottomTemperature,
   surfaceTemperature,
-  wave,
-  waveDirection,
-  wavePeriod,
-  wind,
-  windDirection,
   classes,
 }: TooltipProps) => {
   // Remove seconds from date
@@ -68,57 +64,30 @@ const Tooltip = ({
             item
             xs={12}
           >
-            <Grid container justify="flex-start" item xs={6}>
-              <Typography variant="caption">TEMP AT 25M</Typography>
-              <Typography variant="h5">{bottomTemperature} &#8451;</Typography>
+            <Grid item xs={6}>
+              <Grid container justify="flex-start" item xs={12}>
+                <Typography variant="caption">{`TEMP AT ${depth}M`}</Typography>
+              </Grid>
+              <Grid container justify="flex-start" item xs={12}>
+                <Typography variant="h5">
+                  {bottomTemperature
+                    ? `${formatNumber(bottomTemperature, 1)} \u2103`
+                    : "- -"}
+                </Typography>
+              </Grid>
             </Grid>
-            <Grid container justify="flex-end" item xs={6}>
-              <Typography variant="caption">SURFACE TEMP</Typography>
-              <Typography variant="h5">{surfaceTemperature} &#8451;</Typography>
+            <Grid item xs={6}>
+              <Grid container justify="flex-end" item xs={12}>
+                <Typography variant="caption">SURFACE TEMP</Typography>
+              </Grid>
+              <Grid container justify="flex-end" item xs={12}>
+                <Typography variant="h5">
+                  {surfaceTemperature
+                    ? `${formatNumber(surfaceTemperature, 1)} \u2103`
+                    : "-"}
+                </Typography>
+              </Grid>
             </Grid>
-          </Grid>
-          <Grid container direction="column" item xs={12}>
-            <Typography variant="caption">WIND</Typography>
-            <Typography className={classes.tooltipContentRow} component="div">
-              <Box>
-                <Typography variant="h5">{wind}</Typography>
-              </Box>
-              <Box ml={0.2}>
-                <Typography variant="subtitle2">kph</Typography>
-              </Box>
-              <Box ml={0.5}>
-                <Typography variant="caption">FROM</Typography>
-              </Box>
-              <Box ml={0.5}>
-                <Typography variant="h5">{windDirection}&#176;</Typography>
-              </Box>
-            </Typography>
-          </Grid>
-          <Grid container direction="column" item xs={12}>
-            <Typography variant="caption">WAVES</Typography>
-            <Typography className={classes.tooltipContentRow} component="div">
-              <Box>
-                <Typography variant="h5">{wave}</Typography>
-              </Box>
-              <Box ml={0.2}>
-                <Typography variant="subtitle2">m</Typography>
-              </Box>
-              <Box ml={0.5}>
-                <Typography variant="caption">AT</Typography>
-              </Box>
-              <Box ml={0.5}>
-                <Typography variant="h5">{wavePeriod}</Typography>
-              </Box>
-              <Box ml={0.2}>
-                <Typography variant="subtitle2">s</Typography>
-              </Box>
-              <Box ml={0.5}>
-                <Typography variant="overline">FROM</Typography>
-              </Box>
-              <Box ml={0.5}>
-                <Typography variant="h5">{waveDirection} &#176;</Typography>
-              </Box>
-            </Typography>
           </Grid>
         </Grid>
       </CardContent>
@@ -129,8 +98,8 @@ const Tooltip = ({
 const styles = () =>
   createStyles({
     tooltip: {
-      height: 230,
-      width: 240,
+      height: 100,
+      width: 200,
       display: "flex",
       flexFlow: "column",
       backgroundColor: "#404b6b",
@@ -138,11 +107,11 @@ const styles = () =>
     },
     tooltipHeader: {
       flex: "0 1 auto",
-      padding: "0.5rem 2rem 0.5rem 2rem",
+      padding: "0.5rem 1rem 0 1rem",
     },
     tooltipContent: {
       flex: "1 1 auto",
-      padding: "0.5rem 2rem 0.5rem 2rem",
+      padding: "0.5rem 1rem 0.5rem 1rem",
     },
     tooltipContentRow: {
       display: "flex",
@@ -152,13 +121,9 @@ const styles = () =>
 
 export interface TooltipData {
   date: string;
+  depth: number | null;
   bottomTemperature: number;
   surfaceTemperature: number;
-  wind: number;
-  windDirection: number;
-  wave: number;
-  wavePeriod: number;
-  waveDirection: number;
 }
 
 type TooltipProps = TooltipData & WithStyles<typeof styles>;

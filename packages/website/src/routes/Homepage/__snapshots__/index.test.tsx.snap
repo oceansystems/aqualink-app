@@ -3,7 +3,7 @@
 exports[`Homepage should render with given state from Redux store 1`] = `
 <div>
   <header
-    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary HomepageNavBar-appBar-4 MuiPaper-elevation4"
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary NavBar-appBar-4 MuiPaper-elevation4"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -107,7 +107,7 @@ exports[`Homepage should render with given state from Redux store 1`] = `
         class="MuiGrid-root Homepage-map-2 MuiGrid-item MuiGrid-grid-xs-6"
       >
         <div
-          class="HomepageMap-map-27 leaflet-container leaflet-grab leaflet-touch-drag"
+          class="HomepageMap-map-26 leaflet-container leaflet-grab leaflet-touch-drag"
           style="position: relative;"
           tabindex="0"
         >
@@ -204,7 +204,55 @@ exports[`Homepage should render with given state from Redux store 1`] = `
             </div>
             <div
               class="leaflet-top leaflet-right"
-            />
+            >
+              <div
+                aria-haspopup="true"
+                class="leaflet-control-layers leaflet-control"
+              >
+                <a
+                  class="leaflet-control-layers-toggle"
+                  href="#"
+                  title="Layers"
+                />
+                <section
+                  class="leaflet-control-layers-list"
+                >
+                  <div
+                    class="leaflet-control-layers-base"
+                  />
+                  <div
+                    class="leaflet-control-layers-separator"
+                    style="display: none;"
+                  />
+                  <div
+                    class="leaflet-control-layers-overlays"
+                  >
+                    <label>
+                      <div>
+                        <input
+                          class="leaflet-control-layers-selector"
+                          type="checkbox"
+                        />
+                        <span>
+                           Sea Surface Temperature
+                        </span>
+                      </div>
+                    </label>
+                    <label>
+                      <div>
+                        <input
+                          class="leaflet-control-layers-selector"
+                          type="checkbox"
+                        />
+                        <span>
+                           NOAA Degree Heating Week
+                        </span>
+                      </div>
+                    </label>
+                  </div>
+                </section>
+              </div>
+            </div>
             <div
               class="leaflet-bottom leaflet-left"
             />

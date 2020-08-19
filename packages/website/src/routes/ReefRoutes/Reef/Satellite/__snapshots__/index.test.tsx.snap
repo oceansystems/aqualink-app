@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<div>
+  <div
+    class="MuiPaper-root MuiCard-root Satellite-card-1 MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <div
+      class="MuiCardHeader-root Satellite-header-3"
+    >
+      <div
+        class="MuiCardHeader-content"
+      >
+        <span
+          class="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8"
+            >
+              <h6
+                class="MuiTypography-root Satellite-cardTitle-2 MuiTypography-h6"
+              >
+                SATELLITE OBSERVATION
+              </h6>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+            >
+              <img
+                alt="satellite"
+                src="satellite.svg"
+              />
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div
+      class="MuiCardContent-root Satellite-content-4"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between"
+        style="height: 100%;"
+      >
+        <div
+          class="MuiGrid-root Satellite-contentText-5 MuiGrid-item"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <h6
+                class="MuiTypography-root Satellite-contentTextTitles-6 MuiTypography-subtitle2 MuiTypography-colorTextPrimary"
+              >
+                SURFACE TEMP
+              </h6>
+              <h2
+                class="MuiTypography-root Satellite-contentTextValues-7 MuiTypography-h2 MuiTypography-colorTextPrimary"
+              >
+                20.0 ℃
+              </h2>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <h6
+                class="MuiTypography-root Satellite-contentTextTitles-6 MuiTypography-subtitle2 MuiTypography-colorTextPrimary"
+              >
+                DEGREE HEATING WEEKS
+              </h6>
+              <h2
+                class="MuiTypography-root Satellite-contentTextValues-7 MuiTypography-h2 MuiTypography-colorTextPrimary"
+              >
+                4.1
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+              style="background-color: rgb(8, 91, 163); height: 2rem;"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                0
+              </span>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+              style="background-color: rgb(12, 157, 165); height: 2rem;"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                2
+              </span>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+              style="background-color: rgb(117, 180, 114); height: 2rem;"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                4
+              </span>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+              style="background-color: rgb(123, 217, 37); height: 2rem;"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                6
+              </span>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+              style="background-color: rgb(193, 229, 34); height: 2rem;"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                8
+              </span>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+              style="background-color: rgb(229, 187, 43); height: 2rem;"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                10
+              </span>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+              style="background-color: rgb(230, 121, 40); height: 2rem;"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                12
+              </span>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+              style="background-color: rgb(232, 79, 46); height: 2rem;"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                14
+              </span>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+              style="background-color: rgb(216, 69, 36); height: 2rem;"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                16
+              </span>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+              style="background-color: rgb(128, 58, 32); height: 2rem;"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                18
+              </span>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+              style="background-color: rgb(185, 41, 68); height: 2rem;"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                20
+              </span>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+              style="background-color: rgb(128, 48, 126); height: 2rem;"
+            >
+              <span
+                class="MuiTypography-root MuiTypography-caption"
+              >
+                25
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

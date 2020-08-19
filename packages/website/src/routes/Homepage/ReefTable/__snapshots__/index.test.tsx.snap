@@ -231,13 +231,11 @@ exports[`ReefTable should render with given state from Redux store 1`] = `
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
                       style="color: black; box-sizing: border-box; font-size: inherit; font-family: inherit; font-weight: inherit; align-items: center; text-align: center;"
-                      value="28.6"
                     >
                       <h6
                         class="MuiTypography-root MuiTypography-h6"
                         style="color: rgb(22, 141, 189); padding-left: 2rem;"
                       >
-                        28.6
                          ℃
                       </h6>
                     </td>
@@ -257,13 +255,13 @@ exports[`ReefTable should render with given state from Redux store 1`] = `
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
                       style="color: black; box-sizing: border-box; font-size: inherit; font-family: inherit; font-weight: inherit; align-items: center; text-align: center;"
-                      value="14"
+                      value="20"
                     >
                       <h6
-                        class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary"
-                        style="padding-left: 2rem;"
+                        class="MuiTypography-root MuiTypography-subtitle1"
+                        style="padding-left: 2rem; color: rgb(12, 157, 165);"
                       >
-                        14
+                        20.0
                       </h6>
                     </td>
                     <td

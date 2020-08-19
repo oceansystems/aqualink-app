@@ -10,7 +10,7 @@ const plugin = {
     const { ctx, chartArea } = chart;
     const chartHeight = chartArea.bottom - chartArea.top;
     const chartWidth = chartArea.right - chartArea.left;
-    const day = 24;
+    const day = 1;
     ctx.save();
     ctx.fillStyle = options.color;
     if (options.xTicksFontWeight) {

@@ -22,7 +22,7 @@ describe("NavBar", () => {
 
     element = render(
       <Provider store={store}>
-        <HomePageNavBar />
+        <HomePageNavBar searchLocation={false} />
       </Provider>
     ).container;
   });

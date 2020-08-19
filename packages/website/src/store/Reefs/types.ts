@@ -39,7 +39,7 @@ export interface Reef {
   id: number;
   name: string | null;
   polygon: Polygon | Point;
-  temperatureThreshold: number | null;
+  maxMonthlyMean: number | null;
   depth: number | null;
   status: number;
   videoStream: string | null;
@@ -47,6 +47,7 @@ export interface Reef {
   admin: string | null;
   stream: string | null;
   dailyData: Data[];
+  latestDailyData: Data;
 }
 
 export interface ReefsListState {

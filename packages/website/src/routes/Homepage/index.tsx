@@ -2,23 +2,25 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Grid, withStyles, WithStyles, createStyles } from "@material-ui/core";
 
-import HomepageNavBar from "./NavBar";
+import HomepageNavBar from "../../common/NavBar";
 import HomepageMap from "./Map";
 import ReefTable from "./ReefTable";
 import { reefsRequest } from "../../store/Reefs/reefsListSlice";
 import { reefRequest } from "../../store/Reefs/selectedReefSlice";
+
+const featuredReefId = "1";
 
 const Homepage = ({ classes }: HomepageProps) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(reefsRequest());
-    dispatch(reefRequest("18"));
+    dispatch(reefRequest(featuredReefId));
   }, [dispatch]);
 
   return (
     <>
-      <HomepageNavBar />
+      <HomepageNavBar searchLocation />
       <div className={classes.root}>
         <Grid
           style={{ height: "100%" }}

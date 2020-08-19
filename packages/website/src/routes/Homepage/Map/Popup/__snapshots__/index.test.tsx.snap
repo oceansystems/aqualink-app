@@ -26,34 +26,51 @@ exports[`renders as expected 1`] = `
         class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-6"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
         >
-          <span
-            class="MuiTypography-root MuiTypography-caption MuiTypography-colorTextSecondary"
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
           >
-            TEMP AT 25M
-          </span>
-          <h5
-            class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
-            style="color: rgb(22, 141, 189);"
+            <span
+              class="MuiTypography-root MuiTypography-caption MuiTypography-colorTextSecondary"
+            >
+              TEMP AT 0M
+            </span>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
           >
-            31.8 ℃
-          </h5>
+            <h5
+              class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
+              style="color: rgb(22, 141, 189);"
+            >
+              10.0
+               ℃
+            </h5>
+          </div>
         </div>
         <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-6"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
         >
-          <span
-            class="MuiTypography-root MuiTypography-caption MuiTypography-colorTextSecondary"
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-12"
           >
-            DEG. HEAT. DAYS
-          </span>
-          <h5
-            class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
-            style="color: purple;"
+            <span
+              class="MuiTypography-root MuiTypography-caption MuiTypography-colorTextSecondary"
+            >
+              DEG. HEAT. DAYS
+            </span>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-12"
           >
-            58
-          </h5>
+            <h5
+              class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
+              style="color: rgb(8, 91, 163);"
+            >
+              10.0
+            </h5>
+          </div>
         </div>
       </div>
       <div

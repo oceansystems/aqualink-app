@@ -36,3 +36,15 @@ html, body { height: 100vh }
   height: 12px;
   width: 12px;
 }
+
+.MuiInputBase-root.MuiOutlinedInput-root.MuiAutocomplete-inputRoot.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInputBase-adornedEnd.MuiOutlinedInput-adornedEnd {
+  padding: 0;
+}
+
+.MuiAutocomplete-option {
+  color: #168dbd;
+}
+
+.marker-icon {
+  background-color: transparent;
+}

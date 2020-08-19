@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { FirebaseError } from "firebase";
+import type { AxiosError } from "axios";
 
 import type {
   User,
@@ -28,12 +29,24 @@ export const createUser = createAsyncThunk<
   ) => {
     try {
       const { user } = await userServices.createUser(email, password);
-      const { data } = await userServices.storeUser(fullName, email, user?.uid);
-      return {
-        email: data.email,
-        firebaseUid: data.firebaseUid,
-        token: await user?.getIdToken(),
-      };
+      const token = await user?.getIdToken();
+      try {
+        const { data } = await userServices.storeUser(fullName, email, token);
+        return {
+          email: data.email,
+          firebaseUid: data.firebaseUid,
+          token: await user?.getIdToken(),
+        };
+      } catch (err) {
+        try {
+          await user?.delete();
+        } catch (errDelete) {
+          const error: FirebaseError = errDelete;
+          return rejectWithValue(error.message);
+        }
+        const error: AxiosError<UserState["error"]> = err;
+        return rejectWithValue(error.message);
+      }
     } catch (err) {
       const error: FirebaseError = err;
       return rejectWithValue(error.message);
@@ -62,6 +75,23 @@ export const signInUser = createAsyncThunk<
   }
 );
 
+export const getSelf = createAsyncThunk<User, string, CreateAsyncThunkTypes>(
+  "user/getSelf",
+  async (token: string, { rejectWithValue }) => {
+    try {
+      const { data } = await userServices.getSelf(token);
+      return {
+        email: data.email,
+        firebaseUid: data.firebaseUid,
+        token,
+      };
+    } catch (err) {
+      const error: AxiosError<UserState["error"]> = err;
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 export const signOutUser = createAsyncThunk<
   UserState["userInfo"],
   void,
@@ -79,15 +109,7 @@ export const signOutUser = createAsyncThunk<
 const userSlice = createSlice({
   name: "user",
   initialState: userInitialState,
-  reducers: {
-    initializeUser: (
-      state,
-      { payload }: PayloadAction<UserState["userInfo"]>
-    ) => ({
-      ...state,
-      userInfo: payload,
-    }),
-  },
+  reducers: {},
   extraReducers: (builder) => {
     // User Create
     builder.addCase(
@@ -181,6 +203,34 @@ const userSlice = createSlice({
         error: null,
       };
     });
+
+    // Get self
+    builder.addCase(getSelf.fulfilled, (state, action: PayloadAction<User>) => {
+      return {
+        ...state,
+        userInfo: action.payload,
+        loading: false,
+      };
+    });
+
+    builder.addCase(
+      getSelf.rejected,
+      (state, action: PayloadAction<UserState["error"]>) => {
+        return {
+          ...state,
+          error: action.payload,
+          loading: false,
+        };
+      }
+    );
+
+    builder.addCase(getSelf.pending, (state) => {
+      return {
+        ...state,
+        loading: true,
+        error: null,
+      };
+    });
   },
 });
 
@@ -192,7 +242,5 @@ export const userLoadingSelector = (state: RootState): UserState["loading"] =>
 
 export const userErrorSelector = (state: RootState): UserState["error"] =>
   state.user.error;
-
-export const { initializeUser } = userSlice.actions;
 
 export default userSlice.reducer;

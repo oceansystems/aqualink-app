@@ -48,149 +48,46 @@ exports[`renders as expected 1`] = `
           class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between MuiGrid-grid-xs-12"
         >
           <div
-            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-6"
-          >
-            <span
-              class="MuiTypography-root MuiTypography-caption"
-            >
-              TEMP AT 25M
-            </span>
-            <h5
-              class="MuiTypography-root MuiTypography-h5"
-            >
-               ℃
-            </h5>
-          </div>
-          <div
-            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-6"
-          >
-            <span
-              class="MuiTypography-root MuiTypography-caption"
-            >
-              SURFACE TEMP
-            </span>
-            <h5
-              class="MuiTypography-root MuiTypography-h5"
-            >
-               ℃
-            </h5>
-          </div>
-        </div>
-        <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-grid-xs-12"
-        >
-          <span
-            class="MuiTypography-root MuiTypography-caption"
-          >
-            WIND
-          </span>
-          <div
-            class="MuiTypography-root Tooltip-tooltipContentRow-4 MuiTypography-body1"
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
           >
             <div
-              class="MuiBox-root MuiBox-root-5"
-            >
-              <h5
-                class="MuiTypography-root MuiTypography-h5"
-              />
-            </div>
-            <div
-              class="MuiBox-root MuiBox-root-6"
-            >
-              <h6
-                class="MuiTypography-root MuiTypography-subtitle2"
-              >
-                kph
-              </h6>
-            </div>
-            <div
-              class="MuiBox-root MuiBox-root-7"
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
               >
-                FROM
+                TEMP AT 0M
               </span>
             </div>
             <div
-              class="MuiBox-root MuiBox-root-8"
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
             >
               <h5
                 class="MuiTypography-root MuiTypography-h5"
               >
-                °
+                - -
               </h5>
             </div>
           </div>
-        </div>
-        <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-grid-xs-12"
-        >
-          <span
-            class="MuiTypography-root MuiTypography-caption"
-          >
-            WAVES
-          </span>
           <div
-            class="MuiTypography-root Tooltip-tooltipContentRow-4 MuiTypography-body1"
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
           >
             <div
-              class="MuiBox-root MuiBox-root-9"
-            >
-              <h5
-                class="MuiTypography-root MuiTypography-h5"
-              />
-            </div>
-            <div
-              class="MuiBox-root MuiBox-root-10"
-            >
-              <h6
-                class="MuiTypography-root MuiTypography-subtitle2"
-              >
-                m
-              </h6>
-            </div>
-            <div
-              class="MuiBox-root MuiBox-root-11"
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-12"
             >
               <span
                 class="MuiTypography-root MuiTypography-caption"
               >
-                AT
+                SURFACE TEMP
               </span>
             </div>
             <div
-              class="MuiBox-root MuiBox-root-12"
-            >
-              <h5
-                class="MuiTypography-root MuiTypography-h5"
-              />
-            </div>
-            <div
-              class="MuiBox-root MuiBox-root-13"
-            >
-              <h6
-                class="MuiTypography-root MuiTypography-subtitle2"
-              >
-                s
-              </h6>
-            </div>
-            <div
-              class="MuiBox-root MuiBox-root-14"
-            >
-              <span
-                class="MuiTypography-root MuiTypography-overline"
-              >
-                FROM
-              </span>
-            </div>
-            <div
-              class="MuiBox-root MuiBox-root-15"
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-12"
             >
               <h5
                 class="MuiTypography-root MuiTypography-h5"
               >
-                 °
+                -
               </h5>
             </div>
           </div>

@@ -15,13 +15,21 @@ import { Link } from "react-router-dom";
 import CardChart from "./cardChart";
 import { Reef } from "../../../../store/Reefs/types";
 import { sortDailyData } from "../../../../helpers/sortDailyData";
+import { formatNumber } from "../../../../helpers/numberUtils";
 
 import reefImage from "../../../../assets/reef-image.jpg";
 
 const SelectedReefCard = ({ classes, reef }: SelectedReefCardProps) => {
   const sortByDate = sortDailyData(reef.dailyData);
   const dailyDataLen = sortByDate.length;
+  const {
+    maxBottomTemperature,
+    surfaceTemperature,
+    satelliteTemperature,
+    degreeHeatingDays,
+  } = sortByDate[dailyDataLen - 1];
 
+  const surfTemp = surfaceTemperature || satelliteTemperature;
   return (
     <div className={classes.root}>
       <Typography
@@ -60,11 +68,11 @@ const SelectedReefCard = ({ classes, reef }: SelectedReefCardProps) => {
                   color="textSecondary"
                   variant="subtitle1"
                 >
-                  MEAN DAILY WATER TEMPERATURE AT 25M (C°)
+                  MEAN DAILY SURFACE TEMPERATURE (C&deg;)
                 </Typography>
                 <CardChart
                   dailyData={reef.dailyData}
-                  temperatureThreshold={reef.temperatureThreshold}
+                  temperatureThreshold={(reef.maxMonthlyMean || 22) + 1}
                 />
               </Grid>
             </Grid>
@@ -78,14 +86,16 @@ const SelectedReefCard = ({ classes, reef }: SelectedReefCardProps) => {
             >
               <Grid item xs={12}>
                 <Typography variant="caption" color="textSecondary">
-                  TEMP AT 25M
+                  {`TEMP AT ${reef.depth}M`}
                 </Typography>
                 <Typography
                   className={classes.cardMetrics}
                   variant="h4"
                   color="textSecondary"
                 >
-                  {sortByDate[dailyDataLen - 1].maxBottomTemperature}&#8451;
+                  {maxBottomTemperature
+                    ? `${formatNumber(maxBottomTemperature, 1)} \u2103`
+                    : "- -"}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
@@ -97,7 +107,7 @@ const SelectedReefCard = ({ classes, reef }: SelectedReefCardProps) => {
                   variant="h4"
                   color="textSecondary"
                 >
-                  {sortByDate[dailyDataLen - 1].surfaceTemperature}&#8451;
+                  {surfTemp ? `${formatNumber(surfTemp, 1)} \u2103` : "- -"}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
@@ -109,7 +119,7 @@ const SelectedReefCard = ({ classes, reef }: SelectedReefCardProps) => {
                   variant="h4"
                   color="textSecondary"
                 >
-                  {sortByDate[dailyDataLen - 1].degreeHeatingDays}
+                  {formatNumber(degreeHeatingDays, 1) || "- -"}
                 </Typography>
               </Grid>
               <Grid item xs={12}>

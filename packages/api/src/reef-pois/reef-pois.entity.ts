@@ -3,7 +3,6 @@ import {
   PrimaryGeneratedColumn,
   Column,
   ManyToOne,
-  JoinColumn,
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -14,18 +13,17 @@ export class ReefPointOfInterest {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   poiLabelId: number;
 
-  @Column()
+  @Column({ nullable: true })
   imageUrl: string;
 
   @Column()
   name: string;
 
   @ManyToOne(() => Reef, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'reef_id' })
-  reefId: Reef;
+  reef: Reef;
 
   @CreateDateColumn()
   createdAt: Date;

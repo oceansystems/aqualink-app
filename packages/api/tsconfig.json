@@ -7,5 +7,5 @@
     "noImplicitAny": false
   },
   "include": ["src"],
-  "files": ["src/custom.d.ts", "ormconfig.ts", "firebase.ts"]
+  "files": ["src/custom.d.ts", "ormconfig.ts", "firebaseConfig.ts"]
 }

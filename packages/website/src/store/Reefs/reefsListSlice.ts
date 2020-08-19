@@ -1,3 +1,4 @@
+import { sortBy } from "lodash";
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 
@@ -15,7 +16,7 @@ const reefsListInitialState: ReefsListState = {
 const getReefs = async () => {
   try {
     const { data } = await reefServices.getReefs();
-    return data;
+    return sortBy(data, "name");
   } catch (err) {
     const error: AxiosError<ReefsListState["error"]> = err;
     return Promise.reject(error.message);

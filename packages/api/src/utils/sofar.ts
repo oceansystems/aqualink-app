@@ -1,5 +1,6 @@
 /** Utility function to access the Sofar API and retrieve relevant data. */
 import axios from 'axios';
+import axiosRetry from 'axios-retry';
 import moment from 'moment-timezone';
 import {
   SOFAR_MARINE_URL,
@@ -10,6 +11,8 @@ type SofarValue = {
   timestamp: string;
   value: number;
 };
+
+axiosRetry(axios, { retries: 3 });
 
 export async function sofarHindcast(
   modelId: string,

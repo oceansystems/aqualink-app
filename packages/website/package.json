@@ -2,6 +2,16 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --ignore-path .gitignore",
+    "precommit": "lint-staged",
+    "deploy:prod": "dotenv -e .env.prod yarn build && yarn run firebase deploy --only hosting:prod-target",
+    "deploy:staging": "dotenv -e .env.staging yarn build && yarn run firebase deploy --only hosting:staging-target"
+  },
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
@@ -32,6 +42,7 @@
     "leaflet": "^1.6.0",
     "lodash": "^4.17.15",
     "material-table": "^1.65.0",
+    "moment": "^2.27.0",
     "mutationobserver-shim": "^0.3.7",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
@@ -45,16 +56,6 @@
     "redux": "^4.0.5",
     "redux-mock-store": "^1.5.4",
     "typescript": "~3.8.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --ignore-path .gitignore",
-    "precommit": "lint-staged",
-    "deploy:prod": "dotenv -e .env.prod yarn build && yarn run firebase deploy --only hosting:prod-target",
-    "deploy:staging": "dotenv -e .env.staging yarn build && yarn run firebase deploy --only hosting:staging-target"
   },
   "jest": {
     "snapshotSerializers": [

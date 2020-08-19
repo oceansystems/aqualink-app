@@ -24,7 +24,7 @@ describe("Reef Detail Page", () => {
         type: "Polygon",
         coordinates: [[[0, 0]]],
       },
-      temperatureThreshold: 22,
+      maxMonthlyMean: 22,
       depth: 4,
       status: 1,
       region: "Hawaii",
@@ -37,6 +37,16 @@ describe("Reef Detail Page", () => {
     const emptyStore = mockStore({
       selectedReef: {
         details: reef,
+        loading: false,
+        error: null,
+      },
+      user: {
+        userInfo: null,
+        error: null,
+        loading: false,
+      },
+      reefsList: {
+        list: [],
         loading: false,
         error: null,
       },
@@ -68,6 +78,16 @@ describe("Reef Detail Page", () => {
           ...reef,
           dailyData: [dailyData],
         },
+        loading: false,
+        error: null,
+      },
+      user: {
+        userInfo: null,
+        error: null,
+        loading: false,
+      },
+      reefsList: {
+        list: [],
         loading: false,
         error: null,
       },

@@ -50,12 +50,9 @@ exports[`renders as expected 1`] = `
                 class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary"
                 style="padding: 0px 0px 0.5rem 0.5rem; font-weight: 400;"
               >
-                MEAN DAILY WATER TEMPERATURE AT 25M (C°)
+                MEAN DAILY SURFACE TEMPERATURE (C°)
               </h6>
-              <canvas
-                height="100"
-                width="300"
-              />
+              Mock-Line
             </div>
           </div>
           <div
@@ -68,13 +65,12 @@ exports[`renders as expected 1`] = `
               <span
                 class="MuiTypography-root MuiTypography-caption MuiTypography-colorTextSecondary"
               >
-                TEMP AT 25M
+                TEMP AT 0M
               </span>
               <h4
                 class="MuiTypography-root SelectedReefCard-cardMetrics-5 MuiTypography-h4 MuiTypography-colorTextSecondary"
               >
-                39
-                ℃
+                39.0 ℃
               </h4>
             </div>
             <div
@@ -88,8 +84,7 @@ exports[`renders as expected 1`] = `
               <h4
                 class="MuiTypography-root SelectedReefCard-cardMetrics-5 MuiTypography-h4 MuiTypography-colorTextSecondary"
               >
-                29
-                ℃
+                29.0 ℃
               </h4>
             </div>
             <div
@@ -103,7 +98,7 @@ exports[`renders as expected 1`] = `
               <h4
                 class="MuiTypography-root SelectedReefCard-cardMetrics-5 MuiTypography-h4 MuiTypography-colorTextSecondary"
               >
-                34
+                34.0
               </h4>
             </div>
             <div

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { Line } from "react-chartjs-2";
 
 import { createChartData } from "../../../../helpers/createChartData";
@@ -14,13 +14,26 @@ import "../../../../helpers/fillPlugin";
 
 const CardChart = ({ dailyData, temperatureThreshold }: CardChartProps) => {
   const [updateChart, setUpdateChart] = useState<boolean>(false);
+  const chartRef = useRef<Line>(null);
+  const [xTickShift, setXTickShift] = useState<number>(0);
 
   // Sort daily data by date
   const sortByDate = sortDailyData(dailyData);
 
-  const { bottomTemperatureData } = createDatasets(sortByDate);
+  const { surfaceTemperatureData } = createDatasets(sortByDate);
 
   const { xAxisMax, xAxisMin, chartLabels } = calculateAxisLimits(sortByDate);
+
+  const changeXTickShift = () => {
+    const { current } = chartRef;
+    if (current) {
+      const xScale = current.chartInstance.scales["x-axis-0"];
+      const ticksPositions = xScale.ticks.map((_: any, index: number) =>
+        xScale.getPixelForTick(index)
+      );
+      setXTickShift((ticksPositions[2] - ticksPositions[1]) / 2);
+    }
+  };
 
   const onResize = useCallback(() => {
     setUpdateChart(true);
@@ -37,8 +50,13 @@ const CardChart = ({ dailyData, temperatureThreshold }: CardChartProps) => {
     };
   }, [onResize]);
 
+  useEffect(() => {
+    changeXTickShift();
+  });
+
   return (
     <Line
+      ref={chartRef}
       options={{
         plugins: {
           chartJsPluginBarchartBackground: {
@@ -68,18 +86,16 @@ const CardChart = ({ dailyData, temperatureThreshold }: CardChartProps) => {
                 displayFormats: {
                   hour: "MMM D h:mm a",
                 },
+                unit: "month",
               },
               ticks: {
+                labelOffset: xTickShift,
                 min: xAxisMin,
                 max: xAxisMax,
                 padding: 10,
                 maxRotation: 0,
                 callback: (value: string) => {
-                  const splitDate = value.split(" ");
-                  if (splitDate[2] === "12:00" && splitDate[3] === "pm") {
-                    return `${splitDate[0]} ${splitDate[1]}`;
-                  }
-                  return null;
+                  return value.split(", ")[0].toUpperCase();
                 },
               },
               gridLines: {
@@ -107,7 +123,7 @@ const CardChart = ({ dailyData, temperatureThreshold }: CardChartProps) => {
         },
       }}
       height={100}
-      data={createChartData(chartLabels, bottomTemperatureData, 0.6, 0, true)}
+      data={createChartData(chartLabels, surfaceTemperatureData, 0, true)}
     />
   );
 };

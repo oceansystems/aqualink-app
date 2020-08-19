@@ -6,15 +6,22 @@ import type { User } from "../store/User/types";
 const createUser = (email: string, password: string) =>
   app.auth().createUserWithEmailAndPassword(email, password);
 
-const storeUser = (fullName: string, email: string, firebaseUid?: string) =>
+const storeUser = (fullName: string, email: string, token?: string) =>
   requests.send<User>({
     method: "POST",
     url: "users",
     data: {
       fullName,
       email,
-      firebaseUid,
     },
+    token,
+  });
+
+const getSelf = (token?: string) =>
+  requests.send<User>({
+    method: "GET",
+    url: "users/current",
+    token,
   });
 
 const signInUser = (email: string, password: string) =>
@@ -25,6 +32,7 @@ const signOutUser = () => app.auth().signOut();
 export default {
   createUser,
   storeUser,
+  getSelf,
   signInUser,
   signOutUser,
 };

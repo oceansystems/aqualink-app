@@ -37,7 +37,7 @@ test("renders as expected", () => {
     },
   ];
   const { container } = render(
-    <Charts dailyData={dailyData} temperatureThreshold={0} />
+    <Charts depth={0} dailyData={dailyData} temperatureThreshold={0} />
   );
   expect(container).toMatchSnapshot();
   console.error = originalError;

@@ -17,13 +17,17 @@ describe("ReefTable", () => {
         type: "Point",
         coordinates: [-39.7, -89.7],
       },
-      temperatureThreshold: 5,
+      maxMonthlyMean: 5,
       depth: 19,
       status: 0,
       videoStream: null,
       region: null,
       admin: null,
       stream: null,
+      latestDailyData: {
+        maxBottomTemperature: 10,
+        degreeHeatingDays: 20,
+      },
     };
     const store = mockStore({
       reefsList: {
