@@ -17,7 +17,11 @@ export class Region {
   @Column()
   name: string;
 
-  @Column('geometry', { spatialFeatureType: 'Polygon' })
+  @Column({
+    type: 'geometry',
+    unique: true,
+    srid: 4326,
+  })
   @Index({ spatial: true })
   polygon: GeoJSON;
 

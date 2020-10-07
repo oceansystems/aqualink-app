@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<div>
+  <mock-card
+    classname="FeaturedMedia-card-1"
+  >
+    <div
+      class="FeaturedMedia-noVideoCardHeader-3"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-direction-xs-column MuiGrid-align-items-xs-center"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item"
+        >
+          <mock-typography
+            classname="FeaturedMedia-noVideoCardHeaderText-4"
+            variant="h5"
+          >
+            IMAGE TO BE UPLOADED
+          </mock-typography>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item"
+        >
+          <mock-iconbutton>
+            <img
+              alt="upload"
+              src="icon_upload.svg"
+            />
+          </mock-iconbutton>
+        </div>
+      </div>
+    </div>
+    <div
+      class="FeaturedMedia-noVideoCardContent-5"
+    />
+  </mock-card>
+</div>
+`;

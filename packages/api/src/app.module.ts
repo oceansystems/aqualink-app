@@ -8,6 +8,7 @@ import { RegionsModule } from './regions/regions.module';
 import { SurveysModule } from './surveys/surveys.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { GoogleCloudModule } from './google-cloud/google-cloud.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { AuthModule } from './auth/auth.module';
     TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
     UsersModule,
     AuthModule,
+    GoogleCloudModule,
   ],
 })
 export class AppModule {}

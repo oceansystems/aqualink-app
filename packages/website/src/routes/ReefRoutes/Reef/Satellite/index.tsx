@@ -3,155 +3,158 @@ import {
   withStyles,
   WithStyles,
   createStyles,
-  Theme,
   Card,
   CardContent,
   Typography,
   CardHeader,
   Grid,
+  Tooltip,
+  Box,
 } from "@material-ui/core";
 
-import { colorCode } from "../../../../assets/colorCode";
-import type { Data } from "../../../../store/Reefs/types";
-import { sortDailyData } from "../../../../helpers/sortDailyData";
+import { dhwColorCode } from "../../../../assets/colorCode";
+import type { LiveData } from "../../../../store/Reefs/types";
 import { formatNumber } from "../../../../helpers/numberUtils";
 import satellite from "../../../../assets/satellite.svg";
-import { degreeHeatingWeeksCalculator } from "../../../../helpers/degreeHeatingWeeks";
+import {
+  dhwColorFinder,
+  degreeHeatingWeeksCalculator,
+} from "../../../../helpers/degreeHeatingWeeks";
+import { styles as incomingStyles } from "../styles";
 
-const Satellite = ({ dailyData, classes }: SatelliteProps) => {
-  const sortByDate = sortDailyData(dailyData, "desc");
-  const { degreeHeatingDays, satelliteTemperature } = sortByDate[0];
+const Satellite = ({ maxMonthlyMean, liveData, classes }: SatelliteProps) => {
+  const { degreeHeatingDays, satelliteTemperature } = liveData;
 
-  const degreeHeatingWeeks = degreeHeatingWeeksCalculator(degreeHeatingDays);
+  const degreeHeatingWeeks = degreeHeatingWeeksCalculator(
+    degreeHeatingDays?.value
+  );
+
+  const metrics = [
+    {
+      label: "SURFACE TEMP",
+      value: `${formatNumber(satelliteTemperature?.value, 1)} °C`,
+    },
+    {
+      label: "HISTORICAL MAX",
+      value: `${formatNumber(maxMonthlyMean, 1)} °C`,
+      tooltipTitle: "Historical maximum monthly average over the past 20 years",
+    },
+    {
+      label: "HEAT STRESS",
+      large: true,
+      value: `${formatNumber(degreeHeatingWeeks, 1)} DHW`,
+      tooltipTitle:
+        "Degree Heating Weeks - a measure of the amount of time above the 20 year historical maximum temperatures",
+    },
+  ];
 
   return (
-    <Card className={classes.card}>
+    <Card
+      className={classes.card}
+      style={{ backgroundColor: dhwColorFinder(degreeHeatingWeeks) }}
+    >
       <CardHeader
         className={classes.header}
         title={
-          <Grid container alignItems="center" justify="space-between">
-            <Grid item xs={8}>
+          <Grid container justify="space-between">
+            <Grid container item xs={8}>
               <Typography className={classes.cardTitle} variant="h6">
                 SATELLITE OBSERVATION
               </Typography>
             </Grid>
             <Grid item xs={1}>
-              <img alt="satellite" src={satellite} />
+              <img
+                className={classes.titleImage}
+                alt="satellite"
+                src={satellite}
+              />
             </Grid>
           </Grid>
         }
       />
+
       <CardContent className={classes.content}>
-        <Grid
-          container
-          direction="column"
-          alignItems="stretch"
-          justify="space-between"
-          style={{ height: "100%" }}
-        >
-          <Grid className={classes.contentText} item>
-            <Grid container spacing={3}>
-              <Grid item xs={12}>
+        <Box p="1rem" display="flex" flexGrow={1}>
+          <Grid container spacing={3}>
+            {metrics.map(({ label, large, value, tooltipTitle }) => (
+              <Grid key={label} item xs={large ? 12 : 6}>
                 <Typography
                   className={classes.contentTextTitles}
-                  color="textPrimary"
                   variant="subtitle2"
                 >
-                  SURFACE TEMP
+                  {label}
                 </Typography>
-                <Typography
-                  className={classes.contentTextValues}
-                  color="textPrimary"
-                  variant="h2"
-                >
-                  {satelliteTemperature
-                    ? `${formatNumber(satelliteTemperature, 1)} \u2103`
-                    : "- -"}
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography
-                  className={classes.contentTextTitles}
-                  color="textPrimary"
-                  variant="subtitle2"
-                >
-                  DEGREE HEATING WEEKS
-                </Typography>
-                <Typography
-                  className={classes.contentTextValues}
-                  color="textPrimary"
-                  variant="h2"
-                >
-                  {formatNumber(degreeHeatingWeeks, 1) || "- -"}
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item container>
-            {colorCode.map((elem) => (
-              <Grid
-                container
-                justify="center"
-                alignItems="center"
-                key={elem.value}
-                item
-                xs={1}
-              >
-                <Grid
-                  container
-                  justify="center"
-                  alignItems="center"
-                  item
-                  style={{ backgroundColor: `${elem.color}`, height: "2rem" }}
-                >
-                  <Typography variant="caption">{elem.value}</Typography>
-                </Grid>
+                {tooltipTitle ? (
+                  <Tooltip title={tooltipTitle}>
+                    <Typography
+                      className={classes.contentTextValues}
+                      variant="h2"
+                    >
+                      {value}
+                    </Typography>
+                  </Tooltip>
+                ) : (
+                  <Typography
+                    className={classes.contentTextValues}
+                    variant="h2"
+                  >
+                    {value}
+                  </Typography>
+                )}
               </Grid>
             ))}
           </Grid>
+        </Box>
+
+        <Grid container>
+          {dhwColorCode.map(({ value, color }) => (
+            <Grid
+              key={value}
+              item
+              xs={1}
+              style={{ backgroundColor: `${color}`, height: "2rem" }}
+            >
+              <Box textAlign="center">
+                <Typography variant="caption" align="center">
+                  {value}
+                </Typography>
+              </Box>
+            </Grid>
+          ))}
         </Grid>
       </CardContent>
     </Card>
   );
 };
 
-const styles = (theme: Theme) =>
+const styles = () =>
   createStyles({
+    ...incomingStyles,
     card: {
-      height: "100%",
-      width: "100%",
-      backgroundColor: "#0c9da5",
       display: "flex",
       flexDirection: "column",
+      height: "100%",
     },
-    cardTitle: {
-      lineHeight: 1.5,
-      margin: "0 0 0.5rem 1rem",
-    },
-    header: {
-      flex: "0 1 auto",
-      padding: "0.5rem 1.5rem 0 1rem",
+    titleImage: {
+      height: 35,
+      width: 35,
     },
     content: {
-      flex: "1 1 auto",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+      flexGrow: 1,
       padding: 0,
     },
     contentText: {
-      padding: "2rem 3rem 0 3rem",
-    },
-    contentTextTitles: {
-      lineHeight: 1.33,
-    },
-    contentTextValues: {
-      fontWeight: 300,
-      [theme.breakpoints.between("md", "lg")]: {
-        fontSize: 32,
-      },
+      marginTop: "1rem",
+      padding: "0 1rem",
     },
   });
 
 interface SatelliteIncomingProps {
-  dailyData: Data[];
+  maxMonthlyMean: number | null;
+  liveData: LiveData;
 }
 
 type SatelliteProps = WithStyles<typeof styles> & SatelliteIncomingProps;

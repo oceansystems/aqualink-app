@@ -3,18 +3,15 @@
 exports[`renders as expected 1`] = `
 <div>
   <div
-    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11"
+    class="Charts-root-1"
   >
-    <div
-      class="Charts-root-1"
+    <mock-typography
+      classname="Charts-graphTitle-2"
+      variant="h6"
     >
-      <h6
-        class="MuiTypography-root Charts-graphTitle-2 MuiTypography-h6"
-      >
-        DAILY WATER TEMPERATURE (C°)
-      </h6>
-      Mock-Line
-    </div>
+      DAILY WATER TEMPERATURE (°C)
+    </mock-typography>
+    Mock-Line
   </div>
 </div>
 `;

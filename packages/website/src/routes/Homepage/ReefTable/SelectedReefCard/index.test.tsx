@@ -1,9 +1,10 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
+import configureStore from "redux-mock-store";
+import { Provider } from "react-redux";
 
 import SelectedReefCard from ".";
-import { Reef } from "../../../../store/Reefs/types";
 
 jest.mock("react-chartjs-2", () => ({
   Line: () => "Mock-Line",
@@ -14,9 +15,9 @@ jest.mock("react-chartjs-2", () => ({
   },
 }));
 
-test("renders as expected", () => {
-  const reef: Reef = {
-    id: 0,
+const reef = {
+  details: {
+    id: 2,
     name: "",
     polygon: {
       coordinates: [0, 0],
@@ -29,6 +30,22 @@ test("renders as expected", () => {
     region: "",
     admin: null,
     stream: null,
+    liveData: {
+      reef: { id: 1 },
+      date: "2020-07-01T14:25:18.008Z",
+      bottomTemperature: {
+        value: 39,
+        timestamp: "2020-07-01T14:25:18.008Z",
+      },
+      satelliteTemperature: {
+        value: 29,
+        timestamp: "2020-07-01T14:25:18.008Z",
+      },
+      degreeHeatingDays: {
+        value: 34,
+        timestamp: "2020-07-01T14:25:18.008Z",
+      },
+    },
     dailyData: [
       {
         id: 171,
@@ -50,12 +67,44 @@ test("renders as expected", () => {
         windDirection: 229,
       },
     ],
-  };
+  },
+};
+
+const mockStore = configureStore([]);
+
+const store = mockStore({
+  selectedReef: reef,
+  homepage: {
+    reefOnMap: reef,
+  },
+  surveyList: {
+    list: [],
+  },
+});
+
+store.dispatch = jest.fn();
+
+test("renders as expected", () => {
+  process.env.REACT_APP_FEATURED_REEF_ID = "2";
 
   const { container } = render(
-    <Router>
-      <SelectedReefCard reef={reef} />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <SelectedReefCard />
+      </Router>
+    </Provider>
+  );
+  expect(container).toMatchSnapshot();
+});
+
+test("renders loading as expected", () => {
+  process.env.REACT_APP_FEATURED_REEF_ID = "4";
+  const { container } = render(
+    <Provider store={store}>
+      <Router>
+        <SelectedReefCard />
+      </Router>
+    </Provider>
   );
   expect(container).toMatchSnapshot();
 });

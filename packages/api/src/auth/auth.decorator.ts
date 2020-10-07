@@ -4,9 +4,6 @@ import { FirebaseAuthGuard } from './firebase-auth.guard';
 import { LevelsGuard } from './levels.guard';
 
 export const Auth = (...levels: AdminLevel[]) => {
-  if (!levels) {
-    return UseGuards(FirebaseAuthGuard);
-  }
   return applyDecorators(
     SetMetadata('levels', levels),
     UseGuards(FirebaseAuthGuard, LevelsGuard),

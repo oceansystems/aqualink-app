@@ -10,48 +10,13 @@ import Reef from ".";
 const mockStore = configureStore([]);
 
 jest.mock("./Map", () => "Mock-Map");
-jest.mock("./FeatureVideo", () => "Mock-FeatureVideo");
+jest.mock("./FeaturedMedia", () => "Mock-FeaturedMedia");
 jest.mock("./Charts", () => "Mock-Charts");
 
 describe("Reef Detail Page", () => {
   let elementEmpty: HTMLElement;
   let elementFull: HTMLElement;
   beforeEach(() => {
-    const reef: ReefType = {
-      id: 1,
-      name: null,
-      polygon: {
-        type: "Polygon",
-        coordinates: [[[0, 0]]],
-      },
-      maxMonthlyMean: 22,
-      depth: 4,
-      status: 1,
-      region: "Hawaii",
-      videoStream: null,
-      stream: null,
-      admin: null,
-      dailyData: [],
-    };
-
-    const emptyStore = mockStore({
-      selectedReef: {
-        details: reef,
-        loading: false,
-        error: null,
-      },
-      user: {
-        userInfo: null,
-        error: null,
-        loading: false,
-      },
-      reefsList: {
-        list: [],
-        loading: false,
-        error: null,
-      },
-    });
-
     const dailyData: Data = {
       id: 1,
       date: "20 May 2020",
@@ -72,6 +37,47 @@ describe("Reef Detail Page", () => {
       wavePeriod: 2,
     };
 
+    const reef: ReefType = {
+      id: 1,
+      name: null,
+      polygon: {
+        type: "Polygon",
+        coordinates: [[[0, 0]]],
+      },
+      maxMonthlyMean: 22,
+      depth: 4,
+      status: 1,
+      region: "Hawaii",
+      videoStream: null,
+      stream: null,
+      admin: null,
+      dailyData: [],
+      latestDailyData: dailyData,
+    };
+
+    const emptyStore = mockStore({
+      selectedReef: {
+        details: reef,
+        loading: false,
+        error: null,
+      },
+      user: {
+        userInfo: null,
+        error: null,
+        loading: false,
+      },
+      reefsList: {
+        list: [],
+        loading: false,
+        error: null,
+      },
+      surveyList: {
+        list: [],
+        loading: false,
+        error: null,
+      },
+    });
+
     const fullStore = mockStore({
       selectedReef: {
         details: {
@@ -87,6 +93,11 @@ describe("Reef Detail Page", () => {
         loading: false,
       },
       reefsList: {
+        list: [],
+        loading: false,
+        error: null,
+      },
+      surveyList: {
         list: [],
         loading: false,
         error: null,

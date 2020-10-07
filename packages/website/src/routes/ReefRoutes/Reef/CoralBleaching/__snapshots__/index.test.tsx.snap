@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<div>
+  <mock-card
+    classname="Bleaching-card-1"
+  >
+    <div
+      class="MuiCardHeader-root Bleaching-header-2"
+    >
+      <div
+        class="MuiCardHeader-content"
+      >
+        <mock-typography
+          classname="MuiCardHeader-title"
+          component="span"
+          display="block"
+          variant="h5"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <mock-typography
+                color="textSecondary"
+                variant="h6"
+              >
+                HEAT STRESS ALERT LEVEL
+              </mock-typography>
+            </div>
+          </div>
+        </mock-typography>
+      </div>
+    </div>
+    <mock-cardcontent
+      classname="Bleaching-contentWrapper-3"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+        style="height: 100%;"
+      >
+        <img
+          alt="alert-level"
+          src="alert_lvl1.svg"
+        />
+      </div>
+    </mock-cardcontent>
+  </mock-card>
+</div>
+`;

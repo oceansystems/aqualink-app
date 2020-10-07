@@ -1,6 +1,7 @@
 import { Factory, Seeder } from 'typeorm-seeding';
 import { Reef } from '../reefs/reefs.entity';
 import { DailyData } from '../reefs/daily-data.entity';
+import { ReefPointOfInterest } from '../reef-pois/reef-pois.entity';
 
 export class CreateReef implements Seeder {
   public async run(factory: Factory) {
@@ -20,6 +21,17 @@ export class CreateReef implements Seeder {
             dailyData.date = date;
             dailyData.reef = reef;
             return dailyData;
+          })
+          .create();
+      }),
+    );
+
+    await Promise.all(
+      [...Array(4).keys()].map(() => {
+        return factory(ReefPointOfInterest)()
+          .map(async (poi) => {
+            poi.reef = reef;
+            return poi;
           })
           .create();
       }),

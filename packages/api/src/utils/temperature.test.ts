@@ -28,7 +28,7 @@ test('Calculates data as expected.', () => {
 });
 
 test('Get MMM as expected.', async () => {
-  jest.setTimeout(30000);
+  jest.setTimeout(60000);
   await getMMM(0, 0).then((data) => expect(data).toEqual(28.95));
   await getMMM(-89.9, -10).then((data) => expect(data).toEqual(26.55));
   await getMMM(-108.0, -53.1).then((data) => expect(data).toEqual(7.94));

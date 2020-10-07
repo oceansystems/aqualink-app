@@ -6,7 +6,6 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
-// eslint-disable-next-line import/no-cycle
 import { Reef } from './reefs.entity';
 
 @Entity()
@@ -61,6 +60,12 @@ export class DailyData {
 
   @Column({ nullable: true })
   windDirection: number;
+
+  @Column('integer', { nullable: true })
+  dailyAlertLevel: number;
+
+  @Column('integer', { nullable: true })
+  weeklyAlertLevel: number;
 
   @ManyToOne(() => Reef, { onDelete: 'CASCADE' })
   reef: Reef;

@@ -28,6 +28,7 @@ define(DailyData, (faker: typeof Faker) => {
   dailyData.maxWindSpeed = avgWindSpeed + 1;
   dailyData.avgWindSpeed = avgWindSpeed;
   dailyData.windDirection = faker.random.number({ min: 0, max: 360 });
+  dailyData.dailyAlertLevel = faker.random.number({ min: 0, max: 5 });
 
   return dailyData;
 });

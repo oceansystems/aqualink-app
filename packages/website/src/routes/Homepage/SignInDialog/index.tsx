@@ -8,7 +8,6 @@ import {
   withStyles,
   WithStyles,
   createStyles,
-  Theme,
   Dialog,
   Card,
   CardHeader,
@@ -24,16 +23,17 @@ import {
 import { Alert } from "@material-ui/lab";
 import CloseIcon from "@material-ui/icons/Close";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
+  resetPassword,
   signInUser,
   userInfoSelector,
   userLoadingSelector,
   userErrorSelector,
 } from "../../../store/User/userSlice";
 import { UserSignInParams } from "../../../store/User/types";
+import incomingStyles from "../styles";
 
 const SignInDialog = ({
   open,
@@ -46,6 +46,7 @@ const SignInDialog = ({
   const loading = useSelector(userLoadingSelector);
   const error = useSelector(userErrorSelector);
   const [errorAlertOpen, setErrorAlertOpen] = useState<boolean>(false);
+  const [passwordResetEmail, setPasswordResetEmail] = useState<string>("");
   const { register, errors, handleSubmit } = useForm({
     reValidateMode: "onSubmit",
   });
@@ -76,27 +77,44 @@ const SignInDialog = ({
     }
   }, [user, handleSignInOpen, error]);
 
+  const onResetPassword = useCallback(
+    (
+      data: any,
+      event?: BaseSyntheticEvent<object, HTMLElement, HTMLElement>
+    ) => {
+      if (event) {
+        event.preventDefault();
+      }
+      dispatch(resetPassword({ email: data.emailAddress }));
+      setPasswordResetEmail(data.emailAddress);
+    },
+    [dispatch]
+  );
+
   return (
-    <Dialog open={open}>
-      <Card className={classes.root}>
+    <Dialog open={open} maxWidth="md">
+      <Card>
         <CardHeader
           className={classes.dialogHeader}
           title={
-            <Grid container justify="flex-end" item xs={12}>
+            <Grid container justify="center" item xs={12}>
               <Grid
                 container
                 alignItems="center"
-                justify="space-between"
+                justify="space-around"
                 item
-                xs={11}
+                xs={12}
               >
-                <Grid container item xs={4}>
+                <Grid container item xs={6}>
                   <Typography variant="h4">Aqua</Typography>
-                  <Typography style={{ color: "#8AC6DE" }} variant="h4">
+                  <Typography
+                    className={classes.dialogHeaderSecondPart}
+                    variant="h4"
+                  >
                     link
                   </Typography>
                 </Grid>
-                <Grid item xs={1}>
+                <Grid container justify="flex-end" item xs={1}>
                   <IconButton
                     className={classes.closeButton}
                     size="small"
@@ -131,9 +149,28 @@ const SignInDialog = ({
             </Alert>
           </Collapse>
         )}
+        <Collapse in={passwordResetEmail !== ""}>
+          <Alert
+            severity="success"
+            action={
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  setPasswordResetEmail("");
+                }}
+              >
+                <CloseIcon fontSize="inherit" />
+              </IconButton>
+            }
+          >
+            {`Password reset email sent to ${passwordResetEmail}.`}
+          </Alert>
+        </Collapse>
         <CardContent>
           <Grid container justify="center" item xs={12}>
-            <Grid style={{ margin: "1rem 0 1rem 0" }} container item xs={10}>
+            <Grid className={classes.dialogContentTitle} container item xs={10}>
               <Grid item>
                 <Typography variant="h5" color="textSecondary">
                   Sign In
@@ -141,10 +178,7 @@ const SignInDialog = ({
               </Grid>
             </Grid>
             <Grid container item xs={10}>
-              <form
-                className={classes.signInForm}
-                onSubmit={handleSubmit(onSubmit)}
-              >
+              <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
                 <Grid className={classes.textFieldWrapper} item xs={12}>
                   <Typography className={classes.formText} variant="subtitle2">
                     or login with email address
@@ -188,14 +222,14 @@ const SignInDialog = ({
                   />
                 </Grid>
                 <Grid container item xs={12}>
-                  <Typography variant="subtitle2" color="textSecondary">
-                    <Link
-                      style={{ color: "inherit", textDecoration: "none" }}
-                      to="/"
-                    >
+                  <Button
+                    className={classes.forgotPasswordButton}
+                    onClick={handleSubmit(onResetPassword)}
+                  >
+                    <Typography variant="subtitle2" color="textSecondary">
                       Forgot your password?
-                    </Link>
-                  </Typography>
+                    </Typography>
+                  </Button>
                 </Grid>
                 <Grid className={classes.button} item xs={12}>
                   <Button
@@ -235,34 +269,16 @@ const SignInDialog = ({
   );
 };
 
-const styles = (theme: Theme) =>
+const styles = () =>
   createStyles({
-    root: {
-      height: "70vh",
-      width: "30vw",
-    },
-    closeButton: {
-      color: theme.palette.primary.light,
-    },
-    dialogHeader: {
-      backgroundColor: theme.palette.primary.main,
-    },
-    signInForm: {
-      width: "100%",
-    },
-    textFieldWrapper: {
-      margin: "1rem 0 1rem 0",
-    },
-    textField: {
-      color: "black",
-    },
+    ...incomingStyles,
     formText: {
-      color: theme.palette.grey[500],
-      fontWeight: 400,
+      ...incomingStyles.formText,
       marginBottom: "1rem",
     },
-    button: {
-      margin: "2rem 0 1rem 0",
+    forgotPasswordButton: {
+      color: "inherit",
+      textDecoration: "none",
     },
   });
 

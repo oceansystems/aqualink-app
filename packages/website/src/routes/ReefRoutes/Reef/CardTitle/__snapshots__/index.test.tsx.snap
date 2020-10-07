@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<div>
+  <mock-box
+    classname="CardTitle-root-1"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-baseline"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item"
+        style="margin-right: 1rem;"
+      >
+        <mock-typography
+          variant="h6"
+        >
+          Some value
+        </mock-typography>
+      </div>
+    </div>
+  </mock-box>
+</div>
+`;

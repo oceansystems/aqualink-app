@@ -1,188 +1,110 @@
-import React, { CSSProperties, forwardRef, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import MaterialTable, { Column } from "material-table";
-import { Grid, Paper, Typography } from "@material-ui/core";
-import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
-import ErrorIcon from "@material-ui/icons/Error";
-
-import SelectedReefCard from "./SelectedReefCard";
-import { reefsListSelector } from "../../../store/Reefs/reefsListSlice";
-import { reefDetailsSelector } from "../../../store/Reefs/selectedReefSlice";
-import { setReefOnMap } from "../../../store/Homepage/homepageSlice";
-import { colors } from "../../../layout/App/theme";
-import { formatNumber } from "../../../helpers/numberUtils";
+import React, { useState } from "react";
 import {
-  colorFinder,
-  degreeHeatingWeeksCalculator,
-} from "../../../helpers/degreeHeatingWeeks";
+  withStyles,
+  WithStyles,
+  createStyles,
+  Grid,
+  Typography,
+  IconButton,
+  Hidden,
+  TableContainer,
+  Table,
+  CircularProgress,
+  Box,
+  Theme,
+} from "@material-ui/core";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 
-interface Row {
-  locationName: string | null;
-  temp?: string | 0;
-  depth: number | null;
-  dhd: number | null;
-  alert: string | null;
-  tableData: {
-    id: number;
+import { useSelector } from "react-redux";
+import SelectedReefCard from "./SelectedReefCard";
+import EnhancedTableHead from "./tableHead";
+import ReefTableBody from "./body";
+import { Order, OrderKeys } from "./utils";
+import { reefsListLoadingSelector } from "../../../store/Reefs/reefsListSlice";
+
+const ReefTable = ({ openDrawer, classes }: ReefTableProps) => {
+  const loading = useSelector(reefsListLoadingSelector);
+  const [order, setOrder] = useState<Order>("desc");
+  const [orderBy, setOrderBy] = useState<OrderKeys>("alert");
+
+  const handleRequestSort = (event: unknown, property: OrderKeys) => {
+    const isAsc = orderBy === property && order === "asc";
+    setOrder(isAsc ? "desc" : "asc");
+    setOrderBy(property);
   };
-}
-
-const ReefTable = () => {
-  const reefsList = useSelector(reefsListSelector);
-  const selectedReef = useSelector(reefDetailsSelector);
-  const dispatch = useDispatch();
-  const [selectedRow, setSelectedRow] = useState<number | null>(null);
-
-  const headerStyle: CSSProperties = {
-    backgroundColor: "#cacbd1",
-    color: "black",
-    textAlign: "center",
-  };
-
-  const cellStyle: CSSProperties = {
-    color: "black",
-    alignItems: "center",
-    textAlign: "center",
-  };
-
-  const tableColumns: Array<Column<Row>> = [
-    {
-      title: "LOCATION NAME",
-      field: "locationName",
-      cellStyle,
-      render: (rowData) => (
-        <Typography
-          style={{ paddingRight: "1.5rem" }}
-          variant="subtitle1"
-          color="textSecondary"
-        >
-          {rowData.locationName}
-        </Typography>
-      ),
-    },
-    {
-      title: "TEMP",
-      field: "temp",
-      type: "numeric",
-      cellStyle,
-      render: (rowData) => (
-        <Typography
-          style={{ color: colors.lightBlue, paddingLeft: "2rem" }}
-          variant="h6"
-        >
-          {rowData.temp} &#8451;
-        </Typography>
-      ),
-    },
-    {
-      title: "DEPTH",
-      field: "depth",
-      type: "numeric",
-      cellStyle,
-      render: (rowData) => (
-        <Typography
-          style={{ paddingLeft: "2rem" }}
-          variant="subtitle1"
-          color="textSecondary"
-        >
-          {rowData.depth} m
-        </Typography>
-      ),
-    },
-    {
-      title: "DHD",
-      field: "dhd",
-      type: "numeric",
-      cellStyle,
-      render: (rowData) => (
-        <Typography
-          style={{
-            paddingLeft: "2rem",
-            color: rowData.dhd
-              ? `${colorFinder(degreeHeatingWeeksCalculator(rowData.dhd))}`
-              : "black",
-          }}
-          variant="subtitle1"
-        >
-          {formatNumber(rowData.dhd, 1)}
-        </Typography>
-      ),
-    },
-    {
-      title: "ALERT",
-      field: "alert",
-      cellStyle,
-      render: (rowData) => {
-        if (rowData.alert === "warning") {
-          return (
-            <ErrorIcon
-              style={{ color: colors.lightBlue, paddingRight: "2rem" }}
-            />
-          );
-        }
-        return null;
-      },
-    },
-  ];
-
-  const tableData: Row[] = Object.entries(reefsList).map(([key, value]) => {
-    const { degreeHeatingDays, satelliteTemperature } =
-      value.latestDailyData || {};
-    return {
-      locationName: value.name,
-      temp: formatNumber(satelliteTemperature, 1) || undefined,
-      depth: value.depth,
-      dhd: degreeHeatingDays,
-      alert: "warning",
-      tableData: {
-        id: parseFloat(key),
-      },
-    };
-  });
 
   return (
     <>
-      {selectedReef &&
-        selectedReef.dailyData &&
-        selectedReef.dailyData.length > 0 && (
-          <SelectedReefCard reef={selectedReef} />
-        )}
-      {reefsList && reefsList.length > 0 && (
-        <Grid style={{ marginTop: "2rem" }} item xs={12}>
-          <MaterialTable
-            icons={{
-              SortArrow: forwardRef((props, ref) => (
-                <ArrowUpwardIcon {...props} ref={ref} />
-              )),
-            }}
-            columns={tableColumns}
-            data={tableData}
-            onRowClick={(event, row) => {
-              if (row && row.tableData) {
-                setSelectedRow(row.tableData.id);
-                dispatch(setReefOnMap(reefsList[row.tableData.id]));
-              }
-            }}
-            options={{
-              rowStyle: (rowData) => ({
-                backgroundColor:
-                  selectedRow === rowData.tableData.id
-                    ? colors.lighterBlue
-                    : "none",
-              }),
-              paging: false,
-              headerStyle,
-            }}
-            components={{
-              Container: (props) => <Paper {...props} elevation={0} />,
-              Toolbar: () => null,
-              Pagination: () => null,
-            }}
-          />
+      <Hidden smUp>
+        <Grid container justify="center" style={{ marginBottom: "-3rem" }}>
+          <Grid item>
+            <IconButton>
+              {openDrawer ? <ArrowDownwardIcon /> : <ArrowUpwardIcon />}
+            </IconButton>
+          </Grid>
         </Grid>
-      )}
+        {openDrawer ? null : (
+          <Typography
+            style={{
+              position: "relative",
+              margin: "1rem 0 0.5rem 1rem",
+            }}
+            variant="h5"
+            color="textSecondary"
+          >
+            All Reefs
+          </Typography>
+        )}
+      </Hidden>
+      <SelectedReefCard />
+      <Box
+        className={classes.table}
+        display="flex"
+        flexDirection="column"
+        flex={1}
+      >
+        <TableContainer>
+          <Table stickyHeader>
+            <EnhancedTableHead
+              order={order}
+              orderBy={orderBy}
+              onRequestSort={handleRequestSort}
+            />
+            <ReefTableBody order={order} orderBy={orderBy} />
+          </Table>
+        </TableContainer>
+        {loading && (
+          <Box
+            display="flex"
+            flex={1}
+            alignItems="center"
+            justifyContent="center"
+          >
+            <CircularProgress size="10rem" thickness={1} />
+          </Box>
+        )}
+      </Box>
     </>
   );
 };
 
-export default ReefTable;
+const styles = (theme: Theme) =>
+  createStyles({
+    table: {
+      paddingLeft: 10,
+      height: "70%",
+      overflowY: "auto",
+      [theme.breakpoints.down("xs")]: {
+        paddingLeft: 0,
+      },
+    },
+  });
+
+interface ReefTableIncomingProps {
+  openDrawer: boolean;
+}
+
+type ReefTableProps = ReefTableIncomingProps & WithStyles<typeof styles>;
+
+export default withStyles(styles)(ReefTable);

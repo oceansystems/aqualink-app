@@ -17,8 +17,9 @@ export const reefRequest = createAsyncThunk<
   try {
     const { data } = await reefServices.getReef(id);
     const { data: dailyData } = await reefServices.getReefDailyData(id);
+    const { data: liveData } = await reefServices.getReefLiveData(id);
 
-    return { ...data, dailyData };
+    return { ...data, dailyData, liveData };
   } catch (err) {
     const error: AxiosError<SelectedReefState["error"]> = err;
     return rejectWithValue(error.message);

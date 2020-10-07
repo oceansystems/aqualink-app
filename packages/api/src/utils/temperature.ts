@@ -39,11 +39,15 @@ export async function getMMM(long: number, lat: number) {
     height,
   );
 
-  const data = await image.readRasters({
-    window: [pixelX, pixelY, pixelX + 1, pixelY + 1],
+  const data: number[][] = await image.readRasters({
+    window: [pixelX, pixelY, pixelX + 10, pixelY + 10],
   });
 
-  return data[0][0] !== gdalNoData ? data[0][0] / 100 : null;
+  const filteredData = data.map((row) =>
+    row.filter((value) => value !== gdalNoData),
+  );
+
+  return filteredData[0][0] ? filteredData[0][0] / 100 : undefined;
 }
 
 /**

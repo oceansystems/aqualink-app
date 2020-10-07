@@ -2,25 +2,75 @@
 
 exports[`Reef Detail Page should render with given state from Redux store: snapshot-with-data 1`] = `
 <div>
-  <header
-    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary NavBar-appBar-66 MuiPaper-elevation4"
+  <mock-appbar
+    classname="NavBar-appBar-37"
+    color="primary"
+    position="static"
   >
-    <div
-      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    <mock-toolbar
+      classname="NavBar-toolbar-40"
     >
+      <mock-drawer
+        anchor="left"
+        classes="[object Object]"
+        open="false"
+      >
+        <mock-iconbutton
+          style="align-self: flex-end; margin-right: 5px; margin-top: 5px; color: white;"
+        >
+          <clear />
+        </mock-iconbutton>
+        <mock-link
+          href="/"
+          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        >
+          HOME
+        </mock-link>
+        <mock-link
+          href="/buoy"
+          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        >
+          BUOY
+        </mock-link>
+        <mock-link
+          href="/drones"
+          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        >
+          DRONE
+        </mock-link>
+        <mock-link
+          href="/about"
+          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        >
+          ABOUT
+        </mock-link>
+        <mock-link
+          href="/faq"
+          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        >
+          FAQ
+        </mock-link>
+        <mock-link
+          href="/apply"
+          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        >
+          APPLY
+        </mock-link>
+      </mock-drawer>
       <div
-        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-grid-xs-12"
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
       >
         <div
-          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5 MuiGrid-grid-sm-4"
         >
-          <button
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
-            tabindex="0"
-            type="button"
+          <mock-box
+            alignitems="center"
+            display="flex"
+            flexwrap="nowrap"
           >
-            <span
-              class="MuiIconButton-label"
+            <mock-iconbutton
+              color="inherit"
+              edge="start"
             >
               <svg
                 aria-hidden="true"
@@ -32,891 +82,623 @@ exports[`Reef Detail Page should render with given state from Redux store: snaps
                   d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
                 />
               </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+            </mock-iconbutton>
+            <mock-link
+              classname="NavBar-navBarLink-38"
+              href="/"
+            >
+              <mock-typography
+                color="textPrimary"
+                variant="h4"
+              >
+                Aqua
+              </mock-typography>
+              <mock-typography
+                style="color: rgb(138, 198, 222);"
+                variant="h4"
+              >
+                link
+              </mock-typography>
+            </mock-link>
+          </mock-box>
         </div>
         <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-5"
-        >
-          <h4
-            class="MuiTypography-root MuiTypography-h4"
-          >
-            Aqua
-          </h4>
-          <h4
-            class="MuiTypography-root MuiTypography-h4"
-            style="color: rgb(138, 198, 222);"
-          >
-            link
-          </h4>
-        </div>
-        <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-6"
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-7 MuiGrid-grid-sm-8"
         >
           <div
             class="MuiGrid-root MuiGrid-item"
           >
-            <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-text"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiButton-label"
-              >
-                SIGN IN
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
+            <mock-button>
+              SIGN IN
+            </mock-button>
           </div>
           <div
             class="MuiGrid-root MuiGrid-item"
           >
-            <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-text"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiButton-label"
-              >
-                REGISTER
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
+            <mock-button>
+              REGISTER
+            </mock-button>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </mock-toolbar>
+  </mock-appbar>
+  <mock-dialog
+    maxwidth="md"
+    open="false"
+  >
+    <mock-card>
+      <div
+        class="MuiCardHeader-root RegisterDialog-dialogHeader-48"
+      >
+        <div
+          class="MuiCardHeader-content"
+        >
+          <mock-typography
+            classname="MuiCardHeader-title"
+            component="span"
+            display="block"
+            variant="h5"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around MuiGrid-grid-xs-12"
+              >
+                <div
+                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-6"
+                >
+                  <mock-typography
+                    variant="h4"
+                  >
+                    Aqua
+                  </mock-typography>
+                  <mock-typography
+                    classname="RegisterDialog-dialogHeaderSecondPart-49"
+                    variant="h4"
+                  >
+                    link
+                  </mock-typography>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-1"
+                >
+                  <mock-iconbutton
+                    classname="RegisterDialog-closeButton-47"
+                    size="small"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                      />
+                    </svg>
+                  </mock-iconbutton>
+                </div>
+              </div>
+            </div>
+          </mock-typography>
+        </div>
+      </div>
+      <mock-cardcontent
+        classname="RegisterDialog-contentWrapper-56"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+        >
+          <div
+            class="MuiGrid-root RegisterDialog-dialogContentTitle-50 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item"
+            >
+              <mock-typography
+                color="textSecondary"
+                variant="h5"
+              >
+                Create an account
+              </mock-typography>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+          >
+            <form
+              class="RegisterDialog-form-51"
+            >
+              <div
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-52 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-textfield
+                  error="false"
+                  fullwidth="true"
+                  helpertext=""
+                  id="firstName"
+                  inputprops="[object Object]"
+                  label="First Name"
+                  name="firstName"
+                  placeholder="First Name"
+                  variant="outlined"
+                />
+              </div>
+              <div
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-52 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-textfield
+                  error="false"
+                  fullwidth="true"
+                  helpertext=""
+                  id="lastName"
+                  inputprops="[object Object]"
+                  label="Last Name"
+                  name="lastName"
+                  placeholder="Last Name"
+                  variant="outlined"
+                />
+              </div>
+              <div
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-52 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-textfield
+                  error="false"
+                  fullwidth="true"
+                  helpertext=""
+                  id="emailAddress"
+                  inputprops="[object Object]"
+                  label="Email Address"
+                  name="emailAddress"
+                  placeholder="Email Address"
+                  variant="outlined"
+                />
+              </div>
+              <div
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-52 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-textfield
+                  error="false"
+                  fullwidth="true"
+                  helpertext=""
+                  id="password"
+                  inputprops="[object Object]"
+                  label="Password"
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                  variant="outlined"
+                />
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-space-around MuiGrid-grid-xs-11"
+              >
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+                >
+                  <mock-checkbox
+                    checked="false"
+                    classname="RegisterDialog-termsCheckbox-57"
+                    color="primary"
+                  />
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10"
+                >
+                  <mock-typography
+                    classname="RegisterDialog-formText-54"
+                    color="textSecondary"
+                    variant="subtitle1"
+                  >
+                    I have read the
+                     
+                    <a
+                      class="RegisterDialog-termsLink-58"
+                      href="/"
+                    >
+                      Terms and Conditions
+                    </a>
+                  </mock-typography>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root RegisterDialog-button-55 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-button
+                  color="primary"
+                  disabled="true"
+                  fullwidth="true"
+                  size="large"
+                  type="submit"
+                  variant="contained"
+                >
+                  REGISTER NOW
+                </mock-button>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-typography
+                  classname="RegisterDialog-formText-54"
+                  color="textSecondary"
+                  variant="subtitle1"
+                >
+                  Have an account?
+                   
+                  <mock-button
+                    color="primary"
+                  >
+                    SIGN IN
+                  </mock-button>
+                </mock-typography>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mock-cardcontent>
+    </mock-card>
+  </mock-dialog>
+  <mock-dialog
+    maxwidth="md"
+    open="false"
+  >
+    <mock-card>
+      <div
+        class="MuiCardHeader-root SignInDialog-dialogHeader-60"
+      >
+        <div
+          class="MuiCardHeader-content"
+        >
+          <mock-typography
+            classname="MuiCardHeader-title"
+            component="span"
+            display="block"
+            variant="h5"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around MuiGrid-grid-xs-12"
+              >
+                <div
+                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-6"
+                >
+                  <mock-typography
+                    variant="h4"
+                  >
+                    Aqua
+                  </mock-typography>
+                  <mock-typography
+                    classname="SignInDialog-dialogHeaderSecondPart-61"
+                    variant="h4"
+                  >
+                    link
+                  </mock-typography>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-1"
+                >
+                  <mock-iconbutton
+                    classname="SignInDialog-closeButton-59"
+                    size="small"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                      />
+                    </svg>
+                  </mock-iconbutton>
+                </div>
+              </div>
+            </div>
+          </mock-typography>
+        </div>
+      </div>
+      <div
+        class="MuiCollapse-container MuiCollapse-hidden"
+        style="min-height: 0px;"
+      >
+        <div
+          class="MuiCollapse-wrapper"
+        >
+          <div
+            class="MuiCollapse-wrapperInner"
+          >
+            <div
+              class="MuiPaper-root MuiAlert-root MuiAlert-standardSuccess MuiPaper-elevation0"
+              role="alert"
+            >
+              <div
+                class="MuiAlert-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="MuiAlert-message"
+              >
+                Password reset email sent to .
+              </div>
+              <div
+                class="MuiAlert-action"
+              >
+                <mock-iconbutton
+                  aria-label="close"
+                  color="inherit"
+                  size="small"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </mock-iconbutton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <mock-cardcontent>
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+        >
+          <div
+            class="MuiGrid-root SignInDialog-dialogContentTitle-62 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item"
+            >
+              <mock-typography
+                color="textSecondary"
+                variant="h5"
+              >
+                Sign In
+              </mock-typography>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+          >
+            <form
+              class="SignInDialog-form-63"
+            >
+              <div
+                class="MuiGrid-root SignInDialog-textFieldWrapper-64 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-typography
+                  classname="SignInDialog-formText-66"
+                  variant="subtitle2"
+                >
+                  or login with email address
+                </mock-typography>
+                <mock-textfield
+                  error="false"
+                  fullwidth="true"
+                  helpertext=""
+                  id="emailAddress"
+                  inputprops="[object Object]"
+                  label="Email Address"
+                  name="emailAddress"
+                  placeholder="Email Address"
+                  variant="outlined"
+                />
+              </div>
+              <div
+                class="MuiGrid-root SignInDialog-textFieldWrapper-64 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-textfield
+                  error="false"
+                  fullwidth="true"
+                  helpertext=""
+                  id="password"
+                  inputprops="[object Object]"
+                  label="Password"
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                  variant="outlined"
+                />
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-button
+                  classname="SignInDialog-forgotPasswordButton-68"
+                >
+                  <mock-typography
+                    color="textSecondary"
+                    variant="subtitle2"
+                  >
+                    Forgot your password?
+                  </mock-typography>
+                </mock-button>
+              </div>
+              <div
+                class="MuiGrid-root SignInDialog-button-67 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-button
+                  color="primary"
+                  fullwidth="true"
+                  size="large"
+                  type="submit"
+                  variant="contained"
+                >
+                  SIGN IN
+                </mock-button>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-typography
+                  classname="SignInDialog-formText-66"
+                  color="textSecondary"
+                  variant="subtitle1"
+                >
+                  Don't have an account?
+                   
+                  <mock-button
+                    color="primary"
+                  >
+                    REGISTER
+                  </mock-button>
+                </mock-typography>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mock-cardcontent>
+    </mock-card>
+  </mock-dialog>
   <div
-    class="MuiGrid-root ReefNavBar-root-88 MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around MuiGrid-grid-xs-12"
+    class="MuiContainer-root MuiContainer-maxWidthLg"
   >
     <div
-      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5"
+      class="MuiContainer-root Reef-noData-36 MuiContainer-maxWidthLg"
     >
       <div
-        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center"
+        class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center"
       >
         <div
           class="MuiGrid-root MuiGrid-item"
         >
-          <button
-            aria-label="menu"
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-edgeStart"
-            tabindex="0"
-            type="button"
+          <mock-typography
+            color="primary"
+            gutterbottom="true"
+            variant="h2"
           >
-            <span
-              class="MuiIconButton-label"
-            >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-        </div>
-        
-      </div>
-    </div>
-    <div
-      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5"
-    />
-  </div>
-  <div
-    class="MuiGrid-root Reef-spotterAlert-65 MuiGrid-container MuiGrid-justify-xs-center"
-  >
-    <div
-      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11"
-    >
-      <div
-        class="MuiPaper-root MuiAlert-root MuiAlert-standardInfo MuiPaper-elevation0"
-        role="alert"
-      >
-        <div
-          class="MuiAlert-icon"
-        >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20, 12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10, 10 0 0,0 12,2M11,17H13V11H11V17Z"
-            />
-          </svg>
-        </div>
-        <div
-          class="MuiAlert-message"
-        >
-          Currently no spotter deployed at this reef location. All data values are derived from a combination of NOAA satellite readings and weather models.
+            No Data Found
+          </mock-typography>
         </div>
       </div>
     </div>
   </div>
-  <div
-    class="MuiGrid-root ReefDetails-root-90 MuiGrid-container MuiGrid-justify-xs-center"
+  <mock-appbar
+    classname="Footer-appBar-69"
+    position="static"
   >
-    <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-baseline MuiGrid-grid-xs-11"
-    >
-      <h6
-        class="MuiTypography-root ReefDetails-cardTitles-91 MuiTypography-h6"
-        style="margin-left: 2rem;"
-      >
-        LOCATION:
-      </h6>
-      <h6
-        class="MuiTypography-root ReefDetails-cardTitles-91 MuiTypography-subtitle2"
-      >
-        LAT: 
-        0
-      </h6>
-      <h6
-        class="MuiTypography-root ReefDetails-cardTitles-91 MuiTypography-subtitle2"
-      >
-        LONG: 
-        0
-      </h6>
-    </div>
-    <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-item MuiGrid-justify-xs-space-between MuiGrid-grid-xs-11"
-    >
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-9"
-      >
-        <div
-          class="ReefDetails-container-92"
-        >
-          <mock-map
-            polygon="[object Object]"
-          />
-        </div>
-      </div>
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3"
-      >
-        <div
-          class="ReefDetails-container-92"
-        >
-          <mock-featurevideo />
-        </div>
-      </div>
-    </div>
-    <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-item MuiGrid-justify-xs-space-between MuiGrid-grid-xs-11"
-    >
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3"
-      >
-        <div
-          class="ReefDetails-smallContainer-93"
-        >
-          <div
-            class="MuiPaper-root MuiCard-root Satellite-card-94 MuiPaper-elevation1 MuiPaper-rounded"
-          >
-            <div
-              class="MuiCardHeader-root Satellite-header-96"
-            >
-              <div
-                class="MuiCardHeader-content"
-              >
-                <span
-                  class="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
-                >
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8"
-                    >
-                      <h6
-                        class="MuiTypography-root Satellite-cardTitle-95 MuiTypography-h6"
-                      >
-                        SATELLITE OBSERVATION
-                      </h6>
-                    </div>
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
-                    >
-                      <img
-                        alt="satellite"
-                        src="satellite.svg"
-                      />
-                    </div>
-                  </div>
-                </span>
-              </div>
-            </div>
-            <div
-              class="MuiCardContent-root Satellite-content-97"
-            >
-              <div
-                class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between"
-                style="height: 100%;"
-              >
-                <div
-                  class="MuiGrid-root Satellite-contentText-98 MuiGrid-item"
-                >
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
-                    >
-                      <h6
-                        class="MuiTypography-root Satellite-contentTextTitles-99 MuiTypography-subtitle2 MuiTypography-colorTextPrimary"
-                      >
-                        SURFACE TEMP
-                      </h6>
-                      <h2
-                        class="MuiTypography-root Satellite-contentTextValues-100 MuiTypography-h2 MuiTypography-colorTextPrimary"
-                      >
-                        26.0 ℃
-                      </h2>
-                    </div>
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
-                    >
-                      <h6
-                        class="MuiTypography-root Satellite-contentTextTitles-99 MuiTypography-subtitle2 MuiTypography-colorTextPrimary"
-                      >
-                        DEGREE HEATING WEEKS
-                      </h6>
-                      <h2
-                        class="MuiTypography-root Satellite-contentTextValues-100 MuiTypography-h2 MuiTypography-colorTextPrimary"
-                      >
-                        0.1
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="MuiGrid-root MuiGrid-container MuiGrid-item"
-                >
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
-                      style="background-color: rgb(8, 91, 163); height: 2rem;"
-                    >
-                      <span
-                        class="MuiTypography-root MuiTypography-caption"
-                      >
-                        0
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
-                      style="background-color: rgb(12, 157, 165); height: 2rem;"
-                    >
-                      <span
-                        class="MuiTypography-root MuiTypography-caption"
-                      >
-                        2
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
-                      style="background-color: rgb(117, 180, 114); height: 2rem;"
-                    >
-                      <span
-                        class="MuiTypography-root MuiTypography-caption"
-                      >
-                        4
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
-                      style="background-color: rgb(123, 217, 37); height: 2rem;"
-                    >
-                      <span
-                        class="MuiTypography-root MuiTypography-caption"
-                      >
-                        6
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
-                      style="background-color: rgb(193, 229, 34); height: 2rem;"
-                    >
-                      <span
-                        class="MuiTypography-root MuiTypography-caption"
-                      >
-                        8
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
-                      style="background-color: rgb(229, 187, 43); height: 2rem;"
-                    >
-                      <span
-                        class="MuiTypography-root MuiTypography-caption"
-                      >
-                        10
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
-                      style="background-color: rgb(230, 121, 40); height: 2rem;"
-                    >
-                      <span
-                        class="MuiTypography-root MuiTypography-caption"
-                      >
-                        12
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
-                      style="background-color: rgb(232, 79, 46); height: 2rem;"
-                    >
-                      <span
-                        class="MuiTypography-root MuiTypography-caption"
-                      >
-                        14
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
-                      style="background-color: rgb(216, 69, 36); height: 2rem;"
-                    >
-                      <span
-                        class="MuiTypography-root MuiTypography-caption"
-                      >
-                        16
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
-                      style="background-color: rgb(128, 58, 32); height: 2rem;"
-                    >
-                      <span
-                        class="MuiTypography-root MuiTypography-caption"
-                      >
-                        18
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
-                      style="background-color: rgb(185, 41, 68); height: 2rem;"
-                    >
-                      <span
-                        class="MuiTypography-root MuiTypography-caption"
-                      >
-                        20
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-1"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
-                      style="background-color: rgb(128, 48, 126); height: 2rem;"
-                    >
-                      <span
-                        class="MuiTypography-root MuiTypography-caption"
-                      >
-                        25
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3"
-      >
-        <div
-          class="ReefDetails-smallContainer-93"
-        >
-          <div
-            class="MuiPaper-root MuiCard-root Sensor-card-101 MuiPaper-elevation1 MuiPaper-rounded"
-          >
-            <div
-              class="MuiCardHeader-root Sensor-header-103"
-            >
-              <div
-                class="MuiCardHeader-content"
-              >
-                <span
-                  class="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
-                >
-                  <div
-                    class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8"
-                    >
-                      <h6
-                        class="MuiTypography-root Sensor-cardTitle-102 MuiTypography-h6"
-                      >
-                        SENSOR OBSERVATION
-                      </h6>
-                    </div>
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
-                    >
-                      <img
-                        alt="buoy"
-                        src="buoy.svg"
-                      />
-                    </div>
-                  </div>
-                </span>
-              </div>
-            </div>
-            <div
-              class="MuiCardContent-root Sensor-content-104"
-            >
-              <div
-                class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
-                style="height: 100%;"
-              >
-                <div
-                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
-                >
-                  <div
-                    class="MuiGrid-root Sensor-noSensorAlert-105 MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-6"
-                  >
-                    <h6
-                      class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextPrimary"
-                    >
-                      Not Installed Yet
-                    </h6>
-                  </div>
-                </div>
-                <div
-                  class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-item MuiGrid-direction-xs-column MuiGrid-grid-xs-6"
-                >
-                  <div
-                    class="MuiGrid-root MuiGrid-item"
-                  >
-                    <h6
-                      class="MuiTypography-root Sensor-contentTitles-106 MuiTypography-subtitle2 MuiTypography-colorTextPrimary"
-                    >
-                      SURFACE TEMP
-                    </h6>
-                    <h2
-                      class="MuiTypography-root Sensor-contentValues-107 MuiTypography-h2 MuiTypography-colorTextPrimary"
-                    >
-                      - -
-                    </h2>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-item"
-                  >
-                    <h6
-                      class="MuiTypography-root Sensor-contentTitles-106 MuiTypography-subtitle2 MuiTypography-colorTextPrimary"
-                    >
-                      TEMP AT 4M
-                    </h6>
-                    <h2
-                      class="MuiTypography-root Sensor-contentValues-107 MuiTypography-h2 MuiTypography-colorTextPrimary"
-                    >
-                      - -
-                    </h2>
-                  </div>
-                </div>
-                <div
-                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5"
-                >
-                  <img
-                    alt="sensor"
-                    src="sensor.svg"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3"
-      >
-        <div
-          class="ReefDetails-smallContainer-93"
-        >
-          <div
-            class="MuiPaper-root MuiCard-root Wind-card-108 MuiPaper-elevation1 MuiPaper-rounded"
-          >
-            <div
-              class="MuiCardHeader-root Wind-header-110"
-            >
-              <div
-                class="MuiCardHeader-content"
-              >
-                <span
-                  class="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
-                >
-                  <div
-                    class="MuiGrid-root MuiGrid-container"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2"
-                    >
-                      <img
-                        alt="wind"
-                        src="wind.svg"
-                      />
-                    </div>
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8"
-                    >
-                      <h6
-                        class="MuiTypography-root Wind-cardTitle-109 MuiTypography-h6"
-                      >
-                        WIND
-                      </h6>
-                    </div>
-                  </div>
-                </span>
-              </div>
-            </div>
-            <div
-              class="MuiCardContent-root Wind-contentWrapper-111"
-            >
-              <div
-                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
-                style="height: 100%;"
-              >
-                <div
-                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-9"
-                >
-                  <img
-                    alt="clouds"
-                    src="clouds.svg"
-                    style="height: 5rem;"
-                  />
-                </div>
-                <div
-                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-10"
-                >
-                  <div
-                    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
-                  >
-                    <h6
-                      class="MuiTypography-root Wind-contentTitles-113 MuiTypography-subtitle2 MuiTypography-colorTextSecondary"
-                    >
-                      SPEED
-                    </h6>
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-baseline"
-                    >
-                      <p
-                        class="MuiTypography-root Wind-contentValues-114 MuiTypography-body1 MuiTypography-colorTextSecondary"
-                      >
-                        9.0
-                      </p>
-                      <h6
-                        class="MuiTypography-root Wind-contentUnits-115 MuiTypography-h6 MuiTypography-colorTextSecondary"
-                      >
-                        KM/H
-                      </h6>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
-                  >
-                    <h6
-                      class="MuiTypography-root Wind-contentTitles-113 MuiTypography-subtitle2 MuiTypography-colorTextSecondary"
-                    >
-                      DIRECTION
-                    </h6>
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-baseline"
-                    >
-                      <img
-                        alt="arrow"
-                        class="Wind-arrow-116"
-                        src="directioncircle.svg"
-                        style="transform: rotate(180deg);"
-                      />
-                      <h3
-                        class="MuiTypography-root Wind-contentValues-114 MuiTypography-h3 MuiTypography-colorTextSecondary"
-                      >
-                        180°
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-7"
-                  style="height: 5rem;"
-                >
-                  <img
-                    alt="clouds"
-                    src="clouds2.svg"
-                    style="height: 100%;"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3"
-      >
-        <div
-          class="ReefDetails-smallContainer-93"
-        >
-          <div
-            class="MuiPaper-root MuiCard-root Waves-card-117 MuiPaper-elevation1 MuiPaper-rounded"
-          >
-            <div
-              class="MuiCardHeader-root Waves-header-118"
-            >
-              <div
-                class="MuiCardHeader-content"
-              >
-                <span
-                  class="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
-                >
-                  <div
-                    class="MuiGrid-root MuiGrid-container"
-                  >
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2"
-                    >
-                      <img
-                        alt="waves"
-                        src="waves.svg"
-                      />
-                    </div>
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8"
-                    >
-                      <h6
-                        class="MuiTypography-root Waves-cardTitle-119 MuiTypography-h6"
-                      >
-                        WAVES
-                      </h6>
-                    </div>
-                  </div>
-                </span>
-              </div>
-            </div>
-            <div
-              class="MuiCardContent-root Waves-contentWrapper-120"
-            >
-              <div
-                class="MuiGrid-root Waves-content-121 MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
-                style="height: 100%;"
-              >
-                <div
-                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-space-around MuiGrid-grid-xs-12"
-                >
-                  <div
-                    class="MuiGrid-root MuiGrid-item MuiGrid-grid-lg-4"
-                  >
-                    <h6
-                      class="MuiTypography-root Waves-contentTitles-122 MuiTypography-subtitle2 MuiTypography-colorTextSecondary"
-                    >
-                      HEIGHT
-                    </h6>
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-baseline"
-                    >
-                      <p
-                        class="MuiTypography-root Waves-contentValues-123 MuiTypography-body1 MuiTypography-colorTextSecondary"
-                      >
-                        5.0
-                      </p>
-                      <h6
-                        class="MuiTypography-root Waves-contentUnits-124 MuiTypography-h6 MuiTypography-colorTextSecondary"
-                      >
-                        Μ
-                      </h6>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-item MuiGrid-grid-lg-4"
-                  >
-                    <h6
-                      class="MuiTypography-root Waves-contentTitles-122 MuiTypography-subtitle2 MuiTypography-colorTextSecondary"
-                    >
-                      PERIOD
-                    </h6>
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-baseline"
-                    >
-                      <p
-                        class="MuiTypography-root Waves-contentValues-123 MuiTypography-body1 MuiTypography-colorTextSecondary"
-                      >
-                        2
-                      </p>
-                      <h6
-                        class="MuiTypography-root Waves-contentUnits-124 MuiTypography-h6 MuiTypography-colorTextSecondary"
-                      >
-                        S
-                      </h6>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-item MuiGrid-grid-lg-4"
-                  >
-                    <h6
-                      class="MuiTypography-root Waves-contentTitles-122 MuiTypography-subtitle2 MuiTypography-colorTextSecondary"
-                    >
-                      DIRECTION
-                    </h6>
-                    <div
-                      class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-baseline"
-                    >
-                      <img
-                        alt="arrow"
-                        class="Waves-arrow-125"
-                        src="directioncircle.svg"
-                        style="transform: rotate(180deg);"
-                      />
-                      <p
-                        class="MuiTypography-root Waves-contentValues-123 MuiTypography-body1 MuiTypography-colorTextSecondary"
-                      >
-                        180°
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-md-10 MuiGrid-grid-lg-10"
-                  style="height: 1rem;"
-                >
-                  <img
-                    alt="wave"
-                    src="wave.svg"
-                    style="width: 100%;"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
-    >
-      <mock-charts
-        dailydata="[object Object]"
-        depth="4"
-        temperaturethreshold="23"
-      />
-    </div>
-  </div>
-  <header
-    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary Footer-appBar-126 MuiPaper-elevation4"
-  >
-    <div
-      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
-    >
+    <mock-toolbar>
       <div
         class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
       >
         <div
           class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
         >
-          <h4
-            class="MuiTypography-root MuiTypography-h4"
+          <mock-link
+            classname="Footer-navBarLink-70"
+            href="/"
           >
-            Aqua
-          </h4>
-          <h4
-            class="MuiTypography-root MuiTypography-h4"
-            style="color: rgb(138, 198, 222);"
-          >
-            link
-          </h4>
+            <mock-typography
+              color="textPrimary"
+              variant="h4"
+            >
+              Aqua
+            </mock-typography>
+            <mock-typography
+              style="color: rgb(138, 198, 222);"
+              variant="h4"
+            >
+              link
+            </mock-typography>
+          </mock-link>
         </div>
       </div>
-    </div>
-  </header>
+    </mock-toolbar>
+  </mock-appbar>
 </div>
 `;
 
 exports[`Reef Detail Page should render with given state from Redux store: snapshot-with-no-data 1`] = `
 <div>
-  <header
-    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary NavBar-appBar-3 MuiPaper-elevation4"
+  <mock-appbar
+    classname="NavBar-appBar-2"
+    color="primary"
+    position="static"
   >
-    <div
-      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    <mock-toolbar
+      classname="NavBar-toolbar-5"
     >
+      <mock-drawer
+        anchor="left"
+        classes="[object Object]"
+        open="false"
+      >
+        <mock-iconbutton
+          style="align-self: flex-end; margin-right: 5px; margin-top: 5px; color: white;"
+        >
+          <clear />
+        </mock-iconbutton>
+        <mock-link
+          href="/"
+          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        >
+          HOME
+        </mock-link>
+        <mock-link
+          href="/buoy"
+          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        >
+          BUOY
+        </mock-link>
+        <mock-link
+          href="/drones"
+          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        >
+          DRONE
+        </mock-link>
+        <mock-link
+          href="/about"
+          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        >
+          ABOUT
+        </mock-link>
+        <mock-link
+          href="/faq"
+          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        >
+          FAQ
+        </mock-link>
+        <mock-link
+          href="/apply"
+          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        >
+          APPLY
+        </mock-link>
+      </mock-drawer>
       <div
-        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-grid-xs-12"
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
       >
         <div
-          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5 MuiGrid-grid-sm-4"
         >
-          <button
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
-            tabindex="0"
-            type="button"
+          <mock-box
+            alignitems="center"
+            display="flex"
+            flexwrap="nowrap"
           >
-            <span
-              class="MuiIconButton-label"
+            <mock-iconbutton
+              color="inherit"
+              edge="start"
             >
               <svg
                 aria-hidden="true"
@@ -928,86 +710,548 @@ exports[`Reef Detail Page should render with given state from Redux store: snaps
                   d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
                 />
               </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+            </mock-iconbutton>
+            <mock-link
+              classname="NavBar-navBarLink-3"
+              href="/"
+            >
+              <mock-typography
+                color="textPrimary"
+                variant="h4"
+              >
+                Aqua
+              </mock-typography>
+              <mock-typography
+                style="color: rgb(138, 198, 222);"
+                variant="h4"
+              >
+                link
+              </mock-typography>
+            </mock-link>
+          </mock-box>
         </div>
         <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-5"
-        >
-          <h4
-            class="MuiTypography-root MuiTypography-h4"
-          >
-            Aqua
-          </h4>
-          <h4
-            class="MuiTypography-root MuiTypography-h4"
-            style="color: rgb(138, 198, 222);"
-          >
-            link
-          </h4>
-        </div>
-        <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-6"
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-7 MuiGrid-grid-sm-8"
         >
           <div
             class="MuiGrid-root MuiGrid-item"
           >
-            <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-text"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiButton-label"
-              >
-                SIGN IN
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
+            <mock-button>
+              SIGN IN
+            </mock-button>
           </div>
           <div
             class="MuiGrid-root MuiGrid-item"
           >
-            <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-text"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiButton-label"
-              >
-                REGISTER
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
+            <mock-button>
+              REGISTER
+            </mock-button>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </mock-toolbar>
+  </mock-appbar>
+  <mock-dialog
+    maxwidth="md"
+    open="false"
+  >
+    <mock-card>
+      <div
+        class="MuiCardHeader-root RegisterDialog-dialogHeader-13"
+      >
+        <div
+          class="MuiCardHeader-content"
+        >
+          <mock-typography
+            classname="MuiCardHeader-title"
+            component="span"
+            display="block"
+            variant="h5"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around MuiGrid-grid-xs-12"
+              >
+                <div
+                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-6"
+                >
+                  <mock-typography
+                    variant="h4"
+                  >
+                    Aqua
+                  </mock-typography>
+                  <mock-typography
+                    classname="RegisterDialog-dialogHeaderSecondPart-14"
+                    variant="h4"
+                  >
+                    link
+                  </mock-typography>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-1"
+                >
+                  <mock-iconbutton
+                    classname="RegisterDialog-closeButton-12"
+                    size="small"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                      />
+                    </svg>
+                  </mock-iconbutton>
+                </div>
+              </div>
+            </div>
+          </mock-typography>
+        </div>
+      </div>
+      <mock-cardcontent
+        classname="RegisterDialog-contentWrapper-21"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+        >
+          <div
+            class="MuiGrid-root RegisterDialog-dialogContentTitle-15 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item"
+            >
+              <mock-typography
+                color="textSecondary"
+                variant="h5"
+              >
+                Create an account
+              </mock-typography>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+          >
+            <form
+              class="RegisterDialog-form-16"
+            >
+              <div
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-17 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-textfield
+                  error="false"
+                  fullwidth="true"
+                  helpertext=""
+                  id="firstName"
+                  inputprops="[object Object]"
+                  label="First Name"
+                  name="firstName"
+                  placeholder="First Name"
+                  variant="outlined"
+                />
+              </div>
+              <div
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-17 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-textfield
+                  error="false"
+                  fullwidth="true"
+                  helpertext=""
+                  id="lastName"
+                  inputprops="[object Object]"
+                  label="Last Name"
+                  name="lastName"
+                  placeholder="Last Name"
+                  variant="outlined"
+                />
+              </div>
+              <div
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-17 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-textfield
+                  error="false"
+                  fullwidth="true"
+                  helpertext=""
+                  id="emailAddress"
+                  inputprops="[object Object]"
+                  label="Email Address"
+                  name="emailAddress"
+                  placeholder="Email Address"
+                  variant="outlined"
+                />
+              </div>
+              <div
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-17 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-textfield
+                  error="false"
+                  fullwidth="true"
+                  helpertext=""
+                  id="password"
+                  inputprops="[object Object]"
+                  label="Password"
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                  variant="outlined"
+                />
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-space-around MuiGrid-grid-xs-11"
+              >
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+                >
+                  <mock-checkbox
+                    checked="false"
+                    classname="RegisterDialog-termsCheckbox-22"
+                    color="primary"
+                  />
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10"
+                >
+                  <mock-typography
+                    classname="RegisterDialog-formText-19"
+                    color="textSecondary"
+                    variant="subtitle1"
+                  >
+                    I have read the
+                     
+                    <a
+                      class="RegisterDialog-termsLink-23"
+                      href="/"
+                    >
+                      Terms and Conditions
+                    </a>
+                  </mock-typography>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root RegisterDialog-button-20 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-button
+                  color="primary"
+                  disabled="true"
+                  fullwidth="true"
+                  size="large"
+                  type="submit"
+                  variant="contained"
+                >
+                  REGISTER NOW
+                </mock-button>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-typography
+                  classname="RegisterDialog-formText-19"
+                  color="textSecondary"
+                  variant="subtitle1"
+                >
+                  Have an account?
+                   
+                  <mock-button
+                    color="primary"
+                  >
+                    SIGN IN
+                  </mock-button>
+                </mock-typography>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mock-cardcontent>
+    </mock-card>
+  </mock-dialog>
+  <mock-dialog
+    maxwidth="md"
+    open="false"
+  >
+    <mock-card>
+      <div
+        class="MuiCardHeader-root SignInDialog-dialogHeader-25"
+      >
+        <div
+          class="MuiCardHeader-content"
+        >
+          <mock-typography
+            classname="MuiCardHeader-title"
+            component="span"
+            display="block"
+            variant="h5"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around MuiGrid-grid-xs-12"
+              >
+                <div
+                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-6"
+                >
+                  <mock-typography
+                    variant="h4"
+                  >
+                    Aqua
+                  </mock-typography>
+                  <mock-typography
+                    classname="SignInDialog-dialogHeaderSecondPart-26"
+                    variant="h4"
+                  >
+                    link
+                  </mock-typography>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-1"
+                >
+                  <mock-iconbutton
+                    classname="SignInDialog-closeButton-24"
+                    size="small"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                      />
+                    </svg>
+                  </mock-iconbutton>
+                </div>
+              </div>
+            </div>
+          </mock-typography>
+        </div>
+      </div>
+      <div
+        class="MuiCollapse-container MuiCollapse-hidden"
+        style="min-height: 0px;"
+      >
+        <div
+          class="MuiCollapse-wrapper"
+        >
+          <div
+            class="MuiCollapse-wrapperInner"
+          >
+            <div
+              class="MuiPaper-root MuiAlert-root MuiAlert-standardSuccess MuiPaper-elevation0"
+              role="alert"
+            >
+              <div
+                class="MuiAlert-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="MuiAlert-message"
+              >
+                Password reset email sent to .
+              </div>
+              <div
+                class="MuiAlert-action"
+              >
+                <mock-iconbutton
+                  aria-label="close"
+                  color="inherit"
+                  size="small"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </mock-iconbutton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <mock-cardcontent>
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+        >
+          <div
+            class="MuiGrid-root SignInDialog-dialogContentTitle-27 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item"
+            >
+              <mock-typography
+                color="textSecondary"
+                variant="h5"
+              >
+                Sign In
+              </mock-typography>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+          >
+            <form
+              class="SignInDialog-form-28"
+            >
+              <div
+                class="MuiGrid-root SignInDialog-textFieldWrapper-29 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-typography
+                  classname="SignInDialog-formText-31"
+                  variant="subtitle2"
+                >
+                  or login with email address
+                </mock-typography>
+                <mock-textfield
+                  error="false"
+                  fullwidth="true"
+                  helpertext=""
+                  id="emailAddress"
+                  inputprops="[object Object]"
+                  label="Email Address"
+                  name="emailAddress"
+                  placeholder="Email Address"
+                  variant="outlined"
+                />
+              </div>
+              <div
+                class="MuiGrid-root SignInDialog-textFieldWrapper-29 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-textfield
+                  error="false"
+                  fullwidth="true"
+                  helpertext=""
+                  id="password"
+                  inputprops="[object Object]"
+                  label="Password"
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                  variant="outlined"
+                />
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-button
+                  classname="SignInDialog-forgotPasswordButton-33"
+                >
+                  <mock-typography
+                    color="textSecondary"
+                    variant="subtitle2"
+                  >
+                    Forgot your password?
+                  </mock-typography>
+                </mock-button>
+              </div>
+              <div
+                class="MuiGrid-root SignInDialog-button-32 MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-button
+                  color="primary"
+                  fullwidth="true"
+                  size="large"
+                  type="submit"
+                  variant="contained"
+                >
+                  SIGN IN
+                </mock-button>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <mock-typography
+                  classname="SignInDialog-formText-31"
+                  color="textSecondary"
+                  variant="subtitle1"
+                >
+                  Don't have an account?
+                   
+                  <mock-button
+                    color="primary"
+                  >
+                    REGISTER
+                  </mock-button>
+                </mock-typography>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mock-cardcontent>
+    </mock-card>
+  </mock-dialog>
   <div
-    class="Reef-noData-1"
+    class="MuiContainer-root MuiContainer-maxWidthLg"
   >
     <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center"
+      class="MuiContainer-root Reef-noData-1 MuiContainer-maxWidthLg"
     >
       <div
-        class="MuiGrid-root MuiGrid-item"
+        class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center"
       >
-        <h2
-          class="MuiTypography-root MuiTypography-h2 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+        <div
+          class="MuiGrid-root MuiGrid-item"
         >
-          No Data Found
-        </h2>
+          <mock-typography
+            color="primary"
+            gutterbottom="true"
+            variant="h2"
+          >
+            No Data Found
+          </mock-typography>
+        </div>
       </div>
     </div>
   </div>
+  <mock-appbar
+    classname="Footer-appBar-34"
+    position="static"
+  >
+    <mock-toolbar>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+        >
+          <mock-link
+            classname="Footer-navBarLink-35"
+            href="/"
+          >
+            <mock-typography
+              color="textPrimary"
+              variant="h4"
+            >
+              Aqua
+            </mock-typography>
+            <mock-typography
+              style="color: rgb(138, 198, 222);"
+              variant="h4"
+            >
+              link
+            </mock-typography>
+          </mock-link>
+        </div>
+      </div>
+    </mock-toolbar>
+  </mock-appbar>
 </div>
 `;

@@ -8,12 +8,14 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToOne,
+  OneToMany,
+  ManyToMany,
 } from 'typeorm';
 import { Region } from '../regions/regions.entity';
-import { User } from '../users/users.entity';
-// eslint-disable-next-line import/no-cycle
 import { DailyData } from './daily-data.entity';
 import { VideoStream } from './video-streams.entity';
+import { Survey } from '../surveys/surveys.entity';
+import { User } from '../users/users.entity';
 
 @Entity()
 export class Reef {
@@ -52,21 +54,27 @@ export class Reef {
   @Column({ nullable: true })
   timezone: string;
 
+  @Column({ default: true })
+  approved: boolean;
+
   @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @ManyToOne(() => Region, { onDelete: 'CASCADE', nullable: true })
+  @ManyToOne(() => Region, { onDelete: 'SET NULL', nullable: true })
   region?: Region;
 
-  @ManyToOne(() => User, { onDelete: 'CASCADE', nullable: true })
-  admin?: User;
-
-  @ManyToOne(() => VideoStream, { onDelete: 'CASCADE', nullable: true })
+  @ManyToOne(() => VideoStream, { onDelete: 'SET NULL', nullable: true })
   stream?: VideoStream;
+
+  @ManyToMany(() => User, (user) => user.administeredReefs)
+  admins: User[];
 
   @OneToOne(() => DailyData, (latestDailyData) => latestDailyData.reef)
   latestDailyData?: DailyData;
+
+  @OneToMany(() => Survey, (survey) => survey.reef)
+  surveys: Survey[];
 }

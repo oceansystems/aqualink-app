@@ -5,23 +5,27 @@ import {
   Grid,
   IconButton,
   Typography,
-  Avatar,
   Button,
   Menu,
   MenuItem,
+  Link,
+  Box,
+  Hidden,
   withStyles,
   WithStyles,
   createStyles,
   Theme,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useSelector, useDispatch } from "react-redux";
+import { sortBy } from "lodash";
+import classNames from "classnames";
 
 import RegisterDialog from "../../routes/Homepage/RegisterDialog";
 import SignInDialog from "../../routes/Homepage/SignInDialog";
 import Search from "../Search";
+import MenuDrawer from "../MenuDrawer";
 import { userInfoSelector, signOutUser } from "../../store/User/userSlice";
 
 const NavBar = ({ searchLocation, classes }: NavBarProps) => {
@@ -29,6 +33,7 @@ const NavBar = ({ searchLocation, classes }: NavBarProps) => {
   const dispatch = useDispatch();
   const [registerDialogOpen, setRegisterDialogOpen] = useState<boolean>(false);
   const [signInDialogOpen, setSignInDialogOpen] = useState<boolean>(false);
+  const [menuDrawerOpen, setMenuDrawerOpen] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
 
   const handleRegisterDialog = (open: boolean) => setRegisterDialogOpen(open);
@@ -44,72 +49,125 @@ const NavBar = ({ searchLocation, classes }: NavBarProps) => {
 
   return (
     <>
-      <AppBar className={classes.appBar} position="static" color="primary">
-        <Toolbar>
-          <Grid container alignItems="center" item xs={12}>
-            <Grid item xs={1}>
-              <IconButton edge="start" color="inherit">
-                <MenuIcon />
-              </IconButton>
+      <AppBar
+        className={classNames(classes.appBar, {
+          [classes.appBarXs]: searchLocation,
+        })}
+        position="static"
+        color="primary"
+      >
+        <Toolbar className={classes.toolbar}>
+          <MenuDrawer
+            open={menuDrawerOpen}
+            onClose={() => setMenuDrawerOpen(false)}
+          />
+          <Grid
+            container
+            justify="space-between"
+            alignItems="center"
+            spacing={1}
+          >
+            <Grid item xs={5} sm={searchLocation ? 6 : 4}>
+              <Box display="flex" flexWrap="nowrap" alignItems="center">
+                <IconButton
+                  edge="start"
+                  color="inherit"
+                  onClick={() => setMenuDrawerOpen(true)}
+                >
+                  <MenuIcon />
+                </IconButton>
+
+                <Link className={classes.navBarLink} href="/">
+                  <Typography color="textPrimary" variant="h4">
+                    Aqua
+                  </Typography>
+                  <Typography style={{ color: "#8AC6DE" }} variant="h4">
+                    link
+                  </Typography>
+                </Link>
+              </Box>
             </Grid>
-            <Grid container item xs={5}>
-              <Typography variant="h4">Aqua</Typography>
-              <Typography style={{ color: "#8AC6DE" }} variant="h4">
-                link
-              </Typography>
-            </Grid>
-            {user ? (
-              <Grid
-                container
-                alignItems="center"
-                justify="flex-end"
-                item
-                xs={6}
-              >
-                {searchLocation && <Search />}
-                <Grid container justify="flex-end" item xs={6}>
-                  <IconButton>
-                    <NotificationsIcon className={classes.notificationIcon} />
-                  </IconButton>
-                  <IconButton>
-                    <Avatar />
-                  </IconButton>
-                  <IconButton onClick={handleClick}>
-                    <ExpandMoreIcon className={classes.expandIcon} />
-                  </IconButton>
-                  <Menu
-                    key="user-menu"
-                    className={classes.userMenu}
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={Boolean(anchorEl)}
-                    onClose={handleMenuClose}
-                  >
-                    <MenuItem
-                      className={classes.menuItem}
-                      onClick={() => {
-                        dispatch(signOutUser());
-                        handleMenuClose();
-                      }}
+
+            {searchLocation && (
+              <Hidden xsDown>
+                <Grid item sm={3}>
+                  <Search />
+                </Grid>
+              </Hidden>
+            )}
+
+            <Grid
+              container
+              justify="flex-end"
+              item
+              xs={7}
+              sm={searchLocation ? 3 : 8}
+            >
+              {user ? (
+                <>
+                  <Box display="flex" flexWrap="nowrap" alignItems="center">
+                    {user.fullName ? user.fullName : "My Profile"}
+                    <IconButton
+                      className={classes.button}
+                      onClick={handleClick}
                     >
-                      Logout
-                    </MenuItem>
-                  </Menu>
+                      <ExpandMoreIcon className={classes.expandIcon} />
+                    </IconButton>
+                    <Menu
+                      key="user-menu"
+                      className={classes.userMenu}
+                      anchorEl={anchorEl}
+                      keepMounted
+                      open={Boolean(anchorEl)}
+                      onClose={handleMenuClose}
+                    >
+                      {sortBy(user.administeredReefs, "id").map(
+                        ({ id, name, region }, index) => {
+                          const reefIdentifier = name || region;
+                          return (
+                            <Link href={`/reefs/${id}`} key={`reef-link-${id}`}>
+                              <MenuItem className={classes.menuItem}>
+                                {reefIdentifier || `Reef ${index + 1}`}
+                              </MenuItem>
+                            </Link>
+                          );
+                        }
+                      )}
+                      <MenuItem
+                        key="user-menu-logout"
+                        className={classes.menuItem}
+                        onClick={() => {
+                          dispatch(signOutUser());
+                          handleMenuClose();
+                        }}
+                      >
+                        Logout
+                      </MenuItem>
+                    </Menu>
+                  </Box>
+                </>
+              ) : (
+                <>
+                  <Grid item>
+                    <Button onClick={() => handleSignInDialog(true)}>
+                      SIGN IN
+                    </Button>
+                  </Grid>
+                  <Grid item>
+                    <Button onClick={() => handleRegisterDialog(true)}>
+                      REGISTER
+                    </Button>
+                  </Grid>
+                </>
+              )}
+            </Grid>
+
+            {searchLocation && (
+              <Hidden smUp>
+                <Grid item xs={12} style={{ margin: 0, paddingTop: 0 }}>
+                  <Search />
                 </Grid>
-              </Grid>
-            ) : (
-              <Grid container justify="flex-end" item xs={6}>
-                <Grid item>
-                  <Button onClick={() => handleSignInDialog(true)}>
-                    SIGN IN
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button onClick={() => handleRegisterDialog(true)}>
-                    REGISTER
-                  </Button>
-                </Grid>
-              </Grid>
+              </Hidden>
             )}
           </Grid>
         </Toolbar>
@@ -136,12 +194,26 @@ const styles = (theme: Theme) =>
         backgroundColor: theme.palette.primary.main,
       },
     },
+    navBarLink: {
+      display: "flex",
+      textDecoration: "none",
+      "&:hover": {
+        textDecoration: "none",
+      },
+    },
+    appBarXs: {
+      [theme.breakpoints.only("xs")]: {
+        height: 122,
+      },
+    },
+    toolbar: {
+      padding: theme.spacing(0, 1),
+    },
     userMenu: {
       marginTop: "3rem",
     },
     menuItem: {
       margin: 0,
-      backgroundColor: theme.palette.grey[500],
       color: theme.palette.text.secondary,
     },
     notificationIcon: {
@@ -149,6 +221,10 @@ const styles = (theme: Theme) =>
     },
     expandIcon: {
       color: "#ffffff",
+    },
+    button: {
+      padding: theme.spacing(1),
+      marginLeft: "1rem",
     },
   });
 

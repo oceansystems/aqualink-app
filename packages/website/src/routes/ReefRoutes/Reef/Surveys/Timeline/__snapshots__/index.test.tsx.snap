@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReefRoutes Surveys should render with given state from Redux store 1`] = `
+<div>
+  <div
+    class="SurveyTimeline-root-10"
+  >
+    <mock-hidden
+      mddown="true"
+    >
+      <ul
+        class="MuiTimeline-root MuiTimeline-alignLeft"
+      />
+    </mock-hidden>
+    <mock-hidden
+      lgup="true"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+      />
+    </mock-hidden>
+  </div>
+</div>
+`;

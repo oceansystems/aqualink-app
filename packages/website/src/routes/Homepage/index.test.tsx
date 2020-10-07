@@ -6,7 +6,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import Homepage from ".";
 
+jest.mock("../../common/NavBar", () => "Mock-NavBar");
+jest.mock("./Map", () => "Mock-Map");
 jest.mock("./ReefTable", () => "Mock-ReefTable");
+
 const mockStore = configureStore([]);
 describe("Homepage", () => {
   let element: HTMLElement;

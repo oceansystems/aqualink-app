@@ -2,11 +2,9 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToOne,
   ManyToOne,
   CreateDateColumn,
   UpdateDateColumn,
-  JoinColumn,
 } from 'typeorm';
 import { Exclude, Expose } from 'class-transformer';
 import { Reef } from '../reefs/reefs.entity';
@@ -41,8 +39,7 @@ export class ReefApplication {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @OneToOne(() => Reef, { onDelete: 'CASCADE' })
-  @JoinColumn()
+  @ManyToOne(() => Reef, { onDelete: 'CASCADE' })
   reef: Reef;
 
   @ManyToOne(() => User, { onDelete: 'CASCADE' })

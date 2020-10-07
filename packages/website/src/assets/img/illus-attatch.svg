@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="237px" height="237px" viewBox="0 0 237 237" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>illus-attatch</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="116.097941" cy="116.902059" r="116.097941"></circle>
+        <linearGradient x1="50%" y1="26.956959%" x2="50%" y2="60.4386749%" id="linearGradient-3">
+            <stop stop-color="#FFDB2C" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFEF58" offset="100%"></stop>
+        </linearGradient>
+        <path d="M0.374407663,0 C7.03728207,37.1217288 25.1222269,106.60599 27.9777445,118.9799 C30.8332621,131.35381 34.6406189,147.535076 34.6406189,160.860825" id="path-4"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Apply" transform="translate(-87.000000, -947.000000)">
+            <g id="illus-attatch" transform="translate(89.000000, 948.342196)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <circle stroke="#C7DCF6" stroke-width="2" cx="116.097941" cy="116.902059" r="117.097941"></circle>
+                <g id="Group-5" mask="url(#mask-2)">
+                    <g transform="translate(85.998474, 154.743936)">
+                        <path d="M58.4785019,-9.9475983e-14 L12.4862266,-9.9475983e-14 C10.9751819,-9.9475983e-14 9.6658081,1.04761802 9.33444908,2.52177898 L0.0801924526,43.6519406 C-0.374310766,45.6716244 1.16171974,47.59196 3.23256491,47.59196 L67.7327585,47.59196 C69.8030088,47.59196 71.3390393,45.6716244 70.8845361,43.6519406 L61.6308744,2.52177898 C61.2989204,1.04761802 59.9895466,-9.9475983e-14 58.4785019,-9.9475983e-14" id="Fill-1" stroke="none" fill="#FFFFFF" fill-rule="evenodd"></path>
+                        <path d="M58.4785019,0 L12.4862266,0 C10.9751819,0 9.6658081,1.04761802 9.33444908,2.52177898 L0.0801924526,43.6519406 C-0.374310766,45.6716244 1.16171974,47.59196 3.23256491,47.59196 L67.7327585,47.59196 C69.8030088,47.59196 71.3390393,45.6716244 70.8845361,43.6519406 L61.6308744,2.52177898 C61.2989204,1.04761802 59.9895466,0 58.4785019,0 Z" id="Stroke-3" stroke="#168DBD" stroke-width="4" fill="none"></path>
+                    </g>
+                </g>
+                <g id="Group-6" mask="url(#mask-2)">
+                    <g transform="translate(86.474394, -37.000000)" id="Group-5">
+                        <g>
+                            <g id="Stroke-1" stroke-linecap="round">
+                                <use stroke="url(#linearGradient-3)" stroke-width="8" xlink:href="#path-4"></use>
+                                <use stroke="#FFEF58" stroke-width="6" xlink:href="#path-4"></use>
+                            </g>
+                            <path d="M25.4689844,113.817745 L25.4689844,113.817745 C20.5736754,114.805754 15.8040091,111.638985 14.816,106.743676 L12.5544301,95.5481437 C11.566421,90.6528347 14.73319,85.8831685 19.6275472,84.8942076 C24.5228562,83.9061985 29.2934743,87.0729675 30.2814834,91.9682765 L32.5430533,103.164761 C33.5310624,108.059118 30.3642934,112.828784 25.4689844,113.817745" id="Fill-3" fill="#168DBD"></path>
+                        </g>
+                    </g>
+                </g>
+                <path d="M130.844018,154.743936 C130.844018,149.689662 126.746719,145.592363 121.692445,145.592363 C116.63817,145.592363 112.540871,149.689662 112.540871,154.743936 C112.540871,154.743936 130.844018,154.743936 130.844018,154.743936 Z" id="Oval" stroke="#168DBD" stroke-width="4" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

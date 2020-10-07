@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About should render with given state from Redux store 1`] = `
+<div>
+  <mock-navbar
+    searchlocation="false"
+  />
+  <div>
+    <div
+      class="page-container"
+    >
+      <div
+        class="bloc l-bloc"
+        id="bloc-0"
+      >
+        <div
+          class="bloc l-bloc"
+          id="bloc-1"
+        >
+          <div
+            class="container bloc-md mobilecentered"
+          >
+            <div
+              class="row"
+            >
+              <div
+                class="centered order-lg-0 order-1 order-md-0 order-sm-0 col"
+              >
+                <mock-typography
+                  classname="About-title-1"
+                  variant="h4"
+                >
+                  About Us
+                </mock-typography>
+                <p>
+                  Aqualink is a philanthropic engineering organization working on Ocean conservation problems.
+                  <br />
+                </p>
+              </div>
+              <div
+                class="offset-lg-0 col-lg-12 order-lg-1"
+              >
+                <img
+                  alt="reef1b"
+                  class="img-fluid mx-auto d-block imagepaddingtop img-responsive lazyload"
+                  src="reef1b.jpg"
+                />
+              </div>
+            </div>
+            <div
+              class="row voffset-lg"
+            >
+              <div
+                class="centered order-lg-0 order-1 order-md-0 order-sm-0 col"
+              >
+                <mock-typography
+                  classname="About-title-1"
+                  variant="h4"
+                >
+                  The Team
+                </mock-typography>
+                <p>
+                  We have been working in rapid development and entrepreneurial businesses that scale and hope to bring a similar mindset to Ocean conservation.
+                  <br />
+                  <br />
+                  We have an extended team of engineering contractors in a variety of disciplines all of whom embrace open source philosophies and want to help build Ocean conservation tools. 
+                  <br />
+                </p>
+              </div>
+            </div>
+            <div
+              class="row voffset-md"
+            >
+              <div
+                class="col-lg-4 col-md-4"
+              >
+                <div
+                  class="card border-0"
+                >
+                  <div
+                    class="card-body team-card"
+                  >
+                    <img
+                      alt="placeholder user"
+                      class="rounded-circle mx-auto d-block mt-5 img-style lazyload"
+                      src="peter.jpg"
+                      width="100"
+                    />
+                    <h5
+                      class="text-center mg-sm"
+                    >
+                      Peter Rive
+                    </h5>
+                    <p
+                      class="text-lg-center"
+                    >
+                      Co-founder of SolarCity, a pioneer in making solar energy an affordable alternative to fossil fuels for homeowners.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-lg-4 col-md-4 mt-3 mt-md-0"
+              >
+                <div
+                  class="card border-0"
+                >
+                  <div
+                    class="card-body team-card"
+                  >
+                    <img
+                      alt="placeholder user"
+                      class="rounded-circle mx-auto d-block mt-5 img-placeholder-us-style lazyload"
+                      src="LYNDON1.jpg"
+                      width="100"
+                    />
+                    <h5
+                      class="text-center mg-sm"
+                    >
+                      Lyndon Rive
+                    </h5>
+                    <p
+                      class="text-lg-center"
+                    >
+                      Also a co-founder of SolarCity, current National Geographic board member, and member of the USA underwater hockey team.
+                      <br />
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-lg-4 col-md-4 mt-3 mt-md-0"
+              >
+                <div
+                  class="card border-0"
+                >
+                  <div
+                    class="card-body team-card"
+                  >
+                    <img
+                      alt="placeholder user"
+                      class="rounded-circle mx-auto d-block mt-5 img-3-style lazyload"
+                      src="drew.jpg"
+                      width="100"
+                    />
+                    <h5
+                      class="text-center mg-sm"
+                    >
+                      Drew Gray
+                    </h5>
+                    <p
+                      class="text-lg-center"
+                    >
+                      Engineer and executive with experience building autonomous systems at Tesla, Cruise, Uber, and Voyage. Instrumental in pushing the state-of-the-art in self-driving cars using computer vision and deep learning.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mock-footer />
+</div>
+`;

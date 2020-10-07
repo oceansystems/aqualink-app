@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as expected 1`] = `
+<div>
+  <mock-dialog
+    open="true"
+  >
+    <mock-dialogtitle
+      classname="Dialog-dialogTitle-1"
+    >
+      <mock-typography>
+        Random Header
+      </mock-typography>
+    </mock-dialogtitle>
+    <mock-dialogcontent>
+      <div>
+        Some random content
+      </div>
+    </mock-dialogcontent>
+    <mock-dialogactions />
+  </mock-dialog>
+</div>
+`;

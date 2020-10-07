@@ -7,8 +7,8 @@ import marker from "../assets/marker.png";
 
 const myIcon = L.icon({
   iconUrl: marker,
-  iconSize: [19, 31],
-  iconAnchor: [12, 41],
+  iconSize: [20, 30],
+  iconAnchor: [10, 30],
   popupAnchor: [0, -41],
 });
 

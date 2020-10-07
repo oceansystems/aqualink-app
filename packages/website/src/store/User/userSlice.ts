@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { FirebaseError } from "firebase";
-import type { AxiosError } from "axios";
 
 import type {
+  PasswordResetParams,
   User,
   UserState,
   UserRegisterParams,
@@ -17,6 +17,9 @@ const userInitialState: UserState = {
   error: null,
 };
 
+const isManager = (user: User) =>
+  user.adminLevel === "reef_manager" || user.adminLevel === "super_admin";
+
 export const createUser = createAsyncThunk<
   User,
   UserRegisterParams,
@@ -27,29 +30,27 @@ export const createUser = createAsyncThunk<
     { fullName, email, password }: UserRegisterParams,
     { rejectWithValue }
   ) => {
+    let user;
     try {
-      const { user } = await userServices.createUser(email, password);
+      user = (await userServices.createUser(email, password)).user;
       const token = await user?.getIdToken();
-      try {
-        const { data } = await userServices.storeUser(fullName, email, token);
-        return {
-          email: data.email,
-          firebaseUid: data.firebaseUid,
-          token: await user?.getIdToken(),
-        };
-      } catch (err) {
-        try {
-          await user?.delete();
-        } catch (errDelete) {
-          const error: FirebaseError = errDelete;
-          return rejectWithValue(error.message);
-        }
-        const error: AxiosError<UserState["error"]> = err;
-        return rejectWithValue(error.message);
-      }
+
+      const { data } = await userServices.storeUser(fullName, email, token);
+
+      return {
+        email: data.email,
+        fullName: data.fullName,
+        adminLevel: data.adminLevel,
+        firebaseUid: data.firebaseUid,
+        administeredReefs: isManager(data)
+          ? (await userServices.getAdministeredReefs(token)).data
+          : [],
+        token: await user?.getIdToken(),
+      };
     } catch (err) {
-      const error: FirebaseError = err;
-      return rejectWithValue(error.message);
+      // Delete the user from Firebase if it exists, then rethrow the error
+      await user?.delete();
+      return rejectWithValue(err.message);
     }
   }
 );
@@ -63,32 +64,64 @@ export const signInUser = createAsyncThunk<
   async ({ email, password }: UserSignInParams, { rejectWithValue }) => {
     try {
       const { user } = await userServices.signInUser(email, password);
+      const token = await user?.getIdToken();
+      const { data: userData } = await userServices.getSelf(token);
       return {
-        email: user?.email,
-        firebaseUid: user?.uid,
-        token: await user?.getIdToken(),
+        email: userData.email,
+        fullName: userData.fullName,
+        adminLevel: userData.adminLevel,
+        firebaseUid: userData.firebaseUid,
+        administeredReefs: isManager(userData)
+          ? (await userServices.getAdministeredReefs(token)).data
+          : [],
+        token,
       };
     } catch (err) {
-      const error: FirebaseError = err;
-      return rejectWithValue(error.message);
+      return rejectWithValue(err.message);
     }
   }
 );
+
+export const resetPassword = createAsyncThunk<
+  PasswordResetParams,
+  PasswordResetParams,
+  CreateAsyncThunkTypes
+>("user/reset", async ({ email }: PasswordResetParams, { rejectWithValue }) => {
+  try {
+    await userServices.resetPassword(email);
+    return { email };
+  } catch (err) {
+    return rejectWithValue(err.message);
+  }
+});
 
 export const getSelf = createAsyncThunk<User, string, CreateAsyncThunkTypes>(
   "user/getSelf",
   async (token: string, { rejectWithValue }) => {
     try {
-      const { data } = await userServices.getSelf(token);
+      const { data: userData } = await userServices.getSelf(token);
       return {
-        email: data.email,
-        firebaseUid: data.firebaseUid,
+        email: userData.email,
+        fullName: userData.fullName,
+        adminLevel: userData.adminLevel,
+        firebaseUid: userData.firebaseUid,
+        administeredReefs: isManager(userData)
+          ? (await userServices.getAdministeredReefs(token)).data
+          : [],
         token,
       };
     } catch (err) {
-      const error: AxiosError<UserState["error"]> = err;
-      return rejectWithValue(error.message);
+      return rejectWithValue(err.message);
     }
+  },
+  {
+    // If another user action is pending, cancel this request before it starts.
+    condition(arg: string, { getState }) {
+      const {
+        user: { loading },
+      } = getState();
+      return !loading;
+    },
   }
 );
 

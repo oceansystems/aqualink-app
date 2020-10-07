@@ -16,12 +16,13 @@ import { FilterReefPoiDto } from './dto/filter-reef-poi.dto';
 import { UpdateReefPoiDto } from './dto/update-reef-poi.dto';
 import { AdminLevel } from '../users/users.entity';
 import { Auth } from '../auth/auth.decorator';
+import { Public } from '../auth/public.decorator';
 
+@Auth(AdminLevel.ReefManager, AdminLevel.SuperAdmin)
 @Controller('pois')
 export class ReefPoisController {
   constructor(private poisService: ReefPoisService) {}
 
-  @Auth(AdminLevel.ReefManager, AdminLevel.SuperAdmin)
   @Post()
   create(
     @Body() createReefPoiDto: CreateReefPoiDto,
@@ -29,6 +30,7 @@ export class ReefPoisController {
     return this.poisService.create(createReefPoiDto);
   }
 
+  @Public()
   @Get()
   find(
     @Query() filterReefPoiDto: FilterReefPoiDto,
@@ -36,12 +38,12 @@ export class ReefPoisController {
     return this.poisService.find(filterReefPoiDto);
   }
 
+  @Public()
   @Get(':id')
   findOne(@Param('id', ParseIntPipe) id: number): Promise<ReefPointOfInterest> {
     return this.poisService.findOne(id);
   }
 
-  @Auth(AdminLevel.ReefManager, AdminLevel.SuperAdmin)
   @Put(':id')
   update(
     @Param('id', ParseIntPipe) id: number,
@@ -50,7 +52,6 @@ export class ReefPoisController {
     return this.poisService.update(id, updateReefPoiDto);
   }
 
-  @Auth(AdminLevel.ReefManager, AdminLevel.SuperAdmin)
   @Delete(':id')
   delete(@Param('id', ParseIntPipe) id: number): Promise<void> {
     return this.poisService.delete(id);

@@ -2,13 +2,11 @@ import {
   IsNotEmpty,
   IsString,
   IsOptional,
-  Validate,
   IsInt,
   IsDateString,
+  IsLongitude,
+  IsLatitude,
 } from 'class-validator';
-import { EntityExists } from '../../validations/entity-exists.constraint';
-import { Reef } from '../../reefs/reefs.entity';
-import { User } from '../../users/users.entity';
 
 export class CreateReefApplicationDto {
   @IsOptional()
@@ -29,12 +27,15 @@ export class CreateReefApplicationDto {
   @IsString()
   @IsNotEmpty()
   readonly installationResources?: string;
+}
+
+export class CreateReefWithApplicationDto {
+  @IsLatitude()
+  latitude: number;
+
+  @IsLongitude()
+  longitude: number;
 
   @IsInt()
-  @Validate(EntityExists, [Reef])
-  readonly reefId?: number;
-
-  @IsInt()
-  @Validate(EntityExists, [User])
-  readonly userId: number;
+  depth: number;
 }

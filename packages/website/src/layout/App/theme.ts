@@ -1,4 +1,13 @@
 import { createMuiTheme } from "@material-ui/core/styles";
+import { MuiPickersOverrides } from "@material-ui/pickers/typings/overrides";
+
+type OverridesNameToClassKey = {
+  [P in keyof Required<MuiPickersOverrides>]: keyof MuiPickersOverrides[P];
+};
+
+declare module "@material-ui/core/styles/overrides" {
+  export interface ComponentNameToClassKey extends OverridesNameToClassKey {}
+}
 
 const skyBlue = "#009ee0";
 const lightBlue = "#168dbd";
@@ -13,6 +22,17 @@ const fontFamily =
 
 export const colors = { skyBlue, lightBlue, lighterBlue, darkGreyBlue };
 
+declare module "@material-ui/core/styles/createBreakpoints" {
+  interface BreakpointOverrides {
+    xs: true;
+    sm: true;
+    md: true;
+    lg: true;
+    xl: true;
+    xxl: true;
+  }
+}
+
 const theme: any = createMuiTheme({
   palette: {
     primary: {
@@ -26,6 +46,16 @@ const theme: any = createMuiTheme({
     },
     grey: {
       500: lightGray,
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1460,
+      xxl: 1920,
     },
   },
   overrides: {
@@ -68,6 +98,7 @@ const theme: any = createMuiTheme({
       h6: {
         fontSize: 16,
         fontFamily,
+        fontWeight: 400,
       },
       subtitle1: {
         fontSize: 14,
@@ -84,6 +115,7 @@ const theme: any = createMuiTheme({
       overline: {
         fontSize: 8.5,
         fontFamily,
+        textTransform: "none",
       },
       gutterBottom: {
         marginBottom: "1rem",
@@ -106,6 +138,13 @@ const theme: any = createMuiTheme({
         backgroundColor: darkGreyBlue,
       },
     },
+    MuiButtonBase: {
+      root: {
+        "&:focus": {
+          outline: "none",
+        },
+      },
+    },
     MuiCardContent: {
       root: {
         "&:last-child": {
@@ -121,6 +160,21 @@ const theme: any = createMuiTheme({
     MuiInputBase: {
       root: {
         height: "100%",
+      },
+    },
+    MuiPickersDay: {
+      day: {
+        color: "black",
+      },
+    },
+    MuiPickersCalendarHeader: {
+      switchHeader: {
+        color: "black",
+      },
+    },
+    MuiPickersClockNumber: {
+      clockNumber: {
+        color: "black",
       },
     },
     MuiOutlinedInput: {

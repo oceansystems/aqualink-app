@@ -5,6 +5,11 @@ import configureStore from "redux-mock-store";
 
 import HomePageNavBar from ".";
 
+jest.mock("../../routes/Homepage/RegisterDialog", () => "Mock-RegisterDialog");
+jest.mock("../../routes/Homepage/SignInDialog", () => "Mock-SignInDialog");
+jest.mock("../Search", () => "Mock-Search");
+jest.mock("../MenuDrawer", () => "Mock-MenuDrawer");
+
 const mockStore = configureStore([]);
 
 describe("NavBar", () => {

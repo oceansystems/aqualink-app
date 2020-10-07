@@ -2,25 +2,31 @@
 
 exports[`NavBar should render with given state from Redux store 1`] = `
 <div>
-  <header
-    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary NavBar-appBar-1 MuiPaper-elevation4"
+  <mock-appbar
+    classname="NavBar-appBar-1"
+    color="primary"
+    position="static"
   >
-    <div
-      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    <mock-toolbar
+      classname="NavBar-toolbar-4"
     >
+      <mock-menudrawer
+        open="false"
+      />
       <div
-        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-grid-xs-12"
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
       >
         <div
-          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5 MuiGrid-grid-sm-4"
         >
-          <button
-            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
-            tabindex="0"
-            type="button"
+          <mock-box
+            alignitems="center"
+            display="flex"
+            flexwrap="nowrap"
           >
-            <span
-              class="MuiIconButton-label"
+            <mock-iconbutton
+              color="inherit"
+              edge="start"
             >
               <svg
                 aria-hidden="true"
@@ -32,69 +38,52 @@ exports[`NavBar should render with given state from Redux store 1`] = `
                   d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
                 />
               </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+            </mock-iconbutton>
+            <mock-link
+              classname="NavBar-navBarLink-2"
+              href="/"
+            >
+              <mock-typography
+                color="textPrimary"
+                variant="h4"
+              >
+                Aqua
+              </mock-typography>
+              <mock-typography
+                style="color: rgb(138, 198, 222);"
+                variant="h4"
+              >
+                link
+              </mock-typography>
+            </mock-link>
+          </mock-box>
         </div>
         <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-5"
-        >
-          <h4
-            class="MuiTypography-root MuiTypography-h4"
-          >
-            Aqua
-          </h4>
-          <h4
-            class="MuiTypography-root MuiTypography-h4"
-            style="color: rgb(138, 198, 222);"
-          >
-            link
-          </h4>
-        </div>
-        <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-6"
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-7 MuiGrid-grid-sm-8"
         >
           <div
             class="MuiGrid-root MuiGrid-item"
           >
-            <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-text"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiButton-label"
-              >
-                SIGN IN
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
+            <mock-button>
+              SIGN IN
+            </mock-button>
           </div>
           <div
             class="MuiGrid-root MuiGrid-item"
           >
-            <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-text"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiButton-label"
-              >
-                REGISTER
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
+            <mock-button>
+              REGISTER
+            </mock-button>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </mock-toolbar>
+  </mock-appbar>
+  <mock-registerdialog
+    open="false"
+  />
+  <mock-signindialog
+    open="false"
+  />
 </div>
 `;

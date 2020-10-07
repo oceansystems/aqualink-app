@@ -2,106 +2,117 @@
 
 exports[`renders as expected 1`] = `
 <div>
-  <div
-    class="MuiPaper-root MuiCard-root MuiPaper-elevation1 MuiPaper-rounded"
+  <mock-leafletpopup
+    classname="Popup-popup-3"
+    closebutton="false"
   >
-    <div
-      class="MuiCardHeader-root Popup-popupHeader-1"
-    >
+    <mock-card>
       <div
-        class="MuiCardHeader-content"
-      >
-        <span
-          class="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
-        />
-        <span
-          class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-        />
-      </div>
-    </div>
-    <div
-      class="MuiCardContent-root"
-    >
-      <div
-        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+        class="MuiCardHeader-root Popup-popupHeader-1"
       >
         <div
-          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+          class="MuiCardHeader-content"
+        >
+          <mock-typography
+            classname="MuiCardHeader-title"
+            component="span"
+            display="block"
+            variant="h5"
+          >
+            Hawai
+          </mock-typography>
+        </div>
+      </div>
+      <mock-cardcontent>
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
         >
           <div
-            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
           >
-            <span
-              class="MuiTypography-root MuiTypography-caption MuiTypography-colorTextSecondary"
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
             >
-              TEMP AT 0M
-            </span>
+              <mock-typography
+                color="textSecondary"
+                variant="caption"
+              >
+                TEMP AT 0m
+              </mock-typography>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <mock-typography
+                color="textSecondary"
+                style="color: rgb(22, 141, 189);"
+                variant="h5"
+              >
+                10.0  °C
+              </mock-typography>
+            </div>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
           >
-            <h5
-              class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
-              style="color: rgb(22, 141, 189);"
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
             >
-              10.0
-               ℃
-            </h5>
+              <mock-typography
+                color="textSecondary"
+                variant="caption"
+              >
+                HEAT STRESS
+              </mock-typography>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-flex-end MuiGrid-grid-xs-12"
+            >
+              <mock-typography
+                color="textSecondary"
+                style="color: rgb(8, 91, 163);"
+                variant="h5"
+              >
+                1.4
+                 
+              </mock-typography>
+              <mock-tooltip
+                title="Degree Heating Weeks - a measure of the amount of time above the 20 year historical maximum temperatures"
+              >
+                <mock-typography
+                  color="textSecondary"
+                  style="color: rgb(8, 91, 163); position: relative; bottom: 0px;"
+                  variant="h6"
+                >
+                  DHW
+                </mock-typography>
+              </mock-tooltip>
+            </div>
           </div>
         </div>
         <div
-          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+          class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+          style="margin: 1rem 0px 1rem 0px;"
         >
           <div
-            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiGrid-item"
           >
-            <span
-              class="MuiTypography-root MuiTypography-caption MuiTypography-colorTextSecondary"
+            <a
+              href="/reefs/2"
+              style="text-decoration: none;"
             >
-              DEG. HEAT. DAYS
-            </span>
-          </div>
-          <div
-            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-xs-12"
-          >
-            <h5
-              class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
-              style="color: rgb(8, 91, 163);"
-            >
-              10.0
-            </h5>
-          </div>
-        </div>
-      </div>
-      <div
-        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
-        style="margin: 1rem 0px 1rem 0px;"
-      >
-        <div
-          class="MuiGrid-root MuiGrid-item"
-        >
-          <a
-            href="/reefs/0"
-            style="text-decoration: none;"
-          >
-            <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiButton-label"
+              <mock-button
+                color="primary"
+                size="small"
+                variant="outlined"
               >
                 EXPLORE
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
-          </a>
+              </mock-button>
+            </a>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </mock-cardcontent>
+    </mock-card>
+  </mock-leafletpopup>
 </div>
 `;

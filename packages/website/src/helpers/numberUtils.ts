@@ -1,3 +1,5 @@
+import { isNumber } from "lodash";
+
 export function formatNumber(n?: number | null, decimal = 0) {
-  return n && n.toFixed(decimal);
+  return isNumber(n) ? n.toFixed(decimal) : "- -";
 }

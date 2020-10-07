@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import {
   Grid,
   Typography,
@@ -8,51 +9,46 @@ import {
   WithStyles,
   createStyles,
 } from "@material-ui/core";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ArrowBack from "@material-ui/icons/ArrowBack";
 
 const ReefNavBar = ({
-  reefName,
+  reefName = "",
   lastSurvey,
   managerName,
   classes,
 }: ReefNavBarProps) => {
-  const history = useHistory();
-
   return (
     <Grid
       className={classes.root}
-      item
       container
-      justify="space-around"
+      justify="space-between"
       alignItems="center"
-      xs={12}
     >
-      <Grid item xs={5}>
+      <Grid item xs={11}>
         <Grid alignItems="center" direction="row" container spacing={1}>
           <Grid item>
-            <IconButton
-              edge="start"
-              onClick={history.goBack}
-              color="primary"
-              aria-label="menu"
-            >
-              <ArrowBack />
-            </IconButton>
+            <Link style={{ color: "inherit", textDecoration: "none" }} to="/">
+              <IconButton edge="start" color="primary" aria-label="menu">
+                <ArrowBack />
+              </IconButton>
+            </Link>
           </Grid>
-          {reefName && lastSurvey && (
-            <Grid item xs={7} direction="column" container>
+
+          <Grid item xs={9} direction="column" container>
+            {reefName && (
               <Grid item>
                 <Typography variant="h4">{reefName}</Typography>
               </Grid>
+            )}
+            {lastSurvey && (
               <Grid item>
-                <Typography variant="subtitle1">05/12/20 8:16AM PST</Typography>
+                <Typography variant="subtitle1">{`Last surveyed: ${moment(
+                  lastSurvey
+                ).format("MMM DD[,] YYYY")}`}</Typography>
               </Grid>
-              <Grid item>
-                <Typography variant="subtitle1">{`Last surveyed: ${lastSurvey}`}</Typography>
-              </Grid>
-            </Grid>
-          )}
+            )}
+          </Grid>
         </Grid>
       </Grid>
       <Grid item xs={5}>
@@ -97,9 +93,15 @@ const styles = () =>
 
 interface ReefNavBarIncomingProps {
   reefName?: string;
-  lastSurvey?: string;
+  lastSurvey?: string | null;
   managerName?: string;
 }
+
+ReefNavBar.defaultProps = {
+  reefName: "",
+  lastSurvey: null,
+  managerName: "",
+};
 
 type ReefNavBarProps = ReefNavBarIncomingProps & WithStyles<typeof styles>;
 

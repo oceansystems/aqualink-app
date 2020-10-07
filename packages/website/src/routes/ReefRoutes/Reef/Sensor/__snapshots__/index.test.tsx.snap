@@ -2,104 +2,104 @@
 
 exports[`renders as expected 1`] = `
 <div>
-  <div
-    class="MuiPaper-root MuiCard-root Sensor-card-1 MuiPaper-elevation1 MuiPaper-rounded"
+  <mock-card
+    classname="Sensor-card-7"
   >
     <div
-      class="MuiCardHeader-root Sensor-header-3"
+      class="MuiCardHeader-root Sensor-header-2"
     >
       <div
         class="MuiCardHeader-content"
       >
-        <span
-          class="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+        <mock-typography
+          classname="MuiCardHeader-title"
+          component="span"
+          display="block"
+          variant="h5"
         >
           <div
-            class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
+            class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-space-between"
           >
             <div
               class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8"
             >
-              <h6
-                class="MuiTypography-root Sensor-cardTitle-2 MuiTypography-h6"
+              <mock-typography
+                classname="Sensor-cardTitle-1"
+                variant="h6"
               >
                 SENSOR OBSERVATION
-              </h6>
+              </mock-typography>
             </div>
             <div
               class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
             >
               <img
                 alt="buoy"
+                class="Sensor-titleImage-8"
                 src="buoy.svg"
               />
             </div>
           </div>
-        </span>
+        </mock-typography>
       </div>
     </div>
-    <div
-      class="MuiCardContent-root Sensor-content-4"
+    <mock-cardcontent
+      classname="Sensor-content-9"
     >
-      <div
-        class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
-        style="height: 100%;"
+      <mock-box
+        display="flex"
+        flexgrow="1"
+        p="1rem"
+        style="position: relative;"
       >
         <div
-          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
         >
           <div
-            class="MuiGrid-root Sensor-noSensorAlert-5 MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-6"
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
           >
-            <h6
-              class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextPrimary"
+            <mock-typography
+              classname="Sensor-contentTextTitles-3"
+              variant="subtitle2"
             >
-              Not Installed Yet
-            </h6>
-          </div>
-        </div>
-        <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-item MuiGrid-direction-xs-column MuiGrid-grid-xs-6"
-        >
-          <div
-            class="MuiGrid-root MuiGrid-item"
-          >
-            <h6
-              class="MuiTypography-root Sensor-contentTitles-6 MuiTypography-subtitle2 MuiTypography-colorTextPrimary"
+              TEMP AT 1m
+            </mock-typography>
+            <mock-typography
+              classname="Sensor-contentTextValues-4"
+              variant="h2"
             >
-              SURFACE TEMP
-            </h6>
-            <h2
-              class="MuiTypography-root Sensor-contentValues-7 MuiTypography-h2 MuiTypography-colorTextPrimary"
-            >
-              - -
-            </h2>
+              - - °C
+            </mock-typography>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item"
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
           >
-            <h6
-              class="MuiTypography-root Sensor-contentTitles-6 MuiTypography-subtitle2 MuiTypography-colorTextPrimary"
+            <mock-typography
+              classname="Sensor-contentTextTitles-3"
+              variant="subtitle2"
             >
-              TEMP AT 24M
-            </h6>
-            <h2
-              class="MuiTypography-root Sensor-contentValues-7 MuiTypography-h2 MuiTypography-colorTextPrimary"
+              TEMP AT 24m
+            </mock-typography>
+            <mock-typography
+              classname="Sensor-contentTextValues-4"
+              variant="h2"
             >
-              - -
-            </h2>
+              25.0 °C
+            </mock-typography>
           </div>
         </div>
-        <div
-          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5"
+        <mock-box
+          bottom="0"
+          position="absolute"
+          right="0"
         >
           <img
             alt="sensor"
             src="sensor.svg"
           />
-        </div>
-      </div>
-    </div>
-  </div>
+        </mock-box>
+      </mock-box>
+    </mock-cardcontent>
+  </mock-card>
 </div>
 `;

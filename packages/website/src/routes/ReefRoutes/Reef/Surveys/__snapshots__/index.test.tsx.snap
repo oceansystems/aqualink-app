@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReefRoutes Surveys should render with given state from Redux store 1`] = `
+<div>
+  <mock-dialog
+    open="false"
+  >
+    <mock-dialogtitle
+      classname="Dialog-dialogTitle-10"
+    >
+      <mock-typography>
+        Are you sure you want to delete this survey point? It will be deleted across all surveys.
+      </mock-typography>
+    </mock-dialogtitle>
+    <mock-dialogcontent />
+    <mock-dialogactions>
+      <mock-button
+        color="secondary"
+        size="small"
+        variant="contained"
+      >
+        No
+      </mock-button>
+      <mock-button
+        color="primary"
+        size="small"
+        variant="contained"
+      >
+        Yes
+      </mock-button>
+    </mock-dialogactions>
+  </mock-dialog>
+  <div
+    class="MuiGrid-root Surveys-root-1 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
+  >
+    <mock-box
+      bgcolor="#f5f6f6"
+      height="100%"
+      position="absolute"
+      width="99vw"
+      zindex="-1"
+    />
+    <div
+      class="MuiGrid-root Surveys-surveyWrapper-2 MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-baseline MuiGrid-justify-xs-space-between MuiGrid-grid-xs-11 MuiGrid-grid-lg-12"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-md-12 MuiGrid-grid-lg-4"
+      >
+        <mock-typography
+          classname="Surveys-title-3"
+        >
+          Survey History
+        </mock-typography>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-grid-md-12 MuiGrid-grid-lg-4"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item"
+        >
+          <mock-typography
+            classname="Surveys-subTitle-4"
+            variant="h6"
+          >
+            Survey Point:
+          </mock-typography>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-grid-md-12 MuiGrid-grid-lg-4"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item"
+        >
+          <mock-typography
+            classname="Surveys-subTitle-4"
+            variant="h6"
+          >
+            Observation:
+          </mock-typography>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item"
+        >
+          <div
+            class="MuiFormControl-root Surveys-formControl-5"
+          >
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline Surveys-selectedItem-6 MuiInputBase-formControl MuiInput-formControl"
+            >
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="survey-observation survey-observation"
+                class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input Surveys-textField-8"
+                id="survey-observation"
+                role="button"
+                tabindex="0"
+              >
+                <mock-typography
+                  classname="Surveys-menuItem-7"
+                  variant="h6"
+                >
+                  Any
+                </mock-typography>
+              </div>
+              <input
+                aria-hidden="true"
+                class="MuiSelect-nativeInput"
+                name="survey-observation"
+                tabindex="-1"
+                value="any"
+              />
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSelect-icon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 10l5 5 5-5z"
+                />
+              </svg>
+              <mock-menu
+                anchorel="[object HTMLDivElement]"
+                id="menu-survey-observation"
+                menulistprops="[object Object]"
+                open="false"
+                paperprops="[object Object]"
+              >
+                <mock-menuitem
+                  aria-selected="true"
+                  data-value="any"
+                  role="option"
+                  selected="true"
+                >
+                  <mock-typography
+                    classname="Surveys-menuItem-7"
+                    variant="h6"
+                  >
+                    Any
+                  </mock-typography>
+                </mock-menuitem>
+                <mock-menuitem
+                  classname="Surveys-menuItem-7"
+                  data-value="healthy"
+                  role="option"
+                  selected="false"
+                >
+                  Appears healthy
+                </mock-menuitem>
+                <mock-menuitem
+                  classname="Surveys-menuItem-7"
+                  data-value="possible-disease"
+                  role="option"
+                  selected="false"
+                >
+                  Showing possible signs of disease
+                </mock-menuitem>
+                <mock-menuitem
+                  classname="Surveys-menuItem-7"
+                  data-value="evident-disease"
+                  role="option"
+                  selected="false"
+                >
+                  Signs of disease are evident
+                </mock-menuitem>
+                <mock-menuitem
+                  classname="Surveys-menuItem-7"
+                  data-value="mortality"
+                  role="option"
+                  selected="false"
+                >
+                  Signs of mortality are evident
+                </mock-menuitem>
+                <mock-menuitem
+                  classname="Surveys-menuItem-7"
+                  data-value="environmental"
+                  role="option"
+                  selected="false"
+                >
+                  Signs of environmental disturbance are evident (e.g.,storm damage)
+                </mock-menuitem>
+                <mock-menuitem
+                  classname="Surveys-menuItem-7"
+                  data-value="anthropogenic"
+                  role="option"
+                  selected="false"
+                >
+                  Signs of anthropogenic disturbance are evident (e.g.,fishing gear, trampling)
+                </mock-menuitem>
+              </mock-menu>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-11 MuiGrid-grid-lg-12"
+    >
+      <div
+        class="SurveyTimeline-root-20"
+      >
+        <mock-hidden
+          mddown="true"
+        >
+          <ul
+            class="MuiTimeline-root MuiTimeline-alignLeft"
+          />
+        </mock-hidden>
+        <mock-hidden
+          lgup="true"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+          />
+        </mock-hidden>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,337 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Faq should render with given state from Redux store 1`] = `
+<div>
+  <mock-navbar
+    searchlocation="false"
+  />
+  <div>
+    <div
+      class="page-container"
+    >
+      <div
+        class="bloc l-bloc"
+        id="bloc-11"
+      >
+        <div
+          class="container bloc-lg"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-title-1"
+                variant="h4"
+              >
+                Frequently Asked Questions
+              </mock-typography>
+            </div>
+          </div>
+          <div
+            class="row faqq"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-question-2"
+                variant="h5"
+              >
+                I am managing a large area and would like more than one spotter, can I get multiple?
+              </mock-typography>
+              <p>
+                Please submit an application for each reef or location you would like a spotter for and we’ll be in touch to figure out a staged roll out with you.
+              </p>
+            </div>
+          </div>
+          <div
+            class="row faqq"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-question-2"
+                variant="h5"
+              >
+                Who is responsible for the satellite communication costs?
+              </mock-typography>
+              <p>
+                Aqualink will be responsible for any satellite communication costs.
+              </p>
+            </div>
+          </div>
+          <div
+            class="row faqq"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-question-2"
+                variant="h5"
+              >
+                What is the maximum depth a temperature sensor on the smart mooring can be deployed?
+              </mock-typography>
+              <p>
+                100 meters.
+              </p>
+            </div>
+          </div>
+          <div
+            class="row faqq"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-question-2"
+                variant="h5"
+              >
+                What are the shipping costs?
+                <br />
+              </mock-typography>
+              <p>
+                Shipping cost will vary greatly depending on your location. To get an idea of shipping costs you can visit https://onlineshippingcalculator.com/ and enter the following:
+                <br />
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    Set ship from location to San Francisco CA USA
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Set ship to location to your location
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Weight will be 22lbs
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Dimension will be 18 inches x 18 inches x 14 inches.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Because our shipment will arrive in two boxes and using our negotiated rates you will need to multiply this result by 1.5x. 
+                    <br />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    This should be a rough estimate.
+                    <br />
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    This does not include total landed costs for international shipping (see below).
+                    <br />
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="row faqq"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-question-2"
+                variant="h5"
+              >
+                Am I responsible for customs / duties / taxes?
+              </mock-typography>
+              <p>
+                Yes. As the recipient of the equipment you will need to determine if you need to pay these to receive your equipment at customs.
+              </p>
+            </div>
+          </div>
+          <div
+            class="row faqq"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-question-2"
+                variant="h5"
+              >
+                How big is the smart mooring and spotter buoy?
+              </mock-typography>
+              <p>
+                The total smart mooring system is small enough for regular shipping such as UPS, DHL, FedEx, etc. The dimensions and weight of the buoy are:
+                <br />
+                <br />
+                42cm diameter
+                <br />
+                31cm height
+                <br />
+                5.4 KG
+                <br />
+                <br />
+                There is a ballast chain and smart mooring cable, the weight and dimensions are still TBD but depending on the length of cable needed for your target depth this should be around the same dimensions and less than 15kg.
+                <br />
+              </p>
+            </div>
+          </div>
+          <div
+            class="row faqq"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-question-2"
+                variant="h5"
+              >
+                Can I see more specification for the spotter buoy?
+              </mock-typography>
+              <p>
+                You can see some of the specifications 
+                <a
+                  href="https://content.sofarocean.com/hubfs/Spotter%20product%20documentation%20page/Sofar_Spotter_Specs_8_30_19.pdf"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  here
+                </a>
+                :
+                <br />
+                More specifications will be released soon.
+                <br />
+              </p>
+            </div>
+          </div>
+          <div
+            class="row faqq"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-question-2"
+                variant="h5"
+              >
+                How is the smart mooring moored? Does it come with a mooring anchor?
+              </mock-typography>
+              <p>
+                The smart mooring does not come with an anchor. It terminates in a stainless steel shackle with a chain. This can be attached to an existing mooring. We will work with you to determine the best arrangement for mooring at your site as factors like depth, wind, current, wave action, and storms may determine the configuration of the mooring.
+                <br />
+              </p>
+            </div>
+          </div>
+          <div
+            class="row faqq"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-question-2"
+                variant="h5"
+              >
+                Am I responsible for permitting and permissions to install?
+              </mock-typography>
+              <p>
+                Yes. You will need to know the regulations for your installation site and ensure you have the proper permits and permissions.
+                <br />
+              </p>
+            </div>
+          </div>
+          <div
+            class="row faqq"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-question-2"
+                variant="h5"
+              >
+                How do I receive data from the smart mooring?
+              </mock-typography>
+              <p>
+                Data will be available in an open-source dashboard provided by aqualink.org.
+                <br />
+              </p>
+            </div>
+          </div>
+          <div
+            class="row faqq"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-question-2"
+                variant="h5"
+              >
+                How often will I receive data?
+              </mock-typography>
+              <p>
+                Data will be real time transmitted every 30-45 minutes.
+                <br />
+              </p>
+            </div>
+          </div>
+          <div
+            class="row faqq"
+          >
+            <div
+              class="col"
+            >
+              <mock-typography
+                classname="Faq-question-2"
+                variant="h5"
+              >
+                What data will I receive from the smart mooring?
+              </mock-typography>
+              <p>
+                The planned data available will be:
+                <br />
+                <br />
+                significant wave height
+                <br />
+                peak period
+                <br />
+                mean period
+                <br />
+                peak direction
+                <br />
+                mean direction
+                <br />
+                peak directional spread
+                <br />
+                mean directional spread
+                <br />
+                wind speed
+                <br />
+                wind direction
+                <br />
+                GPS coordinates
+                <br />
+                surface temperature (placement configurable)
+                <br />
+                subsurface temperature (placement configurable)
+                <br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mock-footer />
+</div>
+`;

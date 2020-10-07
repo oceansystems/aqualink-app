@@ -14,23 +14,27 @@ import { AdminLevel, User } from './users.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 import { Auth } from '../auth/auth.decorator';
 import { AuthRequest } from '../auth/auth.types';
+import { Reef } from '../reefs/reefs.entity';
+import { OverrideLevelAccess } from '../auth/override-level-access.decorator';
+import { Public } from '../auth/public.decorator';
 
+@Auth()
 @Controller('users')
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
+  @Public()
   @Post()
   create(@Req() req: any, @Body() createUserDto: CreateUserDto): Promise<User> {
     return this.usersService.create(req, createUserDto);
   }
 
-  @Auth()
   @Get('current')
   getSelf(@Req() req: AuthRequest): Promise<User | undefined> {
     return this.usersService.getSelf(req);
   }
 
-  @Auth(AdminLevel.SuperAdmin)
+  @OverrideLevelAccess(AdminLevel.SuperAdmin)
   @Put(':id/level')
   setAdminLevel(
     @Param('id', ParseIntPipe) id: number,
@@ -39,9 +43,15 @@ export class UsersController {
     return this.usersService.setAdminLevel(id, adminLevel);
   }
 
-  @Auth(AdminLevel.SuperAdmin)
+  @OverrideLevelAccess(AdminLevel.SuperAdmin)
   @Delete(':id')
   delete(@Param('id', ParseIntPipe) id: number): Promise<void> {
     return this.usersService.delete(id);
+  }
+
+  @OverrideLevelAccess(AdminLevel.ReefManager, AdminLevel.SuperAdmin)
+  @Get('current/administered-reefs')
+  getAdministeredReefs(@Req() req: AuthRequest): Promise<Reef[]> {
+    return this.usersService.getAdministeredReefs(req);
   }
 }

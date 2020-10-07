@@ -5,8 +5,8 @@ exports[`Reefs List should render with given state from Redux store 1`] = `
   <div
     class="ReefsList-root-1"
   >
-    <nav
-      class="MuiList-root MuiList-padding"
+    <mock-list
+      component="nav"
     />
   </div>
 </div>

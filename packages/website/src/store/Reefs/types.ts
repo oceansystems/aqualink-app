@@ -11,7 +11,31 @@ export interface Point {
   type: "Point";
 }
 
-export interface Data {
+export interface Pois {
+  id: number;
+  name: string | null;
+}
+
+export interface SofarValue {
+  timestamp: string;
+  value: number;
+}
+
+export interface LiveData {
+  reef: { id: number };
+  bottomTemperature?: SofarValue;
+  surfaceTemperature?: SofarValue;
+  satelliteTemperature?: SofarValue;
+  degreeHeatingDays?: SofarValue;
+  waveHeight?: SofarValue;
+  waveDirection?: SofarValue;
+  wavePeriod?: SofarValue;
+  windSpeed?: SofarValue;
+  windDirection?: SofarValue;
+  weeklyAlertLevel?: number;
+}
+
+export interface DailyData {
   id: number;
   date: string;
 
@@ -33,6 +57,12 @@ export interface Data {
   avgWaveHeight: number;
   waveDirection: number;
   wavePeriod: number;
+
+  weeklyAlertLevel?: number;
+}
+
+interface Region {
+  name: string | null;
 }
 
 export interface Reef {
@@ -43,11 +73,13 @@ export interface Reef {
   depth: number | null;
   status: number;
   videoStream: string | null;
-  region: string | null;
+  region: Region | null;
   admin: string | null;
   stream: string | null;
-  dailyData: Data[];
-  latestDailyData: Data;
+  dailyData: DailyData[];
+  liveData: LiveData;
+  latestDailyData: DailyData;
+  featuredImage?: string;
 }
 
 export interface ReefsListState {

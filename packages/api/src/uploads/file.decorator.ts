@@ -33,19 +33,24 @@ export const AcceptFile = (
     ? parseInt(process.env.STORAGE_MAX_FILE_SIZE_MB, 10)
     : 1;
   const maxFileSizeB = maxFileSizeMB * 1024 * 1024;
+  // Detach config object from MulterConfigurationOptions because
+  // param acl is not currently documented in the types file of the extension 'multer-google-storage'
+  // although the functionality for access control exists
+  const config: any = {
+    bucket: process.env.GCS_BUCKET,
+    keyFilename: process.env.GCS_KEYFILE,
+    projectId: process.env.GC_PROJECT,
+    autoRetry: true,
+    maxRetries: 3,
+    filename: assignName(
+      path.join(process.env.STORAGE_FOLDER || '', subfolder),
+      prefix,
+    ),
+    acl: 'publicread',
+  };
   return UseInterceptors(
     FileInterceptor(param, {
-      storage: new MulterGoogleCloudStorage({
-        bucket: process.env.GCS_BUCKET,
-        keyFilename: process.env.GCS_KEYFILE,
-        projectId: process.env.GC_PROJECT,
-        autoRetry: true,
-        maxRetries: 3,
-        filename: assignName(
-          path.join(process.env.STORAGE_FOLDER || '', subfolder),
-          prefix,
-        ),
-      }),
+      storage: new MulterGoogleCloudStorage(config),
       fileFilter: fileFilter(acceptTypes),
       limits: {
         fileSize: maxFileSizeB,

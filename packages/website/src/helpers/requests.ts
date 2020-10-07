@@ -19,6 +19,7 @@ function send<T>(request: Request): Promise<AxiosResponse<T>> {
     headers,
     data: request.data,
     params: request.params,
+    cancelToken: request.cancelToken,
     responseType: request.responseType || "json",
   });
 }
@@ -30,6 +31,7 @@ interface Request {
   params?: AxiosRequestConfig["params"];
   token?: string;
   responseType?: AxiosRequestConfig["responseType"];
+  cancelToken?: AxiosRequestConfig["cancelToken"];
 }
 
 export default {

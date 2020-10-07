@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Buoy should render with given state from Redux store 1`] = `
+<div>
+  <mock-navbar
+    searchlocation="false"
+  />
+  <div
+    class="Buoy-root-2"
+    id="bloc-6"
+  >
+    <div
+      class="container bloc-md"
+    >
+      <div
+        class="row align-items-center"
+      >
+        <div
+          class="lcolpad col-12 col"
+        >
+          <mock-typography
+            classname="Buoy-title-1"
+            variant="h4"
+          >
+            Monitoring System
+          </mock-typography>
+          <p
+            class="text-lg-left"
+          >
+            Current global ocean temperature monitoring systems are restricted to satellite-derived surface temperatures which only capture the skin temperature of the water. The temperatures at greater depths, where coral reefs can be found, are mostly unknown. Scientists will study those temperatures by installing local data loggers which have to be physically retrieved from the reef to have their data accessed. Once the loggers have been retrieved the findings will be published in a paper but it’s rare to get continuous real-time readings of those temperatures. The monitoring system we are deploying includes a solar-powered smart buoy that relays temperature information in real-time, giving us some of the needed data to detect potential coral bleaching events early and put response plans in place.
+            <br />
+          </p>
+        </div>
+        <div
+          class="col-lg-12 offset-lg-0"
+        >
+          <img
+            alt="bouydiagram2"
+            class="img-fluid mg-lg mx-auto d-block img-responsive diagram lazyload"
+            src="fulldiag3_1.svg"
+          />
+        </div>
+      </div>
+      <div
+        class="row align-items-center"
+      >
+        <div
+          class="lcolpad col-12 col"
+        >
+          <mock-typography
+            classname="Buoy-title-1"
+            variant="h4"
+          >
+            Web Application
+          </mock-typography>
+          <p
+            class="text-lg-left"
+          >
+            An essential component of the monitoring system is the website where data and imagery can be accessed and uploaded. The website is designed as a tool to help you understand and manage heat stress on your local reef and make collaboration with other conservation scientists easier. A sample screen is below which shows all of the critical information for a particular reef. We’d love to get your feedback on this so please email 
+            <a
+              href="mailto:info@aqualink.org"
+            >
+              info@aqualink.org
+            </a>
+             and let us know what you think.
+            <br />
+          </p>
+        </div>
+        <div
+          class="col-lg-12 offset-lg-0"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="order-1 col-12 col-lg-8"
+            >
+              <img
+                alt="bouydiagram2"
+                class="img-fluid mg-lg mx-auto d-block img-responsive diagram lazyload"
+                src="reefdetailpage.jpg"
+              />
+            </div>
+            <div
+              class="MuiGrid-root col-lg-4 MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-evenly"
+            >
+              <div
+                class="Buoy-listItem-3"
+              >
+                <h5
+                  class="mg-clear"
+                >
+                  <strong>
+                    1
+                  </strong>
+                </h5>
+                <p>
+                  A quick video captured during a survey that provides a broad overview of the reef.
+                </p>
+              </div>
+              <div
+                class="Buoy-listItem-3"
+              >
+                <h5
+                  class="mg-clear"
+                >
+                  <strong>
+                    2
+                  </strong>
+                </h5>
+                <p>
+                  Real-time conditions and a summary of the past 7 days at the surface and underwater temperature sensors. Degree heating days is an important measure of prolonged heat stress and is the primary way the application creates alert levels for a reef.
+                </p>
+              </div>
+              <div
+                class="Buoy-listItem-3"
+              >
+                <h5
+                  class="mg-clear"
+                >
+                  <strong>
+                    3
+                  </strong>
+                </h5>
+                <p>
+                  Historical information on temperatures, wind, and waves are displayed and easily downloadable for a more detailed analysis.
+                </p>
+              </div>
+              <div
+                class="Buoy-listItem-3"
+              >
+                <h5
+                  class="mg-clear"
+                >
+                  <strong>
+                    4
+                  </strong>
+                </h5>
+                <p>
+                  Multiple points of interest on the reef can be configured and the associated survey images give you the ability to understand changes to the reef over time and at different temperature profiles.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row voffset-lg"
+      >
+        <div
+          class="col-lg-12"
+        >
+          <mock-typography
+            classname="Buoy-title-1"
+            variant="h4"
+          >
+            System Architecture
+          </mock-typography>
+          <p
+            class="text-lg-left"
+          >
+            The real-time temperature information is transmitted to our servers where a monitoring system combines that data with survey imagery to help understand the cause-and-effect of increasing temperatures on the local marine ecosystem. We are working with coral scientists to create easy-to-use instruction manuals for conducting reef surveys and implementing response plans, all of which will be facilitated through our monitoring system.
+            <br />
+          </p>
+        </div>
+        <div
+          class="col-lg-12"
+        >
+          <img
+            alt="Asset%204"
+            class="img-fluid mx-auto d-block img-responsive diagram lazyload"
+            src="fulldiag3.svg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <mock-footer />
+</div>
+`;

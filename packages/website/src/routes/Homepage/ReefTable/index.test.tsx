@@ -5,6 +5,8 @@ import configureStore from "redux-mock-store";
 
 import ReefTable from ".";
 
+jest.mock("./SelectedReefCard", () => "Mock-SelectedReefCard");
+
 const mockStore = configureStore([]);
 
 describe("ReefTable", () => {
@@ -21,10 +23,11 @@ describe("ReefTable", () => {
       depth: 19,
       status: 0,
       videoStream: null,
-      region: null,
+      region: { name: "Hawai" },
       admin: null,
       stream: null,
       latestDailyData: {
+        weeklyAlertLevel: 3,
         maxBottomTemperature: 10,
         degreeHeatingDays: 20,
       },
@@ -39,13 +42,18 @@ describe("ReefTable", () => {
         loading: false,
         error: null,
       },
+      homepage: {
+        reefOnMap: null,
+      },
     });
+
+    const openDrawer = false;
 
     store.dispatch = jest.fn();
 
     element = render(
       <Provider store={store}>
-        <ReefTable />
+        <ReefTable openDrawer={openDrawer} />
       </Provider>
     ).container;
   });

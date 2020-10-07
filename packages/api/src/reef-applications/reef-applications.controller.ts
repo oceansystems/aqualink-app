@@ -3,12 +3,14 @@ import {
   Body,
   Param,
   Get,
+  Post,
   Put,
   UseInterceptors,
   ClassSerializerInterceptor,
   SerializeOptions,
   Query,
   NotFoundException,
+  Req,
 } from '@nestjs/common';
 import { ReefApplicationsService } from './reef-applications.service';
 import { ReefApplication } from './reef-applications.entity';
@@ -18,7 +20,15 @@ import {
 } from './dto/update-reef-application.dto';
 import { idFromHash, isValidId } from '../utils/urls';
 import { ParseHashedIdPipe } from '../pipes/parse-hashed-id.pipe';
+import { Auth } from '../auth/auth.decorator';
+import {
+  CreateReefApplicationDto,
+  CreateReefWithApplicationDto,
+} from './dto/create-reef-application.dto';
+import { Public } from '../auth/public.decorator';
+import { AuthRequest } from '../auth/auth.types';
 
+@Auth()
 @UseInterceptors(ClassSerializerInterceptor)
 @Controller('reef-applications')
 @SerializeOptions({
@@ -27,6 +37,20 @@ import { ParseHashedIdPipe } from '../pipes/parse-hashed-id.pipe';
 export class ReefApplicationsController {
   constructor(private reefApplicationsService: ReefApplicationsService) {}
 
+  @Post()
+  async create(
+    @Req() request: AuthRequest,
+    @Body('reefApplication') reefApplication: CreateReefApplicationDto,
+    @Body('reef') reef: CreateReefWithApplicationDto,
+  ): Promise<ReefApplication> {
+    return this.reefApplicationsService.create(
+      reefApplication,
+      reef,
+      request.user,
+    );
+  }
+
+  @Public()
   @Get(':id')
   async findOne(
     @Param('id') idParam: string,
@@ -42,6 +66,7 @@ export class ReefApplicationsController {
     return app;
   }
 
+  @Public()
   @Put(':hashId')
   update(
     @Param('hashId', new ParseHashedIdPipe()) id: number,

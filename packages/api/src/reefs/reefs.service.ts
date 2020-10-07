@@ -10,6 +10,9 @@ import { DailyData } from './daily-data.entity';
 import { CreateReefDto } from './dto/create-reef.dto';
 import { FilterReefDto } from './dto/filter-reef.dto';
 import { UpdateReefDto } from './dto/update-reef.dto';
+import { getLiveData } from '../utils/liveData';
+import { SofarLiveData } from '../utils/sofar.types';
+import { getWeeklyAlertLevel, getMaxAlert } from '../workers/dailyData';
 
 @Injectable()
 export class ReefsService {
@@ -49,24 +52,28 @@ export class ReefsService {
       });
     }
     if (filter.admin) {
-      query.andWhere('reef.admin = :admin', {
-        admin: filter.admin,
-      });
+      query.innerJoin(
+        'reef.admins',
+        'adminsAssociation',
+        'adminsAssociation.id = :adminId',
+        { adminId: filter.admin },
+      );
     }
     query.leftJoinAndSelect('reef.region', 'region');
-    query.leftJoinAndSelect('reef.admin', 'admin');
+    query.leftJoinAndSelect('reef.admins', 'admins');
     query.leftJoinAndSelect('reef.stream', 'stream');
     query.leftJoinAndSelect(
       'reef.latestDailyData',
       'latestDailyData',
       `(latestDailyData.date, latestDailyData.reef_id) IN (${this.latestDailyDataSubquery()})`,
     );
+    query.andWhere('approved = true');
     return query.getMany();
   }
 
   async findOne(id: number): Promise<Reef> {
     const found = await this.reefsRepository.findOne(id, {
-      relations: ['region', 'admin', 'stream'],
+      relations: ['region', 'admins', 'stream'],
     });
     if (!found) {
       throw new NotFoundException(`Reef with ID ${id} not found.`);
@@ -94,6 +101,39 @@ export class ReefsService {
   }
 
   async findDailyData(id: number): Promise<DailyData[]> {
-    return this.dailyDataRepository.find({ where: { reef: id } });
+    const reef = await this.reefsRepository.findOne(id);
+
+    if (!reef) {
+      throw new NotFoundException(`Reef with ID ${id} not found.`);
+    }
+
+    return this.dailyDataRepository.find({
+      where: { reef: id },
+      order: {
+        date: 'DESC',
+      },
+      take: 90,
+    });
+  }
+
+  async findLiveData(id: number): Promise<SofarLiveData> {
+    const reef = await this.reefsRepository.findOne(id);
+
+    if (!reef) {
+      throw new NotFoundException(`Reef with ID ${id} not found.`);
+    }
+
+    const weeklyAlertLevel = await getWeeklyAlertLevel(
+      this.dailyDataRepository,
+      new Date(),
+      reef,
+    );
+
+    const liveData = await getLiveData(reef);
+
+    return {
+      ...liveData,
+      weeklyAlertLevel: getMaxAlert(liveData.dailyAlertLevel, weeklyAlertLevel),
+    };
   }
 }

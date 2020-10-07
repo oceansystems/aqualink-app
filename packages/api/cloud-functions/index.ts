@@ -58,7 +58,7 @@ exports.dailyUpdate = functions
   });
 
 exports.scheduledDailyUpdate = functions
-  .runWith({ timeoutSeconds: 120 })
+  .runWith({ timeoutSeconds: 540 })
   .pubsub.schedule('every 24 hours')
   .onRun(async () => {
     const dbUrl = functions.config().database.url;
