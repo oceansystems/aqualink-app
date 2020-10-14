@@ -44,7 +44,7 @@ function Chart({
     // eslint-disable-next-line no-param-reassign
     forwardRef.current = chartRef.current;
   }
-  const [updateChart, setUpdateChart] = useState<boolean>(true);
+  const [updateChart, setUpdateChart] = useState<boolean>(false);
 
   const [xTickShift, setXTickShift] = useState<number>(0);
 
@@ -113,8 +113,6 @@ function Chart({
         fillPlugin: {
           datasetIndex: 1,
           zeroLevel: temperatureThreshold,
-          bottom: 0,
-          top: 35,
           color: "rgba(250, 141, 0, 0.5)",
           updateChart,
         },

@@ -13,17 +13,13 @@ export const fillBetweenLinesPlugin = {
     ) {
       const yScale = chart.scales["y-axis-0"];
 
-      const top = yScale.getPixelForValue(options.top);
       const zero = yScale.getPixelForValue(options.zeroLevel);
-      const bottom = yScale.getPixelForValue(options.bottom);
 
       const { ctx } = chart.chart;
-      const gradient = ctx.createLinearGradient(0, top, 0, bottom);
-      const ratio = Math.min((zero - top) / (bottom - top), 1);
+      const gradient = ctx.createLinearGradient(0, 0, 0, zero);
       gradient.addColorStop(0, options.color);
-      gradient.addColorStop(ratio, options.color);
-      gradient.addColorStop(ratio, "rgba(0, 0, 0, 0)");
-      gradient.addColorStop(1, "rgba(0,0,0,0)");
+      gradient.addColorStop(1, options.color);
+      gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
       if (
         !chart.data.datasets[options.datasetIndex].backgroundColor ||
         options.updateChart
