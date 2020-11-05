@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { LayerGroup, Marker, useLeaflet } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import L from "leaflet";
 import { reefsListSelector } from "../../../../store/Reefs/reefsListSlice";
 import { Reef } from "../../../../store/Reefs/types";
@@ -19,6 +19,40 @@ import {
   getColorByLevel,
   Interval,
 } from "../../../../helpers/bleachingAlertIntervals";
+
+/**
+ * Dummy component to listen for changes in the active reef/reefOnMap state and initiate the popup/fly-to. This is a
+ * separate component to prevent trigger any leaflet element re-rendering.
+ */
+const ActiveReefListener = ({ reef }: { reef: Reef }) => {
+  const { map, popupContainer } = useLeaflet();
+  const reefOnMap = useSelector(reefOnMapSelector);
+
+  useEffect(() => {
+    if (
+      map &&
+      popupContainer &&
+      reefOnMap?.polygon.type === "Point" &&
+      reefOnMap.id === reef.id
+    ) {
+      const setCenter = (latLng: [number, number], zoom: number) => {
+        const newZoom = Math.max(map?.getZoom() || 6, zoom);
+        return map?.flyTo(latLng, newZoom, { duration: 2 });
+      };
+
+      setCenter(
+        [reefOnMap.polygon.coordinates[1], reefOnMap.polygon.coordinates[0]],
+        6
+      );
+      const openPopup = () => {
+        popupContainer.openPopup();
+        map.off("moveend", openPopup);
+      };
+      map.on("moveend", openPopup);
+    }
+  }, [reefOnMap, reef.id, map, popupContainer]);
+  return null;
+};
 
 const buoyIcon = (iconUrl: string) =>
   new L.Icon({
@@ -45,28 +79,11 @@ const clusterIcon = (cluster: any) => {
 
 export const ReefMarkers = () => {
   const reefsList = useSelector(reefsListSelector);
-  const reefOnMap = useSelector(reefOnMapSelector);
-  const { map } = useLeaflet();
   const dispatch = useDispatch();
 
   // To make sure we can see all the reefs all the time, and especially
   // around -180/+180, we create dummy copies of each reef.
   const lngOffsets = [-360, 0, 360];
-
-  const setCenter = useCallback(
-    (inputMap: L.Map, latLng: [number, number], zoom: number) => {
-      const newZoom = Math.max(inputMap.getZoom() || 6, zoom);
-      return inputMap.flyTo(latLng, newZoom, { duration: 2 });
-    },
-    []
-  );
-
-  useEffect(() => {
-    if (map && reefOnMap?.polygon.type === "Point") {
-      const [lng, lat] = reefOnMap.polygon.coordinates;
-      setCenter(map, [lat, lng], 6);
-    }
-  }, [map, reefOnMap, setCenter]);
 
   return (
     <LayerGroup>
@@ -88,6 +105,7 @@ export const ReefMarkers = () => {
                 icon={buoyIcon(alertIconFinder(weeklyAlertLevel))}
                 position={[lat, lng + offset]}
               >
+                <ActiveReefListener reef={reef} />
                 <Popup reef={reef} />
               </Marker>
             ));

@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Popup should render with given state from Redux store 1`] = `
+exports[`renders as expected 1`] = `
 <div>
   <mock-leafletpopup
-    autopan="false"
     classname="Popup-popup-3"
     closebutton="false"
   >

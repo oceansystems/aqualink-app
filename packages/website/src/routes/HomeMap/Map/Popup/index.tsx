@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import {
   withStyles,
   WithStyles,
@@ -13,8 +13,7 @@ import {
   Tooltip,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { Popup as LeafletPopup, useLeaflet } from "react-leaflet";
-import { useSelector } from "react-redux";
+import { Popup as LeafletPopup } from "react-leaflet";
 
 import { Reef } from "../../../../store/Reefs/types";
 import { getReefNameAndRegion } from "../../../../store/Reefs/helpers";
@@ -24,30 +23,13 @@ import {
   dhwColorFinder,
   degreeHeatingWeeksCalculator,
 } from "../../../../helpers/degreeHeatingWeeks";
-import { reefOnMapSelector } from "../../../../store/Homepage/homepageSlice";
 
 const Popup = ({ reef, classes }: PopupProps) => {
-  const { map } = useLeaflet();
-  const reefOnMap = useSelector(reefOnMapSelector);
-  const popupRef = useRef<LeafletPopup>(null);
   const { degreeHeatingDays, maxBottomTemperature, satelliteTemperature } =
     reef.latestDailyData || {};
 
-  useEffect(() => {
-    if (map && popupRef?.current && reefOnMap?.polygon.type === "Point") {
-      const { leafletElement: popup } = popupRef.current;
-      const [lng, lat] = reefOnMap.polygon.coordinates;
-      popup.setLatLng([lat, lng]).openOn(map);
-    }
-  }, [map, reefOnMap]);
-
   return (
-    <LeafletPopup
-      ref={reefOnMap?.id === reef.id ? popupRef : null}
-      closeButton={false}
-      className={classes.popup}
-      autoPan={false}
-    >
+    <LeafletPopup closeButton={false} className={classes.popup}>
       <Card>
         <CardHeader
           className={classes.popupHeader}
