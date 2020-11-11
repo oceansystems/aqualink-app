@@ -30,7 +30,10 @@ export class SurveyMedia {
   id: number;
 
   @Column()
-  url: string;
+  imageUrl: string;
+
+  @Column({ nullable: true })
+  thumbnailUrl: string;
 
   @Column({ default: 1 })
   quality: number;

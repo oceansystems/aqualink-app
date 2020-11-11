@@ -1,9 +1,9 @@
 import { UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-import MulterGoogleCloudStorage from 'multer-google-storage';
 import * as path from 'path';
 import { validateMimetype } from './mimetypes';
 import { fileFilter } from './file.filter';
+import { CustomGoogleCloudStorage } from './custom-google-cloud.storage';
 
 export function assignName(folder: string, prefix: string) {
   return (
@@ -29,10 +29,6 @@ export const AcceptFile = (
   subfolder: string,
   prefix: string,
 ) => {
-  const maxFileSizeMB = process.env.STORAGE_MAX_FILE_SIZE_MB
-    ? parseInt(process.env.STORAGE_MAX_FILE_SIZE_MB, 10)
-    : 1;
-  const maxFileSizeB = maxFileSizeMB * 1024 * 1024;
   // Detach config object from MulterConfigurationOptions because
   // param acl is not currently documented in the types file of the extension 'multer-google-storage'
   // although the functionality for access control exists
@@ -48,13 +44,11 @@ export const AcceptFile = (
     ),
     acl: 'publicread',
   };
+
   return UseInterceptors(
     FileInterceptor(param, {
-      storage: new MulterGoogleCloudStorage(config),
+      storage: new CustomGoogleCloudStorage(config),
       fileFilter: fileFilter(acceptTypes),
-      limits: {
-        fileSize: maxFileSizeB,
-      },
     }),
   );
 };

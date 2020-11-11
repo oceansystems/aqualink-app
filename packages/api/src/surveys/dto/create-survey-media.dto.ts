@@ -14,7 +14,10 @@ import { EntityExists } from '../../validations/entity-exists.constraint';
 
 export class CreateSurveyMediaDto {
   @IsUrl()
-  readonly url: string;
+  readonly imageUrl: string;
+
+  @IsUrl()
+  readonly thumbnailUrl: string;
 
   @IsInt()
   @IsOptional()

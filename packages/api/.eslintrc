@@ -58,6 +58,12 @@
       "rules": {
         "import/no-cycle": "off"
       }
+    },
+    {
+      "files": ["src/**/*.storage.{js,ts}"],
+      "rules": {
+        "no-underscore-dangle": "off"
+      }
     }
   ]
 }

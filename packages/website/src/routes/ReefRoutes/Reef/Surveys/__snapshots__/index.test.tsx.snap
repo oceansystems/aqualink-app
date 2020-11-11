@@ -247,6 +247,7 @@ exports[`ReefRoutes Surveys should render with given state from Redux store 1`] 
                       <div
                         class="MuiCardMedia-root SurveyCard-cardImage-31"
                       />
+                      
                     </div>
                     <div
                       class="MuiGrid-root SurveyCard-infoWrapper-36 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7"
@@ -370,6 +371,7 @@ exports[`ReefRoutes Surveys should render with given state from Redux store 1`] 
                       <div
                         class="MuiCardMedia-root SurveyCard-cardImage-31"
                       />
+                      
                     </div>
                     <div
                       class="MuiGrid-root SurveyCard-infoWrapper-36 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7"

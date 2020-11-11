@@ -6,7 +6,6 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { SchedulerRegistry } from '@nestjs/schedule';
 import { Survey } from './surveys.entity';
 import { CreateSurveyDto } from './dto/create-survey.dto';
 import { User } from '../users/users.entity';
@@ -33,8 +32,6 @@ export class SurveysService {
     private reefRepository: Repository<Reef>,
 
     private googleCloudService: GoogleCloudService,
-
-    private scheduleRegistry: SchedulerRegistry,
   ) {}
 
   // Create a survey
@@ -90,7 +87,11 @@ export class SurveysService {
 
     return this.surveyMediaRepository.save({
       ...createSurveyMediaDto,
-      featured: newFeatured || (!featuredMedia && !createSurveyMediaDto.hidden),
+      featured:
+        newFeatured ||
+        (!featuredMedia &&
+          createSurveyMediaDto.featured &&
+          !createSurveyMediaDto.hidden),
       type: MediaType.Image,
       surveyId: survey,
       comments: this.transformComments(createSurveyMediaDto.comments),
@@ -275,13 +276,25 @@ export class SurveysService {
 
     await Promise.all(
       surveyMedia.map((media) => {
-        const file = getFileFromURL(media.url);
-        // We need to grab the path/to/file. So we split the url on "{GCS_BUCKET}/"
-        return this.googleCloudService.deleteFile(file).catch(() => {
-          this.logger.error(
-            `Could not delete media ${media.url} of survey ${surveyId}.`,
-          );
-        });
+        const imageUrl = getFileFromURL(media.imageUrl);
+        // Thumbnail might not exist
+        const thumbnailUrl =
+          media.thumbnailUrl && getFileFromURL(media.thumbnailUrl);
+
+        return Promise.all(
+          [imageUrl, thumbnailUrl].map((file) => {
+            if (file) {
+              return this.googleCloudService.deleteFile(file).catch((error) => {
+                this.logger.error(
+                  `Could not delete media ${file} of survey ${surveyId}.`,
+                  error,
+                );
+              });
+            }
+
+            return null;
+          }),
+        );
       }),
     );
 
@@ -307,14 +320,22 @@ export class SurveysService {
 
     // We need to grab the path/to/file. So we split the url on "{GCS_BUCKET}/"
     // and grab the second element of the resulting array which is the path we need
-    await this.googleCloudService
-      .deleteFile(getFileFromURL(surveyMedia.url))
-      .catch((error) => {
-        this.logger.error(
-          `Could not delete media ${surveyMedia.url} of survey media ${mediaId}.`,
-        );
-        throw error;
-      });
+    await Promise.all(
+      [surveyMedia.imageUrl, surveyMedia.thumbnailUrl].map((file) => {
+        if (file) {
+          return this.googleCloudService
+            .deleteFile(getFileFromURL(file))
+            .catch((error) => {
+              this.logger.error(
+                `Could not delete media ${file} of survey media ${mediaId}.`,
+              );
+              throw error;
+            });
+        }
+
+        return null;
+      }),
+    );
 
     await this.surveyMediaRepository.delete(mediaId);
   }

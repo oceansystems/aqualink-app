@@ -16,8 +16,19 @@ import { formatNumber } from "../../../../../helpers/numberUtils";
 import DeleteButton from "../DeleteButton";
 import { SurveyListItem } from "../../../../../store/Survey/types";
 import incomingStyles from "../styles";
+import ImageModal from "../../../../../common/ImageModal";
 
 const SurveyCard = ({ isAdmin, reefId, survey, classes }: SurveyCardProps) => {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Paper elevation={0} className={classes.surveyCard}>
       <Grid style={{ height: "100%" }} container justify="space-between">
@@ -25,9 +36,26 @@ const SurveyCard = ({ isAdmin, reefId, survey, classes }: SurveyCardProps) => {
           {survey.featuredSurveyMedia && (
             <CardMedia
               className={classes.cardImage}
-              image={survey.featuredSurveyMedia.url}
+              image={
+                survey.featuredSurveyMedia.thumbnailUrl ||
+                survey.featuredSurveyMedia.imageUrl
+              }
+              onClick={handleOpen}
+              style={
+                survey.featuredSurveyMedia.thumbnailUrl
+                  ? { cursor: "pointer" }
+                  : {}
+              }
             />
           )}
+          {survey.featuredSurveyMedia &&
+            survey.featuredSurveyMedia.thumbnailUrl && (
+              <ImageModal
+                open={open}
+                imageUrl={survey.featuredSurveyMedia.imageUrl}
+                handleClose={handleClose}
+              />
+            )}
         </Grid>
         <Grid className={classes.infoWrapper} container item xs={12} md={7}>
           <Grid className={classes.info} container item xs={12}>

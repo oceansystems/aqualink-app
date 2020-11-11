@@ -20,7 +20,8 @@ type WeatherConditions = "calm" | "waves" | "storm";
 
 export interface SurveyMedia {
   id: number;
-  url: string;
+  imageUrl: string;
+  thumbnailUrl: string;
   featured: boolean;
   observations: Observations;
   comments: string | null;
@@ -76,7 +77,8 @@ export interface SurveyData {
 }
 
 export interface SurveyMediaData {
-  url: string;
+  imageUrl: string;
+  thumbnailUrl: string;
   poiId?: number;
   observations: Observations | null;
   comments?: string;

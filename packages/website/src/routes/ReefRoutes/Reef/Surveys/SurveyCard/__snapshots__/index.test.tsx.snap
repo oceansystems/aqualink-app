@@ -15,6 +15,7 @@ exports[`Survey Card should render with given state from Redux store 1`] = `
         <div
           class="MuiCardMedia-root SurveyCard-cardImage-6"
         />
+        
       </div>
       <div
         class="MuiGrid-root SurveyCard-infoWrapper-11 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7"

@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import {
   withStyles,
   WithStyles,
@@ -36,6 +36,11 @@ import {
 import { userInfoSelector } from "../../../store/User/userSlice";
 import surveyServices from "../../../services/surveyServices";
 import { isAdmin } from "../../../helpers/isAdmin";
+import ImageModal from "../../../common/ImageModal";
+
+interface ImageModalState {
+  [key: number]: boolean;
+}
 
 const carouselSettings = {
   dots: true,
@@ -80,6 +85,35 @@ const SurveyMediaDetails = ({
     },
     [reefId, user, dispatch, surveyId]
   );
+
+  const [open, setOpen] = useState<ImageModalState>({});
+
+  useEffect(() => {
+    if (surveyMedia) {
+      const temp = {};
+      surveyMedia.forEach((media) => {
+        setOpen({ ...temp, [media.id]: false });
+      });
+    }
+  }, [surveyMedia]);
+
+  const handleOpen = (id: number) => {
+    return () => {
+      setOpen({
+        ...open,
+        [id]: true,
+      });
+    };
+  };
+
+  const handleClose = (id: number) => {
+    return () => {
+      setOpen({
+        ...open,
+        [id]: false,
+      });
+    };
+  };
 
   return (
     <>
@@ -144,7 +178,7 @@ const SurveyMediaDetails = ({
                 {point.surveyMedia.map((media) => {
                   return (
                     <Card
-                      key={media.url}
+                      key={media.thumbnailUrl || media.imageUrl}
                       elevation={3}
                       className={classes.shadowBox}
                     >
@@ -169,8 +203,19 @@ const SurveyMediaDetails = ({
                           >
                             <CardMedia
                               className={classes.cardImage}
-                              image={media.url}
+                              image={media.thumbnailUrl || media.imageUrl}
+                              onClick={handleOpen(media.id)}
+                              style={
+                                media.thumbnailUrl ? { cursor: "pointer" } : {}
+                              }
                             />
+                            {media.thumbnailUrl && (
+                              <ImageModal
+                                open={open[media.id]}
+                                imageUrl={media.imageUrl}
+                                handleClose={handleClose(media.id)}
+                              />
+                            )}
                           </Grid>
                           <Grid
                             className={classes.mediaInfoWrapper}

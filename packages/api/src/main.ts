@@ -7,6 +7,7 @@ import { serviceAccount } from '../firebaseConfig';
 import { UnauthorizedExceptionFilter } from './exception-filters/unauthorized.filter';
 import { HttpExceptionFilter } from './exception-filters/http-exception.filter';
 import { apiLoggerMiddleware } from './middleware/api-logger.middleware';
+import { fileParserMiddleware } from './middleware/file-parser-middleware';
 
 async function bootstrap() {
   admin.initializeApp({
@@ -22,6 +23,7 @@ async function bootstrap() {
     new UnauthorizedExceptionFilter(),
   );
   app.use(apiLoggerMiddleware);
+  app.use(fileParserMiddleware);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
   await app.listen(8080);

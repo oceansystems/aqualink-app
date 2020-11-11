@@ -33,11 +33,16 @@ export class SurveysController {
 
   @Post('upload')
   @AcceptFile('file', ['image', 'video'], 'surveys', 'reef')
-  upload(@UploadedFile('file') file: any): string {
+  upload(
+    @UploadedFile('file') file: any,
+  ): { imageUrl: string; thumbnailUrl: string } {
     // Override file path because file.path provided an invalid google cloud format and HTTPS is not working correctly
     // Correct format of a URL pointing to a google cloud object should be
     // https://storage.googleapis.com/{bucketName}/path/to/object/in/bucket
-    return `https://storage.googleapis.com/${process.env.GCS_BUCKET}/${file.filename}`;
+    return {
+      imageUrl: `https://storage.googleapis.com/${process.env.GCS_BUCKET}/${file['0'].filename}`,
+      thumbnailUrl: `https://storage.googleapis.com/${process.env.GCS_BUCKET}/${file['1'].filename}`,
+    };
   }
 
   @Post()
