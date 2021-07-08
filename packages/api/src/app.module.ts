@@ -16,6 +16,7 @@ import { TimeSeriesModule } from './time-series/time-series.module';
 import { CollectionsModule } from './collections/collections.module';
 import { SensorsModule } from './sensors/sensors.module';
 import { AppController } from './app.controller';
+import { AuditModule } from './audit/audit.module';
 
 @Module({
   imports: [
@@ -34,6 +35,7 @@ import { AppController } from './app.controller';
     TimeSeriesModule,
     CollectionsModule,
     SensorsModule,
+    AuditModule,
   ],
   controllers: [AppController],
 })
