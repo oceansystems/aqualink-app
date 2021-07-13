@@ -17,7 +17,10 @@ import {
   reefsRequest,
   reefsListSelector,
 } from "../../store/Reefs/reefsListSlice";
-import { reefRequest } from "../../store/Reefs/selectedReefSlice";
+import {
+  reefDetailsSelector,
+  reefRequest,
+} from "../../store/Reefs/selectedReefSlice";
 import { reefOnMapSelector } from "../../store/Homepage/homepageSlice";
 
 import { surveysRequest } from "../../store/Survey/surveyListSlice";
@@ -67,6 +70,8 @@ function useQuery() {
 const Homepage = ({ classes }: HomepageProps) => {
   const dispatch = useDispatch();
   const reefOnMap = useSelector(reefOnMapSelector);
+  const { id: reefOnCardId } = useSelector(reefDetailsSelector) || {};
+  const reefs = useSelector(reefsListSelector);
 
   const {
     initialZoom,
@@ -75,18 +80,20 @@ const Homepage = ({ classes }: HomepageProps) => {
   }: MapQueryParams = useQuery();
 
   useEffect(() => {
-    dispatch(reefsRequest());
-  }, [dispatch]);
+    if (!reefs) {
+      dispatch(reefsRequest());
+    }
+  }, [dispatch, reefs]);
 
   useEffect(() => {
-    if (!reefOnMap && initialReefId) {
+    if (!reefOnMap && initialReefId && `${reefOnCardId}` !== initialReefId) {
       dispatch(reefRequest(initialReefId));
       dispatch(surveysRequest(initialReefId));
-    } else if (reefOnMap) {
+    } else if (reefOnMap && reefOnCardId !== reefOnMap.id) {
       dispatch(reefRequest(`${reefOnMap.id}`));
       dispatch(surveysRequest(`${reefOnMap.id}`));
     }
-  }, [dispatch, initialReefId, reefOnMap]);
+  }, [dispatch, initialReefId, reefOnCardId, reefOnMap]);
 
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 

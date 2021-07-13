@@ -14,54 +14,94 @@ exports[`MenuDrawer open should render with given state from Redux store 1`] = `
     >
       <clear />
     </mock-iconbutton>
-    <mock-link
-      href="/"
-      style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+    <mock-button
+      classname="MenuDrawer-menuDrawerButton-3"
+      component="[object Object]"
+      to="/"
     >
-      HOME
-    </mock-link>
-    <mock-link
-      href="/map"
-      style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+      <mock-typography
+        variant="h6"
+      >
+        HOME
+      </mock-typography>
+    </mock-button>
+    <mock-button
+      classname="MenuDrawer-menuDrawerButton-3"
+      component="[object Object]"
+      to="/map"
     >
-      MAP
-    </mock-link>
-    <mock-link
-      href="/buoy"
-      style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+      <mock-typography
+        variant="h6"
+      >
+        MAP
+      </mock-typography>
+    </mock-button>
+    <mock-button
+      classname="MenuDrawer-menuDrawerButton-3"
+      component="[object Object]"
+      to="/buoy"
     >
-      BUOY
-    </mock-link>
-    <mock-link
-      href="/drones"
-      style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+      <mock-typography
+        variant="h6"
+      >
+        BUOY
+      </mock-typography>
+    </mock-button>
+    <mock-button
+      classname="MenuDrawer-menuDrawerButton-3"
+      component="[object Object]"
+      to="/drones"
     >
-      DRONE
-    </mock-link>
-    <mock-link
-      href="/about"
-      style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+      <mock-typography
+        variant="h6"
+      >
+        DRONE
+      </mock-typography>
+    </mock-button>
+    <mock-button
+      classname="MenuDrawer-menuDrawerButton-3"
+      component="[object Object]"
+      to="/about"
     >
-      ABOUT
-    </mock-link>
-    <mock-link
-      href="/faq"
-      style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+      <mock-typography
+        variant="h6"
+      >
+        ABOUT
+      </mock-typography>
+    </mock-button>
+    <mock-button
+      classname="MenuDrawer-menuDrawerButton-3"
+      component="[object Object]"
+      to="/faq"
     >
-      FAQ
-    </mock-link>
-    <mock-link
-      href="/tracker"
-      style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+      <mock-typography
+        variant="h6"
+      >
+        FAQ
+      </mock-typography>
+    </mock-button>
+    <mock-button
+      classname="MenuDrawer-menuDrawerButton-3"
+      component="[object Object]"
+      to="/tracker"
     >
-      TRACK A HEATWAVE
-    </mock-link>
-    <mock-link
-      href="/register"
-      style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+      <mock-typography
+        variant="h6"
+      >
+        TRACK A HEATWAVE
+      </mock-typography>
+    </mock-button>
+    <mock-button
+      classname="MenuDrawer-menuDrawerButton-3"
+      component="[object Object]"
+      to="/register"
     >
-      REGISTER A SITE
-    </mock-link>
+      <mock-typography
+        variant="h6"
+      >
+        REGISTER A SITE
+      </mock-typography>
+    </mock-button>
     <mock-box
       margintop="auto"
       padding="25px"

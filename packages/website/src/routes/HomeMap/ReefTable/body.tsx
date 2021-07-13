@@ -12,7 +12,7 @@ import {
   withStyles,
 } from "@material-ui/core";
 import ErrorIcon from "@material-ui/icons/Error";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TableRow as Row } from "../../../store/Homepage/types";
 import { constructTableData } from "../../../store/Reefs/helpers";
@@ -28,6 +28,8 @@ import {
 import { getComparator, Order, OrderKeys, stableSort } from "./utils";
 import { alertColorFinder } from "../../../helpers/bleachingAlertIntervals";
 import { Collection } from "../../Dashboard/collection";
+
+const SCROLLT_TIMEOUT = 500;
 
 const RowNameCell = ({
   reef: { locationName, region },
@@ -143,6 +145,15 @@ const ReefTableBody = ({
     }
   };
 
+  const scrollToRow = useCallback(
+    (element: HTMLElement) =>
+      setTimeout(
+        () => element.scrollIntoView({ block: "center", behavior: "smooth" }),
+        SCROLLT_TIMEOUT
+      ),
+    []
+  );
+
   useEffect(() => {
     const index = reefsList.findIndex((item) => item.id === reefOnMap?.id);
     setSelectedRow(index);
@@ -153,9 +164,9 @@ const ReefTableBody = ({
     const child = document.getElementById(`homepage-table-row-${selectedRow}`);
     // only scroll if not on mobile (info at the top is more useful than the reef row)
     if (child && !isMobile && scrollTableOnSelection) {
-      child.scrollIntoView({ block: "center", behavior: "smooth" });
+      scrollToRow(child);
     }
-  }, [isMobile, scrollTableOnSelection, selectedRow]);
+  }, [isMobile, scrollTableOnSelection, scrollToRow, selectedRow]);
 
   return (
     <TableBody>

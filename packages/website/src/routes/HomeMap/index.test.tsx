@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { mockUser } from "../../mocks/mockUser";
 
 import Homepage from ".";
+import { mockReef } from "../../mocks/mockReef";
 
 jest.mock("../../common/NavBar", () => "Mock-NavBar");
 jest.mock("./Map", () => "Mock-Map");
@@ -17,9 +18,12 @@ describe("Homepage", () => {
   beforeEach(() => {
     const store = mockStore({
       reefsList: {
-        list: [],
+        list: [mockReef],
         loading: false,
         error: null,
+      },
+      selectedReef: {
+        details: mockReef,
       },
       homepage: {
         reefOnMap: null,

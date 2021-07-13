@@ -20,54 +20,94 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
         >
           <clear />
         </mock-iconbutton>
-        <mock-link
-          href="/"
-          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+        <mock-button
+          classname="MenuDrawer-menuDrawerButton-15"
+          component="[object Object]"
+          to="/"
         >
-          HOME
-        </mock-link>
-        <mock-link
-          href="/map"
-          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+          <mock-typography
+            variant="h6"
+          >
+            HOME
+          </mock-typography>
+        </mock-button>
+        <mock-button
+          classname="MenuDrawer-menuDrawerButton-15"
+          component="[object Object]"
+          to="/map"
         >
-          MAP
-        </mock-link>
-        <mock-link
-          href="/buoy"
-          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+          <mock-typography
+            variant="h6"
+          >
+            MAP
+          </mock-typography>
+        </mock-button>
+        <mock-button
+          classname="MenuDrawer-menuDrawerButton-15"
+          component="[object Object]"
+          to="/buoy"
         >
-          BUOY
-        </mock-link>
-        <mock-link
-          href="/drones"
-          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+          <mock-typography
+            variant="h6"
+          >
+            BUOY
+          </mock-typography>
+        </mock-button>
+        <mock-button
+          classname="MenuDrawer-menuDrawerButton-15"
+          component="[object Object]"
+          to="/drones"
         >
-          DRONE
-        </mock-link>
-        <mock-link
-          href="/about"
-          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+          <mock-typography
+            variant="h6"
+          >
+            DRONE
+          </mock-typography>
+        </mock-button>
+        <mock-button
+          classname="MenuDrawer-menuDrawerButton-15"
+          component="[object Object]"
+          to="/about"
         >
-          ABOUT
-        </mock-link>
-        <mock-link
-          href="/faq"
-          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+          <mock-typography
+            variant="h6"
+          >
+            ABOUT
+          </mock-typography>
+        </mock-button>
+        <mock-button
+          classname="MenuDrawer-menuDrawerButton-15"
+          component="[object Object]"
+          to="/faq"
         >
-          FAQ
-        </mock-link>
-        <mock-link
-          href="/tracker"
-          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+          <mock-typography
+            variant="h6"
+          >
+            FAQ
+          </mock-typography>
+        </mock-button>
+        <mock-button
+          classname="MenuDrawer-menuDrawerButton-15"
+          component="[object Object]"
+          to="/tracker"
         >
-          TRACK A HEATWAVE
-        </mock-link>
-        <mock-link
-          href="/register"
-          style="margin: 1rem 2rem 2rem; font-size: 1rem; color: white;"
+          <mock-typography
+            variant="h6"
+          >
+            TRACK A HEATWAVE
+          </mock-typography>
+        </mock-button>
+        <mock-button
+          classname="MenuDrawer-menuDrawerButton-15"
+          component="[object Object]"
+          to="/register"
         >
-          REGISTER A SITE
-        </mock-link>
+          <mock-typography
+            variant="h6"
+          >
+            REGISTER A SITE
+          </mock-typography>
+        </mock-button>
         <mock-box
           margintop="auto"
           padding="25px"
@@ -170,10 +210,10 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
             class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-4 MuiGrid-grid-md-3"
           >
             <div
-              class="Search-searchBar-15"
+              class="Search-searchBar-16"
             >
               <div
-                class="Search-searchBarIcon-16"
+                class="Search-searchBarIcon-17"
               >
                 <mock-iconbutton
                   size="small"
@@ -191,11 +231,11 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 </mock-iconbutton>
               </div>
               <div
-                class="Search-searchBarText-17"
+                class="Search-searchBarText-18"
               >
                 <div
                   aria-expanded="false"
-                  class="MuiAutocomplete-root Search-searchBarInput-18 MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon"
+                  class="MuiAutocomplete-root Search-searchBarInput-19 MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon"
                   role="combobox"
                 >
                   <mock-textfield
@@ -322,10 +362,10 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
             style="margin: 0px; padding-top: 0px;"
           >
             <div
-              class="Search-searchBar-15"
+              class="Search-searchBar-16"
             >
               <div
-                class="Search-searchBarIcon-16"
+                class="Search-searchBarIcon-17"
               >
                 <mock-iconbutton
                   size="small"
@@ -343,11 +383,11 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 </mock-iconbutton>
               </div>
               <div
-                class="Search-searchBarText-17"
+                class="Search-searchBarText-18"
               >
                 <div
                   aria-expanded="false"
-                  class="MuiAutocomplete-root Search-searchBarInput-18 MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon"
+                  class="MuiAutocomplete-root Search-searchBarInput-19 MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon"
                   role="combobox"
                 >
                   <mock-textfield
@@ -374,7 +414,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
   >
     <mock-card>
       <div
-        class="MuiCardHeader-root RegisterDialog-dialogHeader-20"
+        class="MuiCardHeader-root RegisterDialog-dialogHeader-21"
       >
         <div
           class="MuiCardHeader-content"
@@ -400,7 +440,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                     Aqua
                   </mock-typography>
                   <mock-typography
-                    classname="RegisterDialog-dialogHeaderSecondPart-21"
+                    classname="RegisterDialog-dialogHeaderSecondPart-22"
                     variant="h4"
                   >
                     link
@@ -411,7 +451,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 class="MuiGrid-root MuiGrid-item"
               >
                 <mock-iconbutton
-                  classname="RegisterDialog-closeButton-19"
+                  classname="RegisterDialog-closeButton-20"
                   size="small"
                 >
                   <svg
@@ -435,7 +475,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
           class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
         >
           <div
-            class="MuiGrid-root RegisterDialog-dialogContentTitle-22 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+            class="MuiGrid-root RegisterDialog-dialogContentTitle-23 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
           >
             <div
               class="MuiGrid-root MuiGrid-item"
@@ -452,10 +492,10 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
             class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
           >
             <form
-              class="RegisterDialog-form-23"
+              class="RegisterDialog-form-24"
             >
               <div
-                class="MuiGrid-root RegisterDialog-textFieldWrapper-24 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-25 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -470,7 +510,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 />
               </div>
               <div
-                class="MuiGrid-root RegisterDialog-textFieldWrapper-24 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-25 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -485,7 +525,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 />
               </div>
               <div
-                class="MuiGrid-root RegisterDialog-textFieldWrapper-24 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-25 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -500,7 +540,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 />
               </div>
               <div
-                class="MuiGrid-root RegisterDialog-textFieldWrapper-24 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-25 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -515,7 +555,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 />
               </div>
               <div
-                class="MuiGrid-root RegisterDialog-textFieldWrapper-24 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-25 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -538,7 +578,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 >
                   <mock-checkbox
                     checked="false"
-                    classname="RegisterDialog-termsCheckbox-28"
+                    classname="RegisterDialog-termsCheckbox-29"
                     color="primary"
                   />
                 </div>
@@ -547,14 +587,14 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 >
                   <mock-box>
                     <mock-typography
-                      classname="RegisterDialog-formText-26"
+                      classname="RegisterDialog-formText-27"
                       color="textSecondary"
                       variant="subtitle1"
                     >
                       I have read the
                        
                       <a
-                        class="RegisterDialog-termsLink-29"
+                        class="RegisterDialog-termsLink-30"
                         href="/terms"
                       >
                         Terms and Conditions
@@ -564,7 +604,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 </div>
               </div>
               <div
-                class="MuiGrid-root RegisterDialog-button-27 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root RegisterDialog-button-28 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-button
                   color="primary"
@@ -581,7 +621,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-typography
-                  classname="RegisterDialog-formText-26"
+                  classname="RegisterDialog-formText-27"
                   color="textSecondary"
                   variant="subtitle1"
                 >
@@ -608,7 +648,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
       elevation="0"
     >
       <div
-        class="MuiCardHeader-root SignInDialog-dialogHeader-31"
+        class="MuiCardHeader-root SignInDialog-dialogHeader-32"
       >
         <div
           class="MuiCardHeader-content"
@@ -634,7 +674,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                     Aqua
                   </mock-typography>
                   <mock-typography
-                    classname="SignInDialog-dialogHeaderSecondPart-32"
+                    classname="SignInDialog-dialogHeaderSecondPart-33"
                     variant="h4"
                   >
                     link
@@ -645,7 +685,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 class="MuiGrid-root MuiGrid-item"
               >
                 <mock-iconbutton
-                  classname="SignInDialog-closeButton-30"
+                  classname="SignInDialog-closeButton-31"
                   size="small"
                 >
                   <svg
@@ -726,7 +766,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
           class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
         >
           <div
-            class="MuiGrid-root SignInDialog-dialogContentTitle-33 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+            class="MuiGrid-root SignInDialog-dialogContentTitle-34 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
           >
             <div
               class="MuiGrid-root MuiGrid-item"
@@ -743,10 +783,10 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
             class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
           >
             <form
-              class="SignInDialog-form-34"
+              class="SignInDialog-form-35"
             >
               <div
-                class="MuiGrid-root SignInDialog-textFieldWrapper-35 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root SignInDialog-textFieldWrapper-36 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -761,7 +801,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 />
               </div>
               <div
-                class="MuiGrid-root SignInDialog-textFieldWrapper-35 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root SignInDialog-textFieldWrapper-36 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -780,7 +820,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-button
-                  classname="SignInDialog-forgotPasswordButton-39"
+                  classname="SignInDialog-forgotPasswordButton-40"
                 >
                   <mock-typography
                     color="textSecondary"
@@ -791,7 +831,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 </mock-button>
               </div>
               <div
-                class="MuiGrid-root SignInDialog-button-38 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root SignInDialog-button-39 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-button
                   color="primary"
@@ -807,7 +847,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                 class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-typography
-                  classname="SignInDialog-formText-37"
+                  classname="SignInDialog-formText-38"
                   color="textSecondary"
                   variant="subtitle1"
                 >
@@ -833,7 +873,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
       class="MuiContainer-root MuiContainer-maxWidthLg"
     >
       <div
-        class="MuiGrid-root BackButton-backButtonWrapper-40 MuiGrid-container"
+        class="MuiGrid-root BackButton-backButtonWrapper-41 MuiGrid-container"
       >
         <mock-button
           color="primary"
@@ -842,7 +882,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
           to="/reefs/1"
         >
           <mock-typography
-            classname="BackButton-backButtonText-41"
+            classname="BackButton-backButtonText-42"
           >
             Back to Site
           </mock-typography>
@@ -913,7 +953,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
         </div>
       </div>
       <div
-        class="MuiGrid-root InfoCard-cardWrapper-42 MuiGrid-container MuiGrid-justify-xs-center"
+        class="MuiGrid-root InfoCard-cardWrapper-43 MuiGrid-container MuiGrid-justify-xs-center"
       >
         <div
           class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12"
@@ -925,7 +965,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
               class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-space-between"
             >
               <div
-                class="MuiGrid-root Info-cardInfo-43 MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-md-6"
+                class="MuiGrid-root Info-cardInfo-44 MuiGrid-item MuiGrid-grid-xs-11 MuiGrid-grid-md-6"
               >
                 <div
                   class="MuiGrid-root MuiGrid-container"
@@ -942,13 +982,13 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                   </mock-box>
                 </div>
                 <div
-                  class="MuiGrid-root Info-autoWidth-45 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-space-between"
+                  class="MuiGrid-root Info-autoWidth-46 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-space-between"
                 >
                   <div
                     class="MuiGrid-root MuiGrid-item"
                   >
                     <div
-                      class="MuiGrid-root Info-autoWidth-45 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-direction-xs-column"
+                      class="MuiGrid-root Info-autoWidth-46 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-direction-xs-column"
                     >
                       <div
                         class="MuiGrid-root MuiGrid-item"
@@ -970,19 +1010,19 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                     class="MuiGrid-root MuiGrid-item"
                   >
                     <div
-                      class="MuiGrid-root SurveyInfo-autoWidth-46 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-space-between"
+                      class="MuiGrid-root SurveyInfo-autoWidth-47 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-space-between"
                     >
                       <div
                         class="MuiGrid-root MuiGrid-item"
                       >
                         <div
-                          class="MuiGrid-root SurveyInfo-autoWidth-46 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-baseline"
+                          class="MuiGrid-root SurveyInfo-autoWidth-47 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-baseline"
                         >
                           <div
                             class="MuiGrid-root MuiGrid-item"
                           >
                             <mock-typography
-                              classname="SurveyInfo-coloredText-47"
+                              classname="SurveyInfo-coloredText-48"
                               variant="h5"
                             >
                               0
@@ -1005,13 +1045,13 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
                         class="MuiGrid-root MuiGrid-item"
                       >
                         <div
-                          class="MuiGrid-root SurveyInfo-autoWidth-46 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-baseline"
+                          class="MuiGrid-root SurveyInfo-autoWidth-47 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-baseline"
                         >
                           <div
                             class="MuiGrid-root MuiGrid-item"
                           >
                             <mock-typography
-                              classname="SurveyInfo-coloredText-47"
+                              classname="SurveyInfo-coloredText-48"
                               variant="h5"
                             >
                               0
@@ -1057,7 +1097,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
         class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
       >
         <mock-box
-          classname="SurveyHistory-title-48"
+          classname="SurveyHistory-title-49"
         >
           <mock-typography
             variant="h4"
@@ -1067,7 +1107,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
         </mock-box>
       </div>
       <div
-        class="SurveyTimeline-root-57"
+        class="SurveyTimeline-root-58"
       >
         <mock-hidden
           mddown="true"
@@ -1087,7 +1127,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
     </div>
   </mock-box>
   <mock-appbar
-    classname="Footer-appBar-64"
+    classname="Footer-appBar-65"
     position="static"
   >
     <mock-toolbar>
@@ -1098,7 +1138,7 @@ exports[`Survey Point Detail Page should render with given state from Redux stor
           class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
         >
           <mock-link
-            classname="Footer-navBarLink-65"
+            classname="Footer-navBarLink-66"
             href="/map"
           >
             <mock-typography

@@ -193,6 +193,11 @@ const selectedReefSlice = createSlice({
       ...state,
       granularDailyData: undefined,
     }),
+    clearOceanSenseData: (state) => ({
+      ...state,
+      oceanSenseData: undefined,
+      latestOceanSenseData: undefined,
+    }),
   },
   extraReducers: (builder) => {
     builder.addCase(
@@ -423,6 +428,7 @@ export const {
   clearTimeSeriesData,
   clearTimeSeriesDataRange,
   clearGranularDailyData,
+  clearOceanSenseData,
   setReefPois,
 } = selectedReefSlice.actions;
 
