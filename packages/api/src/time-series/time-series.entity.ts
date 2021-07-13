@@ -31,7 +31,7 @@ export class TimeSeries {
   metric: Metric;
 
   @ManyToOne(() => Sources, { onDelete: 'SET NULL', nullable: true })
-  source?: Sources;
+  source: Sources | null;
 
   @CreateDateColumn()
   createdAt: Date;

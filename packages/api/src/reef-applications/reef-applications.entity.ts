@@ -22,26 +22,26 @@ export class ReefApplication {
   id: number;
 
   @ApiProperty({ example: 'Permit Requirements' })
-  @Column({ nullable: true })
-  permitRequirements?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  permitRequirements: string | null;
 
   @ApiProperty({ example: 'Funding Source' })
-  @Column({ nullable: true })
-  fundingSource?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  fundingSource: string | null;
 
-  @Column({ nullable: true })
-  installationSchedule?: Date;
+  @Column({ nullable: true, type: 'timestamp' })
+  installationSchedule: Date | null;
 
   @ApiProperty({ example: 'Installation Resource' })
-  @Column({ nullable: true })
-  installationResources?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  installationResources: string | null;
 
-  @Column({ nullable: true })
-  targetShipdate?: Date;
+  @Column({ nullable: true, type: 'timestamp' })
+  targetShipdate: Date | null;
 
   @ApiProperty({ example: 'Tracking URL' })
-  @Column({ nullable: true })
-  trackingUrl?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  trackingUrl: string | null;
 
   @Exclude()
   @Column({ default: () => 'gen_random_uuid()', unique: true })

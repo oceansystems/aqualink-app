@@ -39,7 +39,7 @@ export async function getDegreeHeatingDays(
   latitude: number,
   longitude: number,
   endOfDate: Date,
-  maxMonthlyMean?: number,
+  maxMonthlyMean: number | null,
 ): Promise<SofarValue | undefined> {
   try {
     // TODO - Get data for the past 84 days.

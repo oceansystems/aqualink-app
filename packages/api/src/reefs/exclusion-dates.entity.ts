@@ -12,8 +12,8 @@ export class ExclusionDates {
   sensorId: string;
 
   // The start of the exclusive range. Inclusive
-  @Column({ nullable: true })
-  startDate?: Date;
+  @Column({ nullable: true, type: 'timestamp' })
+  startDate: Date | null;
 
   // The end of the exclusive range. Inclusive
   @Column()

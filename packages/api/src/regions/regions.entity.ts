@@ -30,7 +30,7 @@ export class Region {
     nullable: false,
   })
   @Index({ spatial: true })
-  polygon: GeoJSON;
+  polygon: GeoJSON | null;
 
   @CreateDateColumn()
   createdAt: Date;
@@ -40,7 +40,7 @@ export class Region {
 
   @ApiProperty({ type: () => Region })
   @ManyToOne(() => Region, { onDelete: 'CASCADE', nullable: true })
-  parent?: Region;
+  parent: Region | null;
 
   @ApiProperty({ example: 1 })
   @RelationId((region: Region) => region.parent)

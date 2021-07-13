@@ -112,7 +112,7 @@ export class CollectionsService {
       ...collection,
       user: {
         ...collection.user,
-        firebaseUid: undefined,
+        firebaseUid: null,
       },
       reefs: collection.reefs.map((reef) => {
         return {

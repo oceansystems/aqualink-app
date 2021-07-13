@@ -43,12 +43,12 @@ export class Reef {
   id: number;
 
   @ApiProperty({ example: 'Duxbury Reef' })
-  @Column({ nullable: true })
-  name?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  name: string | null;
 
   @ApiProperty({ example: 'SPOT-0000' })
-  @Column({ nullable: true })
-  sensorId?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  sensorId: string | null;
 
   @ApiPointProperty()
   @Column({
@@ -58,11 +58,11 @@ export class Reef {
     nullable: false,
   })
   @Index({ spatial: true })
-  polygon: GeoJSON;
+  polygon: GeoJSON | null;
 
   @ApiProperty({ example: 23 })
-  @Column({ nullable: true })
-  depth?: number;
+  @Column({ nullable: true, type: 'integer' })
+  depth: number | null;
 
   // TODO:  This field should be transferred to reef-application table
   //        The transition has to be in sync with changes in admin dashboards in internal.io
@@ -74,16 +74,16 @@ export class Reef {
   })
   status: ReefStatus;
 
-  @Column({ nullable: true })
-  videoStream?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  videoStream: string | null;
 
   @ApiProperty({ example: 33.54 })
   @Column('float', { nullable: true })
-  maxMonthlyMean?: number;
+  maxMonthlyMean: number | null;
 
   @ApiProperty({ example: 'Pacific/Palau' })
-  @Column({ nullable: true })
-  timezone?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  timezone: string | null;
 
   @Column({ default: true })
   approved: boolean;
@@ -95,10 +95,10 @@ export class Reef {
   updatedAt: Date;
 
   @ManyToOne(() => Region, { onDelete: 'SET NULL', nullable: true })
-  region?: Region;
+  region: Region | null;
 
   @ManyToOne(() => VideoStream, { onDelete: 'SET NULL', nullable: true })
-  stream?: VideoStream;
+  stream: VideoStream | null;
 
   @ManyToMany(() => User, (user) => user.administeredReefs)
   admins: User[];

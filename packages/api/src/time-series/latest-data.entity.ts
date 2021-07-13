@@ -54,7 +54,7 @@ export class LatestData {
   reefId: number;
 
   @ManyToOne(() => ReefPointOfInterest, { onDelete: 'CASCADE', nullable: true })
-  poi: ReefPointOfInterest;
+  poi: ReefPointOfInterest | null;
 
   @Column({ type: 'enum', enum: SourceType })
   source: SourceType;

@@ -63,8 +63,8 @@ export class SurveyMedia {
   observations: Observations;
 
   @ApiProperty({ example: 'Survey media comments' })
-  @Column({ nullable: true })
-  comments: string;
+  @Column({ nullable: true, type: 'character varying' })
+  comments: string | null;
 
   @ManyToOne(() => Survey, { onDelete: 'CASCADE', eager: true })
   @JoinColumn({ name: 'survey_id' })
@@ -84,7 +84,7 @@ export class SurveyMedia {
     nullable: true,
   })
   @JoinColumn({ name: 'poi_id' })
-  poi?: ReefPointOfInterest;
+  poi: ReefPointOfInterest | null;
 
   @CreateDateColumn()
   createdAt: Date;

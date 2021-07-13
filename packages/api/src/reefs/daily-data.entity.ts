@@ -20,71 +20,71 @@ export class DailyData {
 
   @ApiProperty({ example: 30 })
   @Column('float', { nullable: true })
-  minBottomTemperature?: number;
+  minBottomTemperature: number | null;
 
   @ApiProperty({ example: 32 })
   @Column('float', { nullable: true })
-  maxBottomTemperature?: number;
+  maxBottomTemperature: number | null;
 
   @ApiProperty({ example: 31 })
   @Column('float', { nullable: true })
-  avgBottomTemperature?: number;
+  avgBottomTemperature: number | null;
 
   @ApiProperty({ example: 20 })
   @Column('float', { nullable: true })
-  degreeHeatingDays?: number;
+  degreeHeatingDays: number | null;
 
   @ApiProperty({ example: 22 })
   @Column('float', { nullable: true })
-  topTemperature?: number;
+  topTemperature: number | null;
 
   @ApiProperty({ example: 21 })
   @Column('float', { nullable: true })
-  satelliteTemperature?: number;
+  satelliteTemperature: number | null;
 
   @ApiProperty({ example: 2 })
   @Column('float', { nullable: true })
-  minWaveHeight?: number;
+  minWaveHeight: number | null;
 
   @ApiProperty({ example: 4 })
   @Column('float', { nullable: true })
-  maxWaveHeight?: number;
+  maxWaveHeight: number | null;
 
   @ApiProperty({ example: 3 })
   @Column('float', { nullable: true })
-  avgWaveHeight?: number;
+  avgWaveHeight: number | null;
 
   @ApiProperty({ example: 279 })
-  @Column({ nullable: true })
-  waveDirection?: number;
+  @Column({ nullable: true, type: 'integer' })
+  waveDirection: number | null;
 
   @ApiProperty({ example: 11 })
-  @Column({ nullable: true })
-  wavePeriod?: number;
+  @Column({ nullable: true, type: 'integer' })
+  wavePeriod: number | null;
 
   @ApiProperty({ example: 1 })
   @Column('float', { nullable: true })
-  minWindSpeed?: number;
+  minWindSpeed: number | null;
 
   @ApiProperty({ example: 3 })
   @Column('float', { nullable: true })
-  maxWindSpeed?: number;
+  maxWindSpeed: number | null;
 
   @ApiProperty({ example: 2 })
   @Column('float', { nullable: true })
-  avgWindSpeed?: number;
+  avgWindSpeed: number | null;
 
   @ApiProperty({ example: 1 })
-  @Column({ nullable: true })
-  windDirection?: number;
+  @Column({ nullable: true, type: 'integer' })
+  windDirection: number | null;
 
   @ApiProperty({ example: 5 })
   @Column('integer', { nullable: true })
-  dailyAlertLevel?: number;
+  dailyAlertLevel: number | null;
 
   @ApiProperty({ example: 5 })
   @Column('integer', { nullable: true })
-  weeklyAlertLevel?: number;
+  weeklyAlertLevel: number | null;
 
   @ManyToOne(() => Reef, { onDelete: 'CASCADE' })
   reef: Reef;

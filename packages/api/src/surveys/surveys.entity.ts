@@ -43,11 +43,11 @@ export class Survey {
 
   @ApiProperty({ example: 33.2 })
   @Column('float', { nullable: true })
-  temperature?: number;
+  temperature?: number | null;
 
   @ApiProperty({ example: 'Survey comment' })
   @Column('text', { nullable: true })
-  comments?: string;
+  comments?: string | null;
 
   @Column({ nullable: false })
   diveDate: Date;
@@ -64,10 +64,10 @@ export class Survey {
   reef: Reef;
 
   @CreateDateColumn()
-  createdAt?: Date;
+  createdAt: Date;
 
   @UpdateDateColumn()
-  updatedAt?: Date;
+  updatedAt: Date;
 
   @OneToOne(() => SurveyMedia, (surveyMedia) => surveyMedia.surveyId)
   featuredSurveyMedia?: SurveyMedia;

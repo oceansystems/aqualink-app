@@ -110,7 +110,7 @@ export const handleDuplicateReef = (err) => {
 
 export const getExclusionDates = async (
   exclusionDatesRepository: Repository<ExclusionDates>,
-  sensorId?: string,
+  sensorId: string | null,
 ) => {
   if (!sensorId) {
     return [];

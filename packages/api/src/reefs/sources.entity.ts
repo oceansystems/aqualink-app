@@ -23,16 +23,16 @@ export class Sources {
   reef: Reef;
 
   @ManyToOne(() => ReefPointOfInterest, { onDelete: 'CASCADE', nullable: true })
-  poi: ReefPointOfInterest;
+  poi: ReefPointOfInterest | null;
 
   @Column({ type: 'enum', enum: SourceType })
   type: SourceType;
 
   @ApiProperty({ example: 12 })
   @Column('float', { nullable: true })
-  depth: number;
+  depth: number | null;
 
   @ApiProperty({ example: 'SPOT-0000' })
-  @Column({ nullable: true })
-  sensorId: string;
+  @Column({ nullable: true, type: 'character varying' })
+  sensorId: string | null;
 }

@@ -102,7 +102,7 @@ export async function getHistoricalMonthlyMeans(long: number, lat: number) {
 
 export function calculateDegreeHeatingDays(
   seaSurfaceTemperatures: number[],
-  maximumMonthlyMean?: number,
+  maximumMonthlyMean: number | null,
 ) {
   if (seaSurfaceTemperatures.length !== 84) {
     throw new Error(

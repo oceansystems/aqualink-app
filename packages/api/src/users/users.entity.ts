@@ -28,12 +28,12 @@ export class User {
 
   @ApiHideProperty()
   @Exclude()
-  @Column({ nullable: true })
-  firebaseUid?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  firebaseUid: string | null;
 
   @ApiProperty({ example: 'Full Name' })
-  @Column({ nullable: true })
-  fullName?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  fullName?: string | null;
 
   @ApiProperty({ example: 'fullname@example.com' })
   @Column()
@@ -41,8 +41,8 @@ export class User {
   email: string;
 
   @ApiProperty({ example: 'Random organization' })
-  @Column({ nullable: true })
-  organization?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  organization: string | null;
 
   @ApiPointProperty()
   @Column({
@@ -52,11 +52,11 @@ export class User {
     srid: 4326,
   })
   @Index({ spatial: true })
-  location?: GeoJSON;
+  location: GeoJSON | null;
 
   @ApiProperty({ example: 'Some country' })
-  @Column({ nullable: true })
-  country?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  country: string | null;
 
   @Column({
     type: 'enum',
@@ -67,12 +67,12 @@ export class User {
   adminLevel: AdminLevel;
 
   @ApiProperty({ example: 'Some description' })
-  @Column({ nullable: true })
-  description?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  description: string | null;
 
   @ApiProperty({ example: 'http://some-sample-url.com' })
-  @Column({ nullable: true })
-  imageUrl?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  imageUrl: string | null;
 
   @ManyToMany(() => Reef, (reef) => reef.admins, { cascade: true })
   @JoinTable()

@@ -91,7 +91,10 @@ const parseCSV = <T>(
   }) as T[];
 };
 
-const reefQuery = (reefRepository: Repository<Reef>, polygon?: GeoJSON) => {
+const reefQuery = (
+  reefRepository: Repository<Reef>,
+  polygon?: GeoJSON | null,
+) => {
   return reefRepository
     .createQueryBuilder(`entity`)
     .where(
@@ -103,7 +106,7 @@ const reefQuery = (reefRepository: Repository<Reef>, polygon?: GeoJSON) => {
 
 const poiQuery = (
   poiRepository: Repository<ReefPointOfInterest>,
-  polygon?: GeoJSON,
+  polygon?: GeoJSON | null,
 ) => {
   return poiRepository
     .createQueryBuilder(`pois`)
@@ -148,9 +151,9 @@ const handleEntityDuplicate = <T>(
   repository: Repository<T>,
   query: (
     repository: Repository<T>,
-    polygon?: GeoJSON,
+    polygon?: GeoJSON | null,
   ) => Promise<T | undefined>,
-  polygon?: GeoJSON,
+  polygon?: GeoJSON | null,
 ) => {
   return (err) => {
     // Catch unique violation, i.e. there is already a reef at this location
@@ -417,8 +420,8 @@ const createSources = async (
     ),
   );
 
-  // Map pois to created sources
-  return keyBy(sourceEntities, (o) => o.poi.id);
+  // Map pois to created sources. Hobo sources have a specified poi.
+  return keyBy(sourceEntities, (o) => o.poi!.id);
 };
 
 /**

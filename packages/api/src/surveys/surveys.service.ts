@@ -183,6 +183,8 @@ export class SurveysService {
         observations: observationsGroupedBySurveyId[survey.id] || [],
         surveyPoints: poiIdGroupedBySurveyId[survey.id] || [],
         surveyPointImage: surveyImageGroupedByPoiId[survey.id] || [],
+        createdAt: survey.createdAt,
+        updatedAt: survey.updatedAt,
       };
     });
   }

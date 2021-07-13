@@ -65,7 +65,7 @@ export class CreateReef implements Seeder {
     );
 
     const sourcesMap: { [k: number]: Sources } = Object.fromEntries(
-      sources.map((source) => [source.poi.id, source]),
+      sources.map((source) => [source.poi!.id, source]),
     );
 
     await Promise.all(

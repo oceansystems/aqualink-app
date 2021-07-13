@@ -20,12 +20,12 @@ export class ReefPointOfInterest {
   id: number;
 
   @ApiProperty({ example: 1 })
-  @Column({ nullable: true })
-  poiLabelId?: number;
+  @Column({ nullable: true, type: 'integer' })
+  poiLabelId: number | null;
 
   @ApiProperty({ example: 'http://some-sample-url.com' })
-  @Column({ nullable: true })
-  imageUrl?: string;
+  @Column({ nullable: true, type: 'character varying' })
+  imageUrl: string | null;
 
   @ApiProperty({ example: 'Outer tide pool' })
   @Column({ nullable: false })
@@ -46,7 +46,7 @@ export class ReefPointOfInterest {
     nullable: true,
   })
   @Index({ spatial: true })
-  polygon?: GeoJSON;
+  polygon: GeoJSON | null;
 
   @CreateDateColumn()
   createdAt: Date;
