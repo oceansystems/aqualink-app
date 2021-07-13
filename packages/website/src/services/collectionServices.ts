@@ -18,6 +18,12 @@ const getPublicCollection = (id: number) =>
     url: `collections/public/${id}`,
   });
 
+const getHeatStressCollection = () =>
+  requests.send<CollectionDetailsResponse>({
+    method: "GET",
+    url: "collections/heat-stress-tracker",
+  });
+
 const getCollection = (id: number, token?: string) =>
   requests.send<CollectionDetailsResponse>({
     method: "GET",
@@ -39,6 +45,7 @@ const updateCollection = (
 export default {
   getCollections,
   getPublicCollection,
+  getHeatStressCollection,
   getCollection,
   updateCollection,
 };

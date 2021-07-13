@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { Repository } from 'typeorm';
+import { DynamicCollection } from '../collections/collections.entity';
 import { CollectionDataDto } from '../collections/dto/collection-data.dto';
 import { Reef } from '../reefs/reefs.entity';
 import { SourceType } from '../reefs/schemas/source-type.enum';
@@ -37,4 +38,11 @@ export const getCollectionData = async (
       }, {}),
     )
     .toJSON();
+};
+
+export const heatStressTracker: DynamicCollection = {
+  name: 'Heat Stress Tracker',
+  reefs: [],
+  reefIds: [],
+  isPublic: true,
 };

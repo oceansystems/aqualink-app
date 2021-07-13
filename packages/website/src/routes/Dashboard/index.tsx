@@ -53,13 +53,20 @@ const Dashboard = ({ match, classes }: DashboardProps) => {
   useEffect(() => {
     if (!atDashboard) {
       const { collectionName: urlCollectionName } = match.params;
+      const isHeatStress = urlCollectionName === "heat-stress";
       const urlCollectionId = urlCollectionName
         ? collections[urlCollectionName]
         : undefined;
 
-      if (urlCollectionId) {
+      if (urlCollectionId || isHeatStress) {
         setPublicNotFound(false);
-        dispatch(collectionRequest({ id: urlCollectionId, isPublic: true }));
+        dispatch(
+          collectionRequest({
+            id: urlCollectionId,
+            isPublic: true,
+            isHeatStress,
+          })
+        );
       } else {
         setPublicNotFound(true);
       }

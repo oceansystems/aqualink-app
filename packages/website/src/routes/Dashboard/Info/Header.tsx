@@ -6,16 +6,15 @@ import {
   Grid,
   Typography,
   Theme,
+  Divider,
 } from "@material-ui/core";
 import EmailIcon from "@material-ui/icons/Email";
 import classNames from "classnames";
 
-import { CollectionDetails } from "../../../store/Collection/types";
+import { User } from "../../../store/User/types";
 
-const Header = ({ collection, classes }: HeaderProps) => {
-  const nSites = collection.reefs.length;
-
-  return (
+const Header = ({ user, nSites, classes }: HeaderProps) => (
+  <>
     <Grid container justify="space-between">
       <Grid item>
         <Grid container direction="column">
@@ -26,7 +25,7 @@ const Header = ({ collection, classes }: HeaderProps) => {
           </Grid>
           <Grid item>
             <Typography variant="h5" color="textSecondary">
-              {collection.user.organization}
+              {user.organization}
             </Typography>
           </Grid>
           <Grid item>
@@ -51,7 +50,7 @@ const Header = ({ collection, classes }: HeaderProps) => {
         <Grid container direction="column">
           <Grid item>
             <Typography variant="subtitle1" color="textSecondary">
-              {collection.user.fullName}
+              {user.fullName}
             </Typography>
           </Grid>
           <Grid item>
@@ -61,7 +60,7 @@ const Header = ({ collection, classes }: HeaderProps) => {
               </Grid>
               <Grid item>
                 <Typography variant="caption" color="textSecondary">
-                  {collection.user.email}
+                  {user.email}
                 </Typography>
               </Grid>
             </Grid>
@@ -69,8 +68,9 @@ const Header = ({ collection, classes }: HeaderProps) => {
         </Grid>
       </Grid>
     </Grid>
-  );
-};
+    <Divider className={classes.divider} />
+  </>
+);
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -92,10 +92,15 @@ const styles = (theme: Theme) =>
       width: 14,
       marginRight: 4,
     },
+
+    divider: {
+      margin: theme.spacing(2.5, 0),
+    },
   });
 
 interface HeaderIncomingProps {
-  collection: CollectionDetails;
+  user: User;
+  nSites: number;
 }
 
 type HeaderProps = HeaderIncomingProps & WithStyles<typeof styles>;

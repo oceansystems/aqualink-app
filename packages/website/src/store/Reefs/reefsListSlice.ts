@@ -5,7 +5,7 @@ import reefServices from "../../services/reefServices";
 import { hasDeployedSpotter } from "../../helpers/reefUtils";
 import type { ReefsListState, ReefsRequestData } from "./types";
 import type { CreateAsyncThunkTypes, RootState } from "../configure";
-import { mapCollectionData } from "./helpers";
+import { mapCollectionData } from "../Collection/utils";
 
 const reefsListInitialState: ReefsListState = {
   loading: false,

@@ -56,6 +56,13 @@ export class CollectionsController {
     return this.collectionsService.find(filterCollectionDto, request.user);
   }
 
+  @ApiOperation({ summary: 'Fetch the heat stress tracker' })
+  @Public()
+  @Get('heat-stress-tracker')
+  getHeatStressTracker() {
+    return this.collectionsService.getHeatStressTracker();
+  }
+
   @ApiOperation({ summary: 'Fetch all public collections' })
   @Public()
   @Get('public')

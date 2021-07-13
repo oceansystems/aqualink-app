@@ -10,11 +10,11 @@ export interface CollectionSummary {
 }
 
 export interface CollectionDetails {
-  id: number;
+  id?: number;
   name: string;
   isPublic: boolean;
   reefs: Reef[];
-  user: User;
+  user?: User;
   reefIds: number[];
 }
 
@@ -23,7 +23,8 @@ export interface CollectionDetailsResponse extends CollectionDetails {
 }
 
 export interface CollectionRequestParams {
-  id: number;
+  id?: number;
+  isHeatStress?: boolean;
   isPublic?: boolean;
   token?: string;
 }

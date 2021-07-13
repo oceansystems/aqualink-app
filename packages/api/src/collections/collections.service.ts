@@ -6,8 +6,8 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { isUndefined, omitBy } from 'lodash';
-import { Repository } from 'typeorm';
-import { Collection } from './collections.entity';
+import { Repository, MoreThan, In } from 'typeorm';
+import { Collection, DynamicCollection } from './collections.entity';
 import { Sources } from '../reefs/sources.entity';
 import { LatestData } from '../time-series/latest-data.entity';
 import { User } from '../users/users.entity';
@@ -15,7 +15,12 @@ import { hasHoboDataSubQuery } from '../utils/reef.utils';
 import { CreateCollectionDto } from './dto/create-collection.dto';
 import { FilterCollectionDto } from './dto/filter-collection.dto';
 import { UpdateCollectionDto } from './dto/update-collection.dto';
-import { getCollectionData } from '../utils/collections.utils';
+import {
+  getCollectionData,
+  heatStressTracker,
+} from '../utils/collections.utils';
+import { Metric } from '../time-series/metrics.entity';
+import { Reef } from '../reefs/reefs.entity';
 
 @Injectable()
 export class CollectionsService {
@@ -27,6 +32,9 @@ export class CollectionsService {
 
     @InjectRepository(LatestData)
     private latestDataRepository: Repository<LatestData>,
+
+    @InjectRepository(Reef)
+    private reefRepository: Repository<Reef>,
 
     @InjectRepository(Sources)
     private sourcesRepository: Repository<Sources>,
@@ -101,28 +109,7 @@ export class CollectionsService {
       return collection;
     }
 
-    const mappedReefData = await getCollectionData(
-      collection.reefs,
-      this.latestDataRepository,
-    );
-
-    const hasHoboData = await hasHoboDataSubQuery(this.sourcesRepository);
-
-    return {
-      ...collection,
-      user: {
-        ...collection.user,
-        firebaseUid: undefined,
-      },
-      reefs: collection.reefs.map((reef) => {
-        return {
-          ...reef,
-          hasHobo: hasHoboData.has(reef.id),
-          applied: reef.applied,
-          collectionData: mappedReefData[reef.id],
-        };
-      }),
-    };
+    return this.processCollection(collection, collection.reefs);
   }
 
   async update(collectionId: number, updateCollectionDto: UpdateCollectionDto) {
@@ -173,5 +160,50 @@ export class CollectionsService {
         `Collection with ID ${collectionId} not found.`,
       );
     }
+  }
+
+  async getHeatStressTracker() {
+    const heatStressData = await this.latestDataRepository.find({
+      metric: Metric.DHW,
+      value: MoreThan(0),
+    });
+
+    const heatStressReefIds = heatStressData.map((data) => data.reefId);
+
+    const heatStressReefs = await this.reefRepository.find({
+      where: { id: In(heatStressReefIds), approved: true },
+    });
+
+    return this.processCollection(heatStressTracker, heatStressReefs);
+  }
+
+  private async processCollection<T extends DynamicCollection | Collection>(
+    collection: T,
+    reefs: Reef[],
+  ): Promise<T> {
+    const mappedReefData = await getCollectionData(
+      reefs,
+      this.latestDataRepository,
+    );
+
+    const hasHoboData = await hasHoboDataSubQuery(this.sourcesRepository);
+
+    return {
+      ...collection,
+      user:
+        collection instanceof Collection
+          ? {
+              ...collection.user,
+              firebaseUid: undefined,
+            }
+          : undefined,
+      reefIds: reefs.map((reef) => reef.id),
+      reefs: reefs.map((reef) => ({
+        ...reef,
+        hasHobo: hasHoboData.has(reef.id),
+        applied: reef.applied,
+        collectionData: mappedReefData[reef.id],
+      })),
+    };
   }
 }

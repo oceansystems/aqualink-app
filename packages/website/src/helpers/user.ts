@@ -22,4 +22,4 @@ export const hasCollection = (user: User | null) => !!user?.collection;
 export const isCollectionOwner = (
   user: User | null,
   collection: CollectionDetails
-) => user?.id === collection.user.id;
+) => user?.id === collection.user?.id;

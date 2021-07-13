@@ -43,7 +43,7 @@ const EditNameForm = ({
   };
 
   const onSubmit = () => {
-    if (signedInUser?.token) {
+    if (signedInUser?.token && collectionId) {
       collectionServices
         .updateCollection(
           { id: collectionId, name: collectionName.value },
@@ -111,11 +111,15 @@ const styles = () =>
   });
 
 interface EditNameFormIncomingProps {
-  collectionId: number;
+  collectionId?: number;
   initialName: string;
   signedInUser: User | null;
   onClose: () => void;
 }
+
+EditNameForm.defaultProps = {
+  collectionId: undefined,
+};
 
 type EditNameFormProps = EditNameFormIncomingProps & WithStyles<typeof styles>;
 

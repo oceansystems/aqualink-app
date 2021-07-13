@@ -5,7 +5,6 @@ import {
   createStyles,
   Box,
   Theme,
-  Divider,
 } from "@material-ui/core";
 
 import { CollectionDetails } from "../../../store/Collection/types";
@@ -15,8 +14,9 @@ import BarChart from "./BarChart";
 const Info = ({ collection, classes }: InfoProps) => {
   return (
     <Box className={classes.root}>
-      <Header collection={collection} />
-      <Divider className={classes.divider} />
+      {collection.user && (
+        <Header user={collection.user} nSites={collection.reefs.length} />
+      )}
       <BarChart collection={collection} />
     </Box>
   );
@@ -39,10 +39,6 @@ const styles = (theme: Theme) =>
         height: 440,
         padding: theme.spacing(2),
       },
-    },
-
-    divider: {
-      margin: "20px 0",
     },
   });
 

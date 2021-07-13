@@ -13,6 +13,11 @@ import {
 import { Reef } from '../reefs/reefs.entity';
 import { User } from '../users/users.entity';
 
+export type DynamicCollection = Omit<
+  Collection,
+  'id' | 'user' | 'userId' | 'createdAt' | 'updatedAt'
+>;
+
 @Entity()
 export class Collection {
   @ApiProperty({ example: 1 })
