@@ -78,8 +78,13 @@ Before running daily updates for the first time, you will need to augment your r
 In addition, you will need to set the environment variables in Firebase:
 
 ```
-export $(grep -v '^#' .env.prod | xargs) && firebase functions:config:set database.url=$DATABASE_URL sofar_api.token=$SOFAR_API_TOKEN api.base_url=$BACKEND_BASE_URL
+yarn config:cloud-functions:<project>
 ```
+
+where `<project>` can take one of the three following values:
+1. `prod`: production project
+2. `staging`: staging project
+3. `programize`: programize staging project
 
 #### Deploy
 

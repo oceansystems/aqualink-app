@@ -40,6 +40,11 @@ import { createPoint } from '../utils/coordinates';
 import { Sources } from './sources.entity';
 import { getCollectionData } from '../utils/collections.utils';
 import { LatestData } from '../time-series/latest-data.entity';
+import { getYouTubeVideoId } from '../utils/urls';
+import {
+  fetchVideoDetails,
+  getErrorMessage,
+} from '../workers/check-video-streams';
 
 @Injectable()
 export class ReefsService {
@@ -199,15 +204,17 @@ export class ReefsService {
   }
 
   async findOne(id: number): Promise<Reef> {
-    const found = await this.reefsRepository.findOne(id, {
+    const reef = await this.reefsRepository.findOne(id, {
       relations: ['region', 'admins', 'stream', 'historicalMonthlyMean'],
     });
 
-    if (!found) {
+    if (!reef) {
       throw new NotFoundException(`Reef with ID ${id} not found.`);
     }
 
-    return found;
+    const videoStream = await this.checkVideoStream(reef);
+
+    return { ...reef, videoStream, applied: reef.applied };
   }
 
   async update(id: number, updateReefDto: UpdateReefDto): Promise<Reef> {
@@ -449,5 +456,45 @@ export class ReefsService {
       .relation('admins')
       .of(reef)
       .addAndRemove(adminIds, reef.admins);
+  }
+
+  private async checkVideoStream(reef: Reef) {
+    // Check if reef has a video stream url
+    if (!reef.videoStream) {
+      return null;
+    }
+
+    const apiKey = process.env.FIREBASE_KEY;
+
+    // Api key must be specified for the process to continue
+    if (!apiKey) {
+      // Log an explicit error
+      this.logger.error('No google api key was defined');
+      return null;
+    }
+
+    const videoId = getYouTubeVideoId(reef.videoStream);
+
+    // Video id could not be extracted, because the video stream url wan not in the correct format
+    if (!videoId) {
+      return null;
+    }
+
+    const rsp = await fetchVideoDetails([videoId], apiKey);
+
+    // Video was not found.
+    if (!rsp.data.items.length) {
+      return null;
+    }
+
+    const msg = getErrorMessage(rsp.data.items[0]);
+
+    // An error was returned (Video is not live, it is not public etc).
+    if (msg) {
+      return null;
+    }
+
+    // All checks passed, return video stream url.
+    return reef.videoStream;
   }
 }

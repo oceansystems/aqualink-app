@@ -74,8 +74,8 @@ export class Reef {
   })
   status: ReefStatus;
 
-  @Column({ nullable: true })
-  videoStream?: string;
+  @Column({ nullable: true, type: 'text' })
+  videoStream?: string | null;
 
   @ApiProperty({ example: 33.54 })
   @Column('float', { nullable: true })

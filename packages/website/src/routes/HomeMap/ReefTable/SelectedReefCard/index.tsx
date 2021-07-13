@@ -31,9 +31,7 @@ import { Reef } from "../../../../store/Reefs/types";
 import Chart from "../../../../common/Chart";
 import { surveyListSelector } from "../../../../store/Survey/surveyListSlice";
 import { convertDailyDataToLocalTime } from "../../../../helpers/dates";
-import { useLiveStreamCheck } from "../../../../hooks/useLiveStreamCheck";
 import Chip from "../../../../common/Chip";
-import { getYouTubeVideoId } from "../../../../helpers/video";
 
 const useStyles = makeStyles((theme) => ({
   cardWrapper: {
@@ -115,7 +113,6 @@ const SelectedReefContent = ({ reef, imageUrl }: SelectedReefContentProps) => {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
-  const isStreamLive = useLiveStreamCheck(getYouTubeVideoId(reef.videoStream));
   const sortedDailyData = sortByDate(reef.dailyData, "date");
   const dailyDataLen = sortedDailyData.length;
   const { maxBottomTemperature, satelliteTemperature, degreeHeatingDays } =
@@ -201,10 +198,10 @@ const SelectedReefContent = ({ reef, imageUrl }: SelectedReefContentProps) => {
                 container
                 alignItems="center"
                 justify={
-                  isStreamLive && isMobile ? "space-between" : "flex-end"
+                  reef.videoStream && isMobile ? "space-between" : "flex-end"
                 }
               >
-                {isStreamLive && isMobile && (
+                {reef.videoStream && isMobile && (
                   <Chip
                     live
                     liveText="LIVE VIDEO"
@@ -247,7 +244,7 @@ const SelectedReefContent = ({ reef, imageUrl }: SelectedReefContentProps) => {
                   <span title={name || ""}>{name}</span>
                 </Typography>
               </Grid>
-              {isStreamLive && (
+              {reef.videoStream && (
                 <Chip
                   live
                   liveText="LIVE VIDEO"
