@@ -16,7 +16,7 @@ import { EntityExists } from '../../validations/entity-exists.constraint';
 export class CreateSurveyMediaDto {
   @ApiProperty({
     example:
-      'https://storage.googleapis.com/storage/reef-image-564894612222.jpg	',
+      'https://storage.googleapis.com/storage/reef-image-564894612222.jpg',
   })
   @IsUrl()
   readonly url: string;

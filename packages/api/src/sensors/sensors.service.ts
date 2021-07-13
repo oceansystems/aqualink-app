@@ -11,7 +11,7 @@ import { TimeSeries } from '../time-series/time-series.entity';
 import { getReefFromSensorId } from '../utils/reef.utils';
 import { getSpotterData, getLatestData } from '../utils/sofar';
 import { createPoint } from '../utils/coordinates';
-import { DEFAULT_SPOTTER_DATA_VALUE, SpotterData } from '../utils/sofar.types';
+import { SpotterData } from '../utils/sofar.types';
 import {
   TimeSeriesData,
   getDataQuery,
@@ -52,16 +52,7 @@ export class SensorsService {
     const spotterData = await Bluebird.map(
       reefs,
       (reef) => {
-        if (!reef.sensorId) {
-          return {
-            id: reef.id,
-            ...DEFAULT_SPOTTER_DATA_VALUE,
-            longitude: [],
-            latitude: [],
-          };
-        }
-
-        return getSpotterData(reef.sensorId).then((data) => {
+        return getSpotterData(reef.sensorId!).then((data) => {
           return {
             id: reef.id,
             ...data,
@@ -140,10 +131,6 @@ export class SensorsService {
 
     return Promise.all(
       surveyDetails.map(async (survey) => {
-        if (!survey.surveyMedia) {
-          return survey;
-        }
-
         const reefTimeSeries = await this.getClosestTimeSeriesData(
           survey.diveDate,
           survey.reefId,
@@ -157,7 +144,7 @@ export class SensorsService {
         );
 
         const surveyMedia = await Promise.all(
-          survey.surveyMedia.map(async (media) => {
+          survey.surveyMedia!.map(async (media) => {
             if (!media.poiId) {
               return media;
             }
@@ -244,6 +231,10 @@ export class SensorsService {
       .andWhere('source.reef_id = :reefId', { reefId })
       .andWhere(poiCondition)
       .getMany();
+
+    if (!sources.length) {
+      return {};
+    }
 
     // Create map from source_id to source entity
     const sourceMap = keyBy(sources, (source) => source.id);

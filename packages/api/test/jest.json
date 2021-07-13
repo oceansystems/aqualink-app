@@ -1,0 +1,24 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": "../",
+  "testEnvironment": "node",
+  "testRegex": ["app.spec.ts$", "test.ts$"],
+  "testTimeout": 120000,
+  "verbose": true,
+  "collectCoverage": true,
+  "coveragePathIgnorePatterns": [
+    "node_modules",
+    "migration",
+    "entity.ts",
+    "module.ts",
+    "dto.ts",
+    "ormconfig.ts",
+    "spec.ts",
+    "test",
+    "docs",
+    "config"
+  ],
+  "transform": {
+    "\\.ts$": "ts-jest"
+  }
+}

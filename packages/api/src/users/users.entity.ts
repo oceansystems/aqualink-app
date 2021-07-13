@@ -28,7 +28,7 @@ export class User {
 
   @ApiHideProperty()
   @Exclude()
-  @Column({ nullable: true })
+  @Column({ nullable: true, select: false })
   firebaseUid?: string;
 
   @ApiProperty({ example: 'Full Name' })

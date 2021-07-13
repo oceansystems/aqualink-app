@@ -1,12 +1,12 @@
 import {
   Injectable,
   NotFoundException,
-  InternalServerErrorException,
   Logger,
+  BadRequestException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { omit } from 'lodash';
+import { isNil, omit } from 'lodash';
 import { SchedulerRegistry } from '@nestjs/schedule';
 import { Survey } from './surveys.entity';
 import { CreateSurveyDto } from './dto/create-survey.dto';
@@ -33,7 +33,7 @@ export class SurveysService {
     @InjectRepository(Reef)
     private reefRepository: Repository<Reef>,
 
-    private googleCloudService: GoogleCloudService,
+    public googleCloudService: GoogleCloudService,
 
     private scheduleRegistry: SchedulerRegistry,
   ) {}
@@ -47,7 +47,7 @@ export class SurveysService {
     const reef = await this.reefRepository.findOne(reefId);
 
     if (!reef) {
-      throw new NotFoundException(`Reef with id ${reefId} was not found.`);
+      throw new NotFoundException(`Reef with id ${reefId} was not found`);
     }
 
     const survey = await this.surveyRepository.save({
@@ -227,17 +227,22 @@ export class SurveysService {
     }
     const updated = await this.surveyRepository.findOne(surveyId);
 
-    if (!updated) {
-      throw new InternalServerErrorException('Something went wrong');
-    }
-
-    return updated;
+    return updated!;
   }
 
   async updateMedia(
     editSurveyMediaDto: EditSurveyMediaDto,
     mediaId: number,
   ): Promise<SurveyMedia> {
+    if (
+      isNil(editSurveyMediaDto.featured) ||
+      isNil(editSurveyMediaDto.hidden)
+    ) {
+      throw new BadRequestException(
+        'Features and hidden flags must be provided',
+      );
+    }
+
     const surveyMedia = await this.surveyMediaRepository.findOne(mediaId);
 
     if (!surveyMedia) {
@@ -246,6 +251,7 @@ export class SurveysService {
       );
     }
 
+    // Media changes from featured to not featured
     if (
       surveyMedia.featured &&
       (editSurveyMediaDto.hidden || !editSurveyMediaDto.featured)
@@ -253,6 +259,7 @@ export class SurveysService {
       await this.assignFeaturedMedia(surveyMedia.surveyId.id, mediaId);
     }
 
+    // Media changes from not featured to featured
     if (
       !surveyMedia.featured &&
       !editSurveyMediaDto.hidden &&
@@ -279,11 +286,7 @@ export class SurveysService {
 
     const updated = await this.surveyMediaRepository.findOne(mediaId);
 
-    if (!updated) {
-      throw new InternalServerErrorException('Something went wrong');
-    }
-
-    return updated;
+    return updated!;
   }
 
   async delete(surveyId: number): Promise<void> {

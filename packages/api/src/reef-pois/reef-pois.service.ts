@@ -1,8 +1,4 @@
-import {
-  Injectable,
-  NotFoundException,
-  InternalServerErrorException,
-} from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { GeoJSON } from 'geojson';
@@ -83,16 +79,16 @@ export class ReefPoisService {
       ...updateReef,
       ...polygon,
     });
+
     if (!result.affected) {
       throw new NotFoundException(
         `Reef Point of Interest with ID ${id} not found.`,
       );
     }
+
     const updated = await this.poisRepository.findOne(id);
-    if (!updated) {
-      throw new InternalServerErrorException('Something went wrong.');
-    }
-    return updated;
+
+    return updated!;
   }
 
   async delete(id: number): Promise<void> {

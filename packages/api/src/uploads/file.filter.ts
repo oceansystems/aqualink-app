@@ -1,9 +1,10 @@
 import { BadRequestException } from '@nestjs/common';
+import { Request } from 'express';
 import { validateMimetype } from './mimetypes';
 
 export function fileFilter(validTypes: string[]) {
   return (
-    req: any,
+    req: Request,
     file: Express.Multer.File,
     callback: (error: Error | null, acceptFile: boolean) => void,
   ): void => {

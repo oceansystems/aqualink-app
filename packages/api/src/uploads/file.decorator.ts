@@ -1,5 +1,6 @@
 import { UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { Request } from 'express';
 import MulterGoogleCloudStorage from 'multer-google-storage';
 import * as path from 'path';
 import { random, times } from 'lodash';
@@ -20,7 +21,7 @@ export const getRandomName = (
 
 export function assignName(folder: string, prefix: string) {
   return (
-    req: any,
+    req: Request,
     file: Express.Multer.File,
     callback: (error: Error | null, filename: string) => void,
   ) => {

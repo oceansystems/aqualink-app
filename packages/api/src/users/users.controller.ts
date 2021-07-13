@@ -15,6 +15,7 @@ import {
   ApiParam,
   ApiTags,
 } from '@nestjs/swagger';
+import { Request } from 'express';
 import { UsersService } from './users.service';
 import { AdminLevel, User } from './users.entity';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -24,6 +25,7 @@ import { Reef } from '../reefs/reefs.entity';
 import { OverrideLevelAccess } from '../auth/override-level-access.decorator';
 import { Public } from '../auth/public.decorator';
 import { ApiNestNotFoundResponse } from '../docs/api-response';
+import { SetAdminLevelDto } from './dto/set-admin-level.dto';
 
 @ApiTags('Users')
 @Auth()
@@ -34,7 +36,10 @@ export class UsersController {
   @ApiOperation({ summary: 'Creates a new user' })
   @Public()
   @Post()
-  create(@Req() req: any, @Body() createUserDto: CreateUserDto): Promise<User> {
+  create(
+    @Req() req: Request,
+    @Body() createUserDto: CreateUserDto,
+  ): Promise<User> {
     return this.usersService.create(req, createUserDto);
   }
 
@@ -53,9 +58,9 @@ export class UsersController {
   @Put(':id/level')
   setAdminLevel(
     @Param('id', ParseIntPipe) id: number,
-    @Body('level') adminLevel: AdminLevel,
+    @Body() setAdminLevelDto: SetAdminLevelDto,
   ): Promise<void> {
-    return this.usersService.setAdminLevel(id, adminLevel);
+    return this.usersService.setAdminLevel(id, setAdminLevelDto.level);
   }
 
   @ApiBearerAuth()

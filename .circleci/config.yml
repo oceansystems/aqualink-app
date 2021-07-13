@@ -9,6 +9,7 @@ jobs:
       - image: node:12
         environment:
           DATABASE_URL: postgres://postgres:CHANGE-ME@postgres:5432/postgres
+          TEST_DATABASE_URL: postgres://postgres:CHANGE-ME@postgres:5432/postgres
 
       - image: kartoza/postgis:12.1
         environment:
@@ -49,6 +50,9 @@ jobs:
           name: Install psql
           command: apt-get update && apt-get install -y postgresql-client
 
+      # Ensure that all migrations succeed
+      - run: cd packages/api && yarn migration:run
+
       # Run tests
       # This could also be run using lerna: `yarn test` in the main repo, but doing it
       # explicitly like this separates out the tasks nicely in the UI.
@@ -61,5 +65,3 @@ jobs:
       - run: yarn build
       - run: cd packages/api && yarn build:cloud-functions
 
-      # Ensure that all migrations succeed
-      - run: cd packages/api && yarn migration:run

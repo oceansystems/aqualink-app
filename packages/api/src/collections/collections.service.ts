@@ -162,7 +162,7 @@ export class CollectionsService {
       },
     );
 
-    return this.collectionRepository.findOne(collection.id);
+    return this.collectionRepository.findOne(collection!.id);
   }
 
   async delete(collectionId: number) {
