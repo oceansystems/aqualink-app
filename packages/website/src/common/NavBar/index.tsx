@@ -272,6 +272,7 @@ const styles = (theme: Theme) =>
     userMenuWrapper: {
       marginTop: 36,
       border: "1px solid rgba(0, 0, 0, 0.12)",
+      maxWidth: 275,
     },
     userMenuDivider: {
       margin: "4px 0",
@@ -283,19 +284,20 @@ const styles = (theme: Theme) =>
       margin: 0,
       color: theme.palette.text.secondary,
       fontSize: 14,
+      display: "block",
+      overflowWrap: "break-word",
+      whiteSpace: "unset",
       "&:hover": {
         backgroundColor: "rgba(22, 141, 189, 0.8)",
         color: theme.palette.text.primary,
       },
+      minHeight: "auto",
     },
     menuItemLink: {
       textDecoration: "none",
       "&:hover": {
         textDecoration: "none",
       },
-    },
-    notificationIcon: {
-      color: "#a9e6ff",
     },
     expandIcon: {
       color: "#ffffff",

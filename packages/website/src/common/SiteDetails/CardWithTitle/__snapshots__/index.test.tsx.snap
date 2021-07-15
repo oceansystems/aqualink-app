@@ -6,7 +6,7 @@ exports[`renders as expected 1`] = `
     class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
   >
     <div
-      class="MuiGrid-root MuiGrid-item"
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
     >
       <mock-box
         classname="Title-root-4"
@@ -19,6 +19,7 @@ exports[`renders as expected 1`] = `
             style="margin-right: 1rem;"
           >
             <mock-typography
+              classname=""
               variant="h6"
             >
               Some value

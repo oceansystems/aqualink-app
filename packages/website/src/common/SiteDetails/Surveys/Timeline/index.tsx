@@ -78,7 +78,7 @@ const SurveyTimeline = ({
                   <TimelineDot variant="outlined" className={classes.dot} />
                   <hr className={classes.connector} />
                 </TimelineSeparator>
-                <TimelineContent>
+                <TimelineContent className={classes.surveyCardWrapper}>
                   <SurveyCard
                     pointId={pointId}
                     pointName={pointName}

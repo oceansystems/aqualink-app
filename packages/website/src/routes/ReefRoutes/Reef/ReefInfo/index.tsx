@@ -27,9 +27,16 @@ import {
 import { Reef, ReefUpdateParams } from "../../../../store/Reefs/types";
 import { getReefNameAndRegion } from "../../../../store/Reefs/helpers";
 import reefServices from "../../../../services/reefServices";
-import { userInfoSelector } from "../../../../store/User/userSlice";
+import {
+  setAdministeredReefs,
+  userInfoSelector,
+} from "../../../../store/User/userSlice";
 import { displayTimeInLocalTimezone } from "../../../../helpers/dates";
 import CollectionButton from "./CollectionButton";
+import {
+  reefsListSelector,
+  setReefs,
+} from "../../../../store/Reefs/reefsListSlice";
 
 const ReefNavBar = ({
   hasDailyData,
@@ -41,6 +48,7 @@ const ReefNavBar = ({
   const dispatch = useDispatch();
   const theme = useTheme();
   const user = useSelector(userInfoSelector);
+  const reefsList = useSelector(reefsListSelector);
   const [editEnabled, setEditEnabled] = useState<boolean>(false);
   const [alertOpen, setAlertOpen] = useState<boolean>(false);
   const [alertSeverity, setAlertSeverity] = useState<"success" | "error">();
@@ -86,6 +94,26 @@ const ReefNavBar = ({
       reefServices
         .updateReef(reef.id, data, user.token)
         .then(() => dispatch(setReefData(data)))
+        .then(() => {
+          dispatch(
+            setAdministeredReefs(
+              user?.administeredReefs?.map((item) =>
+                item.id === reef.id && data.name
+                  ? { ...item, name: data.name }
+                  : item
+              )
+            )
+          );
+          dispatch(
+            setReefs(
+              reefsList?.map((item) =>
+                item.id === reef.id && data.name
+                  ? { ...item, name: data.name }
+                  : item
+              )
+            )
+          );
+        })
         .then(() => setAlertSeverity("success"))
         .catch(() => setAlertSeverity("error"))
         .finally(() => {

@@ -68,11 +68,11 @@ exports[`NavBar with routeButtons should render with given state from Redux stor
           >
             Mock User
             <mock-iconbutton
-              classname="NavBar-button-12"
+              classname="NavBar-button-11"
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root NavBar-expandIcon-11"
+                class="MuiSvgIcon-root NavBar-expandIcon-10"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -175,12 +175,12 @@ exports[`NavBar with routeButtons should render with given state from Redux stor
 exports[`NavBar without routeButtons should render with given state from Redux store 1`] = `
 <div>
   <mock-appbar
-    classname="NavBar-appBar-13"
+    classname="NavBar-appBar-12"
     color="primary"
     position="static"
   >
     <mock-toolbar
-      classname="NavBar-toolbar-16"
+      classname="NavBar-toolbar-15"
     >
       <mock-menudrawer
         open="false"
@@ -212,7 +212,7 @@ exports[`NavBar without routeButtons should render with given state from Redux s
               </svg>
             </mock-iconbutton>
             <mock-link
-              classname="NavBar-navBarLink-14"
+              classname="NavBar-navBarLink-13"
               href="/map"
             >
               <mock-typography
@@ -240,11 +240,11 @@ exports[`NavBar without routeButtons should render with given state from Redux s
           >
             Mock User
             <mock-iconbutton
-              classname="NavBar-button-24"
+              classname="NavBar-button-22"
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root NavBar-expandIcon-23"
+                class="MuiSvgIcon-root NavBar-expandIcon-21"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -254,21 +254,21 @@ exports[`NavBar without routeButtons should render with given state from Redux s
               </svg>
             </mock-iconbutton>
             <mock-menu
-              classname="NavBar-userMenu-19"
+              classname="NavBar-userMenu-18"
               keepmounted="true"
               menulistprops="[object Object]"
               open="false"
               popoverclasses="[object Object]"
             >
               <mock-divider
-                classname="NavBar-userMenuDivider-18"
+                classname="NavBar-userMenuDivider-17"
               />
               <mock-link
-                classname="NavBar-menuItemLink-21"
+                classname="NavBar-menuItemLink-20"
                 href="/dashboard"
               >
                 <mock-menuitem
-                  classname="NavBar-menuItem-20"
+                  classname="NavBar-menuItem-19"
                 >
                   <div
                     class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
@@ -300,10 +300,10 @@ exports[`NavBar without routeButtons should render with given state from Redux s
                 </mock-menuitem>
               </mock-link>
               <mock-divider
-                classname="NavBar-userMenuDivider-18"
+                classname="NavBar-userMenuDivider-17"
               />
               <mock-menuitem
-                classname="NavBar-menuItem-20"
+                classname="NavBar-menuItem-19"
               >
                 <div
                   class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"

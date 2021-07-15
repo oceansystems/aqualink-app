@@ -21,7 +21,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
           <clear />
         </mock-iconbutton>
         <mock-button
-          classname="MenuDrawer-menuDrawerButton-16"
+          classname="MenuDrawer-menuDrawerButton-15"
           component="[object Object]"
           to="/"
         >
@@ -32,7 +32,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
           </mock-typography>
         </mock-button>
         <mock-button
-          classname="MenuDrawer-menuDrawerButton-16"
+          classname="MenuDrawer-menuDrawerButton-15"
           component="[object Object]"
           to="/map"
         >
@@ -43,7 +43,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
           </mock-typography>
         </mock-button>
         <mock-button
-          classname="MenuDrawer-menuDrawerButton-16"
+          classname="MenuDrawer-menuDrawerButton-15"
           component="[object Object]"
           to="/buoy"
         >
@@ -54,7 +54,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
           </mock-typography>
         </mock-button>
         <mock-button
-          classname="MenuDrawer-menuDrawerButton-16"
+          classname="MenuDrawer-menuDrawerButton-15"
           component="[object Object]"
           to="/drones"
         >
@@ -65,7 +65,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
           </mock-typography>
         </mock-button>
         <mock-button
-          classname="MenuDrawer-menuDrawerButton-16"
+          classname="MenuDrawer-menuDrawerButton-15"
           component="[object Object]"
           to="/about"
         >
@@ -76,7 +76,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
           </mock-typography>
         </mock-button>
         <mock-button
-          classname="MenuDrawer-menuDrawerButton-16"
+          classname="MenuDrawer-menuDrawerButton-15"
           component="[object Object]"
           to="/faq"
         >
@@ -87,7 +87,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
           </mock-typography>
         </mock-button>
         <mock-button
-          classname="MenuDrawer-menuDrawerButton-16"
+          classname="MenuDrawer-menuDrawerButton-15"
           component="[object Object]"
           to="/tracker"
         >
@@ -98,7 +98,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
           </mock-typography>
         </mock-button>
         <mock-button
-          classname="MenuDrawer-menuDrawerButton-16"
+          classname="MenuDrawer-menuDrawerButton-15"
           component="[object Object]"
           to="/register"
         >
@@ -122,7 +122,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
             role="group"
           >
             <mock-button
-              classname="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedContained MuiButtonGroup-groupedContainedHorizontal MuiButtonGroup-groupedContained MenuDrawer-contributeButton-15"
+              classname="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedContained MuiButtonGroup-groupedContainedHorizontal MuiButtonGroup-groupedContained MenuDrawer-contributeButton-14"
               color="default"
               disabled="false"
               disableelevation="false"
@@ -138,7 +138,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
               GitHub
             </mock-button>
             <mock-button
-              classname="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedContained MuiButtonGroup-groupedContainedHorizontal MuiButtonGroup-groupedContained MenuDrawer-contributeButton-15"
+              classname="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedContained MuiButtonGroup-groupedContainedHorizontal MuiButtonGroup-groupedContained MenuDrawer-contributeButton-14"
               color="default"
               disabled="false"
               disableelevation="false"
@@ -213,11 +213,11 @@ exports[`Terms page should render with given state from Redux store 1`] = `
           >
             Mock User
             <mock-iconbutton
-              classname="NavBar-button-13"
+              classname="NavBar-button-12"
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root NavBar-expandIcon-12"
+                class="MuiSvgIcon-root NavBar-expandIcon-11"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -315,7 +315,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
   >
     <mock-card>
       <div
-        class="MuiCardHeader-root RegisterDialog-dialogHeader-18"
+        class="MuiCardHeader-root RegisterDialog-dialogHeader-17"
       >
         <div
           class="MuiCardHeader-content"
@@ -341,7 +341,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                     Aqua
                   </mock-typography>
                   <mock-typography
-                    classname="RegisterDialog-dialogHeaderSecondPart-19"
+                    classname="RegisterDialog-dialogHeaderSecondPart-18"
                     variant="h4"
                   >
                     link
@@ -352,7 +352,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 class="MuiGrid-root MuiGrid-item"
               >
                 <mock-iconbutton
-                  classname="RegisterDialog-closeButton-17"
+                  classname="RegisterDialog-closeButton-16"
                   size="small"
                 >
                   <svg
@@ -376,7 +376,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
           class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
         >
           <div
-            class="MuiGrid-root RegisterDialog-dialogContentTitle-20 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+            class="MuiGrid-root RegisterDialog-dialogContentTitle-19 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
           >
             <div
               class="MuiGrid-root MuiGrid-item"
@@ -393,10 +393,10 @@ exports[`Terms page should render with given state from Redux store 1`] = `
             class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
           >
             <form
-              class="RegisterDialog-form-21"
+              class="RegisterDialog-form-20"
             >
               <div
-                class="MuiGrid-root RegisterDialog-textFieldWrapper-22 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-21 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -411,7 +411,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 />
               </div>
               <div
-                class="MuiGrid-root RegisterDialog-textFieldWrapper-22 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-21 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -426,7 +426,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 />
               </div>
               <div
-                class="MuiGrid-root RegisterDialog-textFieldWrapper-22 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-21 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -441,7 +441,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 />
               </div>
               <div
-                class="MuiGrid-root RegisterDialog-textFieldWrapper-22 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-21 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -456,7 +456,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 />
               </div>
               <div
-                class="MuiGrid-root RegisterDialog-textFieldWrapper-22 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root RegisterDialog-textFieldWrapper-21 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -479,7 +479,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 >
                   <mock-checkbox
                     checked="false"
-                    classname="RegisterDialog-termsCheckbox-26"
+                    classname="RegisterDialog-termsCheckbox-25"
                     color="primary"
                   />
                 </div>
@@ -488,14 +488,14 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 >
                   <mock-box>
                     <mock-typography
-                      classname="RegisterDialog-formText-24"
+                      classname="RegisterDialog-formText-23"
                       color="textSecondary"
                       variant="subtitle1"
                     >
                       I have read the
                        
                       <a
-                        class="RegisterDialog-termsLink-27"
+                        class="RegisterDialog-termsLink-26"
                         href="/terms"
                       >
                         Terms and Conditions
@@ -505,7 +505,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 </div>
               </div>
               <div
-                class="MuiGrid-root RegisterDialog-button-25 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root RegisterDialog-button-24 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-button
                   color="primary"
@@ -522,7 +522,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-typography
-                  classname="RegisterDialog-formText-24"
+                  classname="RegisterDialog-formText-23"
                   color="textSecondary"
                   variant="subtitle1"
                 >
@@ -549,7 +549,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
       elevation="0"
     >
       <div
-        class="MuiCardHeader-root SignInDialog-dialogHeader-29"
+        class="MuiCardHeader-root SignInDialog-dialogHeader-28"
       >
         <div
           class="MuiCardHeader-content"
@@ -575,7 +575,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                     Aqua
                   </mock-typography>
                   <mock-typography
-                    classname="SignInDialog-dialogHeaderSecondPart-30"
+                    classname="SignInDialog-dialogHeaderSecondPart-29"
                     variant="h4"
                   >
                     link
@@ -586,7 +586,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 class="MuiGrid-root MuiGrid-item"
               >
                 <mock-iconbutton
-                  classname="SignInDialog-closeButton-28"
+                  classname="SignInDialog-closeButton-27"
                   size="small"
                 >
                   <svg
@@ -667,7 +667,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
           class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
         >
           <div
-            class="MuiGrid-root SignInDialog-dialogContentTitle-31 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
+            class="MuiGrid-root SignInDialog-dialogContentTitle-30 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
           >
             <div
               class="MuiGrid-root MuiGrid-item"
@@ -684,10 +684,10 @@ exports[`Terms page should render with given state from Redux store 1`] = `
             class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
           >
             <form
-              class="SignInDialog-form-32"
+              class="SignInDialog-form-31"
             >
               <div
-                class="MuiGrid-root SignInDialog-textFieldWrapper-33 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root SignInDialog-textFieldWrapper-32 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -702,7 +702,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 />
               </div>
               <div
-                class="MuiGrid-root SignInDialog-textFieldWrapper-33 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root SignInDialog-textFieldWrapper-32 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-textfield
                   error="false"
@@ -721,7 +721,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-button
-                  classname="SignInDialog-forgotPasswordButton-37"
+                  classname="SignInDialog-forgotPasswordButton-36"
                 >
                   <mock-typography
                     color="textSecondary"
@@ -732,7 +732,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 </mock-button>
               </div>
               <div
-                class="MuiGrid-root SignInDialog-button-36 MuiGrid-item MuiGrid-grid-xs-12"
+                class="MuiGrid-root SignInDialog-button-35 MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-button
                   color="primary"
@@ -748,7 +748,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
                 class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
               >
                 <mock-typography
-                  classname="SignInDialog-formText-35"
+                  classname="SignInDialog-formText-34"
                   color="textSecondary"
                   variant="subtitle1"
                 >
@@ -1055,7 +1055,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
     </p>
   </div>
   <mock-appbar
-    classname="Footer-appBar-38"
+    classname="Footer-appBar-37"
     position="static"
   >
     <mock-toolbar>
@@ -1066,7 +1066,7 @@ exports[`Terms page should render with given state from Redux store 1`] = `
           class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-10"
         >
           <mock-link
-            classname="Footer-navBarLink-39"
+            classname="Footer-navBarLink-38"
             href="/map"
           >
             <mock-typography

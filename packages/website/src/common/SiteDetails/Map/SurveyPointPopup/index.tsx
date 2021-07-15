@@ -27,8 +27,12 @@ const SurveyPointPopup = ({
           item
           spacing={2}
         >
-          <Grid item>
-            <Typography variant="h6" color="textSecondary">
+          <Grid title={point.name || ""} item className={classes.nameWrapper}>
+            <Typography
+              className={classes.name}
+              variant="h6"
+              color="textSecondary"
+            >
               {point.name}
             </Typography>
           </Grid>
@@ -49,8 +53,15 @@ const styles = () =>
   createStyles({
     surveyPointPopup: {
       minWidth: 150,
+      maxWidth: 240,
       minHeight: 50,
       padding: 16,
+    },
+    nameWrapper: {
+      maxWidth: "80%",
+    },
+    name: {
+      overflowWrap: "break-word",
     },
   });
 

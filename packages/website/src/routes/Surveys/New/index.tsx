@@ -46,7 +46,10 @@ const NewSurvey = ({ reef, classes }: NewSurveyProps) => {
           <Grid className={classes.root} container justify="center">
             <Grid item xs={10}>
               {reef.name && (
-                <Typography variant="h5">{`NEW SURVEY FOR ${reef.name.toUpperCase()}`}</Typography>
+                <Typography
+                  className={classes.title}
+                  variant="h5"
+                >{`NEW SURVEY FOR ${reef.name.toUpperCase()}`}</Typography>
               )}
             </Grid>
             <Grid
@@ -94,6 +97,9 @@ const styles = (theme: Theme) =>
     root: {
       marginTop: "2rem",
       // overflow: "hidden",
+    },
+    title: {
+      overflowWrap: "break-word",
     },
     mapContainer: {
       height: "30rem",

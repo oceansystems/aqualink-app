@@ -20,6 +20,7 @@ import {
 import AddIcon from "@material-ui/icons/Add";
 import { DeleteOutlineOutlined } from "@material-ui/icons";
 
+import classNames from "classnames";
 import observationOptions from "../../../constants/uploadDropdowns";
 import { Pois } from "../../../store/Reefs/types";
 import { ReactComponent as StarIcon } from "../../../assets/starIcon.svg";
@@ -44,6 +45,8 @@ const MediaCard = ({
   const size = (file && file.size && file.size / 1000000)?.toFixed(2);
   const [addPoiDialogOpen, setAddPoiDialogOpen] = useState<boolean>(false);
   const [newPoiName, setNewPoiName] = useState<string>("");
+
+  const errored = newPoiName.length > 100;
 
   const handleNewPoiNameChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -72,6 +75,10 @@ const MediaCard = ({
                   placeholder="Survey Point"
                   value={newPoiName}
                   onChange={handleNewPoiNameChange}
+                  error={errored}
+                  helperText={
+                    errored ? "Must not exceed 100 characters" : undefined
+                  }
                 />
               </Grid>
               <Grid
@@ -82,7 +89,7 @@ const MediaCard = ({
                 xs={12}
               >
                 <Button
-                  disabled={newPoiName === ""}
+                  disabled={newPoiName === "" || errored}
                   variant="outlined"
                   color="primary"
                   onClick={() => {
@@ -154,7 +161,10 @@ const MediaCard = ({
                 >
                   {surveyPointOptions.map((item) => (
                     <MenuItem
-                      className={classes.textField}
+                      className={classNames(
+                        classes.textField,
+                        classes.menuItem
+                      )}
                       value={item.id}
                       key={item.id}
                     >
@@ -287,6 +297,12 @@ const styles = (theme: Theme) =>
         borderColor: theme.palette.primary.main,
       },
     },
+    menuItem: {
+      maxWidth: 280,
+      overflowWrap: "break-word",
+      display: "block",
+      whiteSpace: "unset",
+    },
     mediaSizeWrapper: {
       height: "100%",
     },
@@ -296,8 +312,10 @@ const styles = (theme: Theme) =>
       borderRadius: "2px 0 0 2px",
     },
     newPoiDialog: {
-      height: "10rem",
       width: "20rem",
+      "& > *:last-child": {
+        padding: theme.spacing(2),
+      },
     },
     starIcon: {
       height: 42,

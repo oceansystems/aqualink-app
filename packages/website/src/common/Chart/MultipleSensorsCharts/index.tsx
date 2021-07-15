@@ -82,7 +82,7 @@ const ChartWithCard = ({
   const cardDataset = findCardDataset(hasSpotterData, hasHoboData);
 
   const chartWidthClass =
-    cardDataset === "spotter" ? classes.smallChart : classes.largeChart;
+    cardDataset === "spotter" ? classes.smallChart : classes.mediumChart;
 
   const chartStartDate = startDate || subtractFromDate(today, "week");
   const chartEndDate = moment
@@ -371,7 +371,7 @@ const ChartWithCard = ({
                 spacing={1}
               >
                 <Grid
-                  className={classnames(classes.chart, chartWidthClass)}
+                  className={classnames(classes.chart, classes.largeChart)}
                   item
                 >
                   <Chart
@@ -437,6 +437,11 @@ const styles = (theme: Theme) =>
       },
     },
     largeChart: {
+      [theme.breakpoints.up("md")]: {
+        width: "calc(100% - 230px)",
+      },
+    },
+    mediumChart: {
       [theme.breakpoints.up("md")]: {
         width: "calc(100% - 240px)",
       },

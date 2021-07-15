@@ -23,7 +23,7 @@ const CardWithTitle: FC<CardWithTitleProps> = ({
   return (
     <Grid className={className} container item {...gridProps}>
       {titleItems.length > 0 && (
-        <Grid item>
+        <Grid item xs={12}>
           <Title values={titleItems} />
         </Grid>
       )}

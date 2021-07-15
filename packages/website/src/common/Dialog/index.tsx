@@ -73,6 +73,7 @@ const styles = (theme: Theme) =>
   createStyles({
     dialogTitle: {
       backgroundColor: theme.palette.primary.main,
+      overflowWrap: "break-word",
     },
   });
 

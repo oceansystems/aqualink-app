@@ -209,6 +209,15 @@ const userSlice = createSlice({
           }
         : state.userInfo,
     }),
+    setAdministeredReefs: (
+      state,
+      action: PayloadAction<User["administeredReefs"]>
+    ) => ({
+      ...state,
+      userInfo: state.userInfo
+        ? { ...state.userInfo, administeredReefs: action.payload }
+        : state.userInfo,
+    }),
   },
   extraReducers: (builder) => {
     // User Create
@@ -237,6 +246,11 @@ export const userLoadingSelector = (state: RootState): UserState["loading"] =>
 export const userErrorSelector = (state: RootState): UserState["error"] =>
   state.user.error;
 
-export const { setToken, clearError, setCollectionReefs } = userSlice.actions;
+export const {
+  setToken,
+  clearError,
+  setCollectionReefs,
+  setAdministeredReefs,
+} = userSlice.actions;
 
 export default userSlice.reducer;

@@ -52,6 +52,8 @@ const styles = (theme: Theme) =>
   createStyles({
     title: {
       marginTop: 100,
+      maxWidth: "90%",
+      overflowWrap: "break-word",
       [theme.breakpoints.down("xs")]: {
         marginTop: 50,
       },

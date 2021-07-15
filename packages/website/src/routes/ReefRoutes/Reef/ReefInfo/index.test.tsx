@@ -17,6 +17,9 @@ describe("ReefNavBar", () => {
       user: {
         userInfo: mockUser,
       },
+      reefsList: {
+        list: [mockReef],
+      },
     });
     store.dispatch = jest.fn();
 

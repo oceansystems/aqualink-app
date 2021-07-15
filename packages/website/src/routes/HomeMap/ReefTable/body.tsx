@@ -261,10 +261,14 @@ const styles = (theme: Theme) =>
   createStyles({
     nameCells: {
       paddingLeft: 10,
+      maxWidth: 120,
+      overflowWrap: "break-word",
       [theme.breakpoints.down("xs")]: { width: "35%", paddingRight: 0 },
     },
     extendedTableNameCells: {
       paddingLeft: 10,
+      maxWidth: 200,
+      overflowWrap: "break-word",
       [theme.breakpoints.down("xs")]: { width: "10%", paddingRight: 0 },
     },
     regionName: {

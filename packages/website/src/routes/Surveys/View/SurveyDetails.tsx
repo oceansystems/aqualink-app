@@ -43,7 +43,9 @@ const SurveyDetails = ({ reef, survey, classes }: SurveyDetailsProps) => {
               <Typography className={classes.regionName}>
                 {regionName}
               </Typography>
-              <Typography variant="subtitle1">{reef.name}</Typography>
+              <Typography className={classes.reefName} variant="subtitle1">
+                {reef.name}
+              </Typography>
             </Grid>
             <Grid item xs={12} md={4}>
               <Typography
@@ -102,6 +104,10 @@ const styles = () =>
   createStyles({
     regionName: {
       fontSize: 18,
+    },
+    reefName: {
+      maxWidth: "95%",
+      overflowWrap: "break-word",
     },
     inlineText: {
       display: "inline",

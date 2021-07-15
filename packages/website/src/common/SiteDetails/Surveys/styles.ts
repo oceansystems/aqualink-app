@@ -16,6 +16,9 @@ const styles = {
   },
   surveyCardWrapper: {
     marginBottom: "2rem",
+    [theme.breakpoints.up("lg")]: {
+      maxWidth: "65%",
+    },
   },
   surveyCard: {
     width: "100%",

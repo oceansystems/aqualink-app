@@ -101,6 +101,7 @@ const SiteDetails = ({
             text: `${featuredSurveyPoint?.name}`,
             variant: "subtitle2",
             marginRight: "2rem",
+            overflowEllipsis: true,
           },
           {
             text: `${displayTimeInLocalTimezone({

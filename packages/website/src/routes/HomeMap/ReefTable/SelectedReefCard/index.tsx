@@ -104,6 +104,13 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: "nowrap",
     textOverflow: "ellipsis",
   },
+  cardImageTextWrapper: {
+    position: "absolute",
+    top: 16,
+    left: 16,
+    right: 16,
+    overflowWrap: "break-word",
+  },
 }));
 
 type SelectedReefContentProps = {
@@ -178,13 +185,13 @@ const SelectedReefContent = ({ reef, imageUrl }: SelectedReefContentProps) => {
             <Hidden smUp>
               <Box
                 bgcolor="rgba(3, 48, 66, 0.75)"
-                height="40%"
+                height="55%"
                 width="100%"
                 position="absolute"
                 top={0}
                 left={0}
               >
-                <Box position="absolute" top={16} left={16}>
+                <Box className={classes.cardImageTextWrapper}>
                   <Typography variant="h5">{name}</Typography>
 
                   {regionName && (

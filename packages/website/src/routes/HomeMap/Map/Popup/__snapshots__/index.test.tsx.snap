@@ -20,7 +20,9 @@ exports[`Popup should render with given state from Redux store 1`] = `
             display="block"
             variant="h5"
           >
-            Hawaii
+            <span>
+              Hawaii
+            </span>
           </mock-typography>
         </div>
       </div>

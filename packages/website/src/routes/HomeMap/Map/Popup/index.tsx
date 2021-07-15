@@ -28,6 +28,8 @@ const Popup = ({ reef, classes, autoOpen }: PopupProps) => {
   const { map } = useLeaflet();
   const reefOnMap = useSelector(reefOnMapSelector);
   const popupRef = useRef<LeafletPopup>(null);
+  const { name, region } = getReefNameAndRegion(reef);
+  const isNameLong = name && name.length > 50;
 
   const { dhw, satelliteTemperature } = reef.collectionData || {};
 
@@ -61,8 +63,12 @@ const Popup = ({ reef, classes, autoOpen }: PopupProps) => {
             content: classes.popupHeaderContent,
             subheader: classes.subheader,
           }}
-          title={getReefNameAndRegion(reef).name}
-          subheader={getReefNameAndRegion(reef).region}
+          title={
+            <span title={isNameLong && name ? name : undefined}>
+              {isNameLong ? `${name?.substring(0, 50)}...` : name}
+            </span>
+          }
+          subheader={region}
         />
         <CardContent>
           <Grid container item xs={12}>
@@ -149,11 +155,7 @@ const styles = (theme: Theme) =>
     },
 
     popup: {
-      width: "12vw",
-      minWidth: 200,
-      [theme.breakpoints.up("xl")]: {
-        width: "7vw",
-      },
+      width: 215,
     },
   });
 

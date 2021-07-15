@@ -39,6 +39,7 @@ const PointSelector = ({
 }: PointSelectorProps) => {
   const [editDialogOpen, setEditDialogOpen] = useState(false);
   const [editPoi, setEditPoi] = useState<Pois>();
+  const errored = !editPoiNameDraft || editPoiNameDraft.length > 100;
 
   const onEditDialogClose = () => {
     disableEditPoiName();
@@ -73,7 +74,7 @@ const PointSelector = ({
       color: "primary",
       text: editPoiNameLoading ? "Updating..." : "Save",
       action: onEditPoiSubmit,
-      disabled: editPoiNameLoading || (editPoi && !editPoiNameDraft),
+      disabled: editPoiNameLoading || (editPoi && errored),
     },
   ];
 
@@ -93,8 +94,15 @@ const PointSelector = ({
               fullWidth
               value={editPoiNameDraft}
               onChange={onChangePoiName}
-              error={!editPoiNameDraft}
-              helperText={!editPoiNameDraft ? "Cannot be empty" : ""}
+              error={errored}
+              helperText={
+                // eslint-disable-next-line no-nested-ternary
+                !editPoiNameDraft
+                  ? "Cannot be empty"
+                  : editPoiNameDraft.length > 100
+                  ? "Must not exceed 100 characters"
+                  : ""
+              }
             />
           }
         />

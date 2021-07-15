@@ -10,6 +10,7 @@ import {
   Collapse,
   LinearProgress,
   Tooltip,
+  Theme,
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import { ArrowBack, CloudUploadOutlined } from "@material-ui/icons";
@@ -285,7 +286,7 @@ const UploadMedia = ({
               <ArrowBack />
             </IconButton>
           </Grid>
-          <Grid item>
+          <Grid item className={classes.reefName}>
             {reefName && (
               <Typography variant="h5">{`${reefName.toUpperCase()} MEDIA UPLOAD`}</Typography>
             )}
@@ -361,7 +362,7 @@ const UploadMedia = ({
   );
 };
 
-const styles = () =>
+const styles = (theme: Theme) =>
   createStyles({
     root: {
       marginTop: "2rem",
@@ -378,6 +379,11 @@ const styles = () =>
       "&:focus": {
         outline: "none",
       },
+      marginTop: theme.spacing(2),
+    },
+    reefName: {
+      maxWidth: "calc(100% - 56px)", // 100% minus the back button
+      overflowWrap: "break-word",
     },
     popover: {
       pointerEvents: "none",

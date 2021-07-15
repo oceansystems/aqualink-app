@@ -303,7 +303,7 @@ exports[`Surveys should render with given state from Redux store 1`] = `
                 />
               </div>
               <div
-                class="MuiTimelineContent-root MuiTimelineItem-content"
+                class="MuiTimelineContent-root MuiTimelineItem-content SurveyTimeline-surveyCardWrapper-23"
               >
                 <div
                   class="MuiPaper-root SurveyCard-surveyCard-39 MuiPaper-elevation0 MuiPaper-rounded"

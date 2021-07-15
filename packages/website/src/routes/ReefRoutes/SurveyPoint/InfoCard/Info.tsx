@@ -58,14 +58,14 @@ const Info = ({ reef, pointId, onEditButtonClick, classes }: InfoProps) => {
         justify="space-between"
         spacing={2}
       >
-        <Grid item>
+        <Grid className={classes.infoWrapper} item>
           <Grid
             className={classes.autoWidth}
             container
             direction="column"
             spacing={2}
           >
-            <Grid item>
+            <Grid className={classes.nameWrapper} item>
               <Typography variant="h5" color="textSecondary">
                 {pointName}
               </Typography>
@@ -123,6 +123,15 @@ const styles = () =>
   createStyles({
     cardInfo: {
       padding: 24,
+    },
+
+    infoWrapper: {
+      maxWidth: "100%",
+    },
+
+    nameWrapper: {
+      maxWidth: "100%",
+      overflowWrap: "break-word",
     },
 
     coordinates: {

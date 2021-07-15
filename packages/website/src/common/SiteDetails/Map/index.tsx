@@ -82,8 +82,13 @@ const ReefMap = ({
     latLng: [number, number],
     zoom: number
   ) => {
-    const newZoom = Math.max(inputMap.getZoom() || 15, zoom);
-    return inputMap.flyTo(latLng, newZoom);
+    const maxZoom = Math.max(inputMap.getZoom() || 15, zoom);
+    const pointBounds = L.latLngBounds(latLng, latLng);
+    inputMap.flyToBounds(pointBounds, {
+      maxZoom,
+      duration: 2,
+      paddingTopLeft: L.point(0, 200),
+    });
   };
 
   // Fit the polygon constructed by the reef's center and its survey points

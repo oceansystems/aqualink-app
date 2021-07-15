@@ -49,6 +49,10 @@ const reefsListSlice = createSlice({
         ? state.list?.filter(hasDeployedSpotter)
         : state.list,
     }),
+    setReefs: (state, action: PayloadAction<ReefsListState["list"]>) => ({
+      ...state,
+      list: action.payload,
+    }),
   },
   extraReducers: (builder) => {
     builder.addCase(
@@ -98,6 +102,6 @@ export const reefsListErrorSelector = (
   state: RootState
 ): ReefsListState["error"] => state.reefsList.error;
 
-export const { filterReefsWithSpotter } = reefsListSlice.actions;
+export const { filterReefsWithSpotter, setReefs } = reefsListSlice.actions;
 
 export default reefsListSlice.reducer;
